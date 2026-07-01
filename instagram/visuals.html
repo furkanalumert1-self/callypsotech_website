@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CallypsoTech — Instagram Görselleri</title>
+<link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --primary:#3B82F6;--secondary:#8B5CF6;--accent:#06B6D4;
+  --bg:#020817;--bg2:#060d1f;--bg3:#0a1428;
+  --text:#F0F4FF;--muted:#7A8FB0;--muted2:#9AABC8;
+  --font:'Audiowide',sans-serif;--body:'Inter',sans-serif;--mono:'JetBrains Mono',monospace;
+}
+body{background:#111;font-family:var(--body);padding:40px 20px;}
+h1{color:#fff;font-family:var(--font);text-align:center;margin-bottom:8px;font-size:22px;}
+.subtitle{color:var(--muted);text-align:center;font-size:13px;margin-bottom:40px;font-family:var(--mono);}
+.grid{display:flex;flex-direction:column;gap:60px;align-items:center;}
+.post-wrap{display:flex;flex-direction:column;align-items:center;gap:12px;}
+.post-label{color:var(--muted);font-size:12px;font-family:var(--mono);letter-spacing:2px;}
+
+/* POST CARD — 1080x1080 scaled to 540x540 */
+.card{
+  width:540px;height:540px;position:relative;overflow:hidden;
+  border-radius:4px;flex-shrink:0;
+}
+
+/* ─── POST 1: LAUNCH ─── */
+.p1{background:var(--bg);}
+.p1 .bg-glow{position:absolute;inset:0;background:radial-gradient(ellipse 90% 60% at 50% 0%,rgba(59,130,246,0.25) 0%,transparent 65%),radial-gradient(ellipse 50% 40% at 80% 90%,rgba(139,92,246,0.15) 0%,transparent 50%);}
+.p1 .grid-lines{position:absolute;inset:0;background-image:linear-gradient(rgba(59,130,246,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(59,130,246,0.05) 1px,transparent 1px);background-size:48px 48px;}
+.p1 .content{position:relative;z-index:2;padding:52px 48px;height:100%;display:flex;flex-direction:column;justify-content:space-between;}
+.p1 .logo{font-family:var(--font);font-size:15px;color:var(--text);letter-spacing:1px;}
+.p1 .logo span{color:var(--primary);}
+.p1 .main{text-align:center;}
+.p1 .eyebrow{font-family:var(--mono);font-size:10px;color:var(--accent);letter-spacing:3px;margin-bottom:20px;}
+.p1 .headline{font-family:var(--font);font-size:26px;line-height:1.25;color:var(--text);margin-bottom:16px;}
+.p1 .headline .grad{background:linear-gradient(135deg,var(--primary),var(--secondary),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.p1 .body{font-size:13px;color:var(--muted2);line-height:1.7;max-width:380px;margin:0 auto 24px;}
+.wave{display:flex;align-items:center;justify-content:center;gap:3px;height:36px;}
+.wbar{width:3px;border-radius:2px;background:linear-gradient(to top,var(--primary),var(--accent));}
+.p1 .footer{display:flex;justify-content:space-between;align-items:center;}
+.p1 .badge{background:rgba(59,130,246,0.12);border:1px solid rgba(59,130,246,0.3);padding:6px 14px;border-radius:100px;font-size:10px;color:#60A5FA;font-family:var(--mono);letter-spacing:1px;}
+.p1 .url{font-family:var(--mono);font-size:10px;color:var(--muted);}
+
+/* ─── POST 2: HOW IT WORKS ─── */
+.p2{background:var(--bg2);}
+.p2 .bg-glow{position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 50%,rgba(139,92,246,0.12) 0%,transparent 70%);}
+.p2 .content{position:relative;z-index:2;padding:44px 48px;height:100%;display:flex;flex-direction:column;justify-content:space-between;}
+.p2 .top{display:flex;justify-content:space-between;align-items:center;}
+.p2 .logo{font-family:var(--font);font-size:14px;color:var(--text);letter-spacing:1px;}
+.p2 .logo span{color:var(--primary);}
+.p2 .tag{font-family:var(--mono);font-size:10px;color:var(--accent);letter-spacing:2px;}
+.p2 .title{font-family:var(--font);font-size:22px;color:var(--text);margin:20px 0 24px;}
+.p2 .steps{display:flex;flex-direction:column;gap:14px;flex:1;}
+.p2 .step{display:flex;align-items:flex-start;gap:14px;}
+.p2 .num{width:34px;height:34px;border-radius:8px;background:rgba(59,130,246,0.12);border:1px solid rgba(59,130,246,0.25);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:12px;color:var(--primary);flex-shrink:0;}
+.p2 .step-text strong{display:block;font-size:13px;color:var(--text);font-weight:600;margin-bottom:2px;}
+.p2 .step-text span{font-size:12px;color:var(--muted);}
+.p2 .bottom{display:flex;justify-content:space-between;align-items:center;margin-top:16px;}
+.p2 .url{font-family:var(--mono);font-size:10px;color:var(--muted);}
+.p2 .arrow{font-size:12px;color:var(--primary);font-family:var(--mono);}
+
+/* ─── POST 3: STAT ─── */
+.p3{background:var(--bg);}
+.p3 .bg-glow{position:absolute;inset:0;background:radial-gradient(ellipse 80% 80% at 50% 50%,rgba(59,130,246,0.18) 0%,transparent 65%);}
+.p3 .grid-lines{position:absolute;inset:0;background-image:linear-gradient(rgba(59,130,246,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(59,130,246,0.04) 1px,transparent 1px);background-size:48px 48px;}
+.p3 .content{position:relative;z-index:2;padding:52px 48px;height:100%;display:flex;flex-direction:column;justify-content:space-between;text-align:center;}
+.p3 .logo{font-family:var(--font);font-size:14px;color:var(--text);letter-spacing:1px;text-align:left;}
+.p3 .logo span{color:var(--primary);}
+.p3 .main{}
+.p3 .big-num{font-family:var(--font);font-size:100px;line-height:1;background:linear-gradient(135deg,var(--primary),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.p3 .sub{font-family:var(--font);font-size:16px;color:var(--text);margin:8px 0 16px;}
+.p3 .desc{font-size:13px;color:var(--muted2);line-height:1.7;max-width:360px;margin:0 auto;}
+.p3 .pills{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;}
+.p3 .pill{background:rgba(59,130,246,0.08);border:1px solid rgba(59,130,246,0.2);padding:5px 12px;border-radius:100px;font-size:11px;color:var(--muted2);}
+.p3 .url{font-family:var(--mono);font-size:10px;color:var(--muted);text-align:right;}
+
+/* ─── POST 4: HEALTH ─── */
+.p4{background:var(--bg2);}
+.p4 .accent-bar{position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--primary),var(--accent));}
+.p4 .bg-glow{position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 20% 80%,rgba(6,182,212,0.1) 0%,transparent 60%);}
+.p4 .content{position:relative;z-index:2;padding:52px 48px;height:100%;display:flex;flex-direction:column;justify-content:space-between;}
+.p4 .top{display:flex;justify-content:space-between;align-items:center;}
+.p4 .logo{font-family:var(--font);font-size:14px;color:var(--text);letter-spacing:1px;}
+.p4 .logo span{color:var(--primary);}
+.p4 .sector-tag{background:rgba(6,182,212,0.1);border:1px solid rgba(6,182,212,0.3);padding:5px 12px;border-radius:100px;font-size:10px;color:var(--accent);font-family:var(--mono);letter-spacing:1px;}
+.p4 .mid{}
+.p4 .em{font-size:40px;margin-bottom:14px;display:block;}
+.p4 .title{font-family:var(--font);font-size:21px;color:var(--text);line-height:1.25;margin-bottom:8px;}
+.p4 .subtitle{font-size:13px;color:var(--muted2);margin-bottom:22px;}
+.p4 .list{display:flex;flex-direction:column;gap:10px;}
+.p4 .item{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--muted2);}
+.p4 .check{width:22px;height:22px;border-radius:6px;background:rgba(34,197,94,0.12);border:1px solid rgba(34,197,94,0.25);display:flex;align-items:center;justify-content:center;font-size:11px;flex-shrink:0;}
+.p4 .url{font-family:var(--mono);font-size:10px;color:var(--muted);}
+
+/* ─── POST 5: TESTIMONIAL ─── */
+.p5{background:var(--bg3);}
+.p5 .bg-glow{position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 50%,rgba(59,130,246,0.08) 0%,transparent 65%);}
+.p5 .border-frame{position:absolute;inset:20px;border:1px solid rgba(59,130,246,0.15);border-radius:12px;}
+.p5 .content{position:relative;z-index:2;padding:56px 52px;height:100%;display:flex;flex-direction:column;justify-content:space-between;}
+.p5 .logo{font-family:var(--font);font-size:14px;color:var(--text);letter-spacing:1px;}
+.p5 .logo span{color:var(--primary);}
+.p5 .quote-mark{font-size:72px;line-height:.7;color:rgba(59,130,246,0.25);font-family:Georgia,serif;margin-bottom:8px;}
+.p5 .quote-text{font-size:14px;color:var(--text);line-height:1.75;font-style:italic;margin-bottom:24px;}
+.p5 .stars{color:#FBBF24;font-size:16px;letter-spacing:3px;margin-bottom:16px;}
+.p5 .author{display:flex;align-items:center;gap:12px;}
+.p5 .avatar{width:44px;height:44px;border-radius:50%;background:rgba(6,182,212,0.15);border:2px solid rgba(6,182,212,0.3);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:#22D3EE;}
+.p5 .author-name{font-size:14px;font-weight:600;color:var(--text);}
+.p5 .author-role{font-size:11px;color:var(--muted);}
+.p5 .url{font-family:var(--mono);font-size:10px;color:var(--muted);text-align:right;}
+
+/* ─── POST 6: COST ─── */
+.p6{background:var(--bg);}
+.p6 .bg-glow{position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 80% 20%,rgba(139,92,246,0.12) 0%,transparent 55%);}
+.p6 .content{position:relative;z-index:2;padding:48px;height:100%;display:flex;flex-direction:column;justify-content:space-between;}
+.p6 .top{display:flex;justify-content:space-between;}
+.p6 .logo{font-family:var(--font);font-size:14px;color:var(--text);letter-spacing:1px;}
+.p6 .logo span{color:var(--primary);}
+.p6 .tag{font-family:var(--mono);font-size:10px;color:var(--accent);letter-spacing:2px;}
+.p6 .title{font-family:var(--font);font-size:19px;color:var(--text);line-height:1.3;margin:16px 0 24px;}
+.p6 .compare{display:flex;flex-direction:column;gap:14px;flex:1;}
+.p6 .box{border-radius:10px;padding:16px 18px;}
+.p6 .box-no{background:rgba(239,68,68,0.06);border:1px solid rgba(239,68,68,0.15);}
+.p6 .box-yes{background:rgba(34,197,94,0.06);border:1px solid rgba(34,197,94,0.2);}
+.p6 .box-head{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:600;margin-bottom:6px;}
+.p6 .box-no .box-head{color:#F87171;}
+.p6 .box-yes .box-head{color:#4ADE80;}
+.p6 .box-body{font-size:12px;color:var(--muted);line-height:1.6;}
+.p6 .saving{background:rgba(59,130,246,0.08);border:1px solid rgba(59,130,246,0.2);border-radius:8px;padding:10px 14px;font-size:12px;color:var(--primary);text-align:center;font-family:var(--mono);}
+.p6 .url{font-family:var(--mono);font-size:10px;color:var(--muted);}
+
+/* ─── POST 7: ECOMMERCE ─── */
+.p7{background:var(--bg2);}
+.p7 .accent-bar{position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--secondary),var(--primary));}
+.p7 .bg-glow{position:absolute;inset:0;background:radial-gradient(ellipse 55% 45% at 85% 15%,rgba(139,92,246,0.12) 0%,transparent 55%);}
+.p7 .content{position:relative;z-index:2;padding:48px;height:100%;display:flex;flex-direction:column;justify-content:space-between;}
+.p7 .top{display:flex;justify-content:space-between;align-items:center;}
+.p7 .logo{font-family:var(--font);font-size:14px;color:var(--text);letter-spacing:1px;}
+.p7 .logo span{color:var(--primary);}
+.p7 .sector-tag{background:rgba(139,92,246,0.1);border:1px solid rgba(139,92,246,0.3);padding:5px 12px;border-radius:100px;font-size:10px;color:#A78BFA;font-family:var(--mono);letter-spacing:1px;}
+.p7 .em{font-size:42px;margin:16px 0 6px;display:block;}
+.p7 .title{font-family:var(--font);font-size:19px;color:var(--text);line-height:1.3;margin-bottom:8px;}
+.p7 .sub{font-size:13px;color:var(--muted2);margin-bottom:20px;}
+.p7 .list{display:flex;flex-direction:column;gap:10px;}
+.p7 .item{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--muted2);}
+.p7 .dot{width:6px;height:6px;border-radius:50%;background:var(--secondary);flex-shrink:0;}
+.p7 .url{font-family:var(--mono);font-size:10px;color:var(--muted);}
+
+/* ─── POST 8: MULTILINGUAL ─── */
+.p8{background:var(--bg);}
+.p8 .bg-glow{position:absolute;inset:0;background:radial-gradient(ellipse 75% 60% at 50% 50%,rgba(6,182,212,0.1) 0%,transparent 65%);}
+.p8 .content{position:relative;z-index:2;padding:48px;height:100%;display:flex;flex-direction:column;justify-content:space-between;}
+.p8 .top{display:flex;justify-content:space-between;align-items:center;}
+.p8 .logo{font-family:var(--font);font-size:14px;color:var(--text);letter-spacing:1px;}
+.p8 .logo span{color:var(--primary);}
+.p8 .globe{font-size:28px;}
+.p8 .title{font-family:var(--font);font-size:20px;color:var(--text);margin:16px 0 20px;line-height:1.3;}
+.p8 .langs{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:20px;}
+.p8 .lang-pill{padding:8px 16px;border-radius:8px;font-size:13px;font-weight:500;}
+.p8 .lang-pill.tr{background:rgba(59,130,246,0.12);border:1px solid rgba(59,130,246,0.3);color:#93C5FD;}
+.p8 .lang-pill.en{background:rgba(6,182,212,0.1);border:1px solid rgba(6,182,212,0.3);color:#67E8F9;}
+.p8 .lang-pill.ar{background:rgba(139,92,246,0.1);border:1px solid rgba(139,92,246,0.3);color:#C4B5FD;}
+.p8 .lang-pill.de{background:rgba(251,191,36,0.08);border:1px solid rgba(251,191,36,0.2);color:#FDE68A;}
+.p8 .lang-pill.ru{background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.2);color:#FCA5A5;}
+.p8 .lang-pill.more{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);color:var(--muted);}
+.p8 .desc{font-size:13px;color:var(--muted2);line-height:1.7;}
+.p8 .url{font-family:var(--mono);font-size:10px;color:var(--muted);}
+
+/* ─── POST 9: CTA ─── */
+.p9{background:var(--bg);}
+.p9 .bg-glow{position:absolute;inset:0;background:radial-gradient(ellipse 85% 70% at 50% 50%,rgba(59,130,246,0.15) 0%,transparent 65%);}
+.p9 .grid-lines{position:absolute;inset:0;background-image:linear-gradient(rgba(59,130,246,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(59,130,246,0.04) 1px,transparent 1px);background-size:48px 48px;}
+.p9 .content{position:relative;z-index:2;padding:52px 48px;height:100%;display:flex;flex-direction:column;justify-content:space-between;text-align:center;}
+.p9 .logo{font-family:var(--font);font-size:14px;color:var(--text);letter-spacing:1px;text-align:left;}
+.p9 .logo span{color:var(--primary);}
+.p9 .main{}
+.p9 .big{font-family:var(--font);font-size:64px;line-height:1;background:linear-gradient(135deg,var(--primary),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:6px;}
+.p9 .big-sub{font-family:var(--font);font-size:15px;color:var(--muted2);margin-bottom:28px;}
+.p9 .items{display:flex;flex-direction:column;gap:12px;align-items:center;}
+.p9 .cta-item{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--text);}
+.p9 .cta-icon{font-size:16px;}
+.p9 .btn{background:var(--primary);color:#fff;border:none;padding:13px 36px;border-radius:8px;font-size:14px;font-weight:600;font-family:var(--body);margin-top:8px;display:inline-block;}
+.p9 .url{font-family:var(--mono);font-size:10px;color:var(--muted);text-align:right;}
+
+/* ─── POST 10: VALUE ─── */
+.p10{background:var(--bg);}
+.p10 .bg-glow{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 60%,rgba(139,92,246,0.15) 0%,transparent 65%),radial-gradient(ellipse 50% 40% at 20% 20%,rgba(59,130,246,0.1) 0%,transparent 50%);}
+.p10 .grid-lines{position:absolute;inset:0;background-image:linear-gradient(rgba(59,130,246,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(59,130,246,0.04) 1px,transparent 1px);background-size:48px 48px;}
+.p10 .content{position:relative;z-index:2;padding:52px 48px;height:100%;display:flex;flex-direction:column;justify-content:space-between;}
+.p10 .logo{font-family:var(--font);font-size:14px;color:var(--text);letter-spacing:1px;}
+.p10 .logo span{color:var(--primary);}
+.p10 .main{text-align:center;}
+.p10 .eyebrow{font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:3px;margin-bottom:20px;}
+.p10 .headline{font-family:var(--font);font-size:24px;color:var(--text);line-height:1.3;margin-bottom:12px;}
+.p10 .headline .grad{background:linear-gradient(135deg,var(--primary),var(--secondary),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.p10 .sub{font-size:14px;color:var(--muted2);line-height:1.7;max-width:360px;margin:0 auto 24px;}
+.p10 .tags{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;}
+.p10 .tag{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);padding:5px 12px;border-radius:100px;font-size:11px;color:var(--muted);font-family:var(--mono);}
+.p10 .footer{display:flex;justify-content:space-between;align-items:center;}
+.p10 .brand-full{font-family:var(--font);font-size:13px;color:var(--text);letter-spacing:.5px;}
+.p10 .brand-full span{color:var(--primary);}
+.p10 .url{font-family:var(--mono);font-size:10px;color:var(--muted);}
+</style>
+</head>
+<body>
+
+<h1>CallypsoTech — Instagram Görselleri</h1>
+<p class="subtitle">Her görseli sağ tık → "Resmi farklı kaydet" ile kaydedin · 540×540px (2x = 1080×1080)</p>
+
+<div class="grid">
+
+<!-- POST 1 -->
+<div class="post-wrap">
+  <div class="post-label">POST 1 — TANITIM</div>
+  <div class="card p1">
+    <div class="bg-glow"></div>
+    <div class="grid-lines"></div>
+    <div class="content">
+      <div class="logo">Callypso<span>Tech</span></div>
+      <div class="main">
+        <div class="eyebrow">AI VOICE AGENT PLATFORMU</div>
+        <div class="headline">Telefonlarınızı<br><span class="grad">Yapay Zeka Yanıtlasın</span></div>
+        <div class="body">Müşterileriniz sizi 7/24 ulaşıyor — gece yarısı, hafta sonu, bayramda bile.</div>
+        <div class="wave" id="w1"></div>
+      </div>
+      <div class="footer">
+        <div class="badge">● CANLI · 7/24</div>
+        <div class="url">callypsotech.com</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- POST 2 -->
+<div class="post-wrap">
+  <div class="post-label">POST 2 — NASIL ÇALIŞIR</div>
+  <div class="card p2">
+    <div class="bg-glow"></div>
+    <div class="content">
+      <div class="top">
+        <div class="logo">Callypso<span>Tech</span></div>
+        <div class="tag">// NASIL ÇALIŞIR</div>
+      </div>
+      <div class="title">4 Adımda Tam Otomasyon</div>
+      <div class="steps">
+        <div class="step">
+          <div class="num">01</div>
+          <div class="step-text"><strong>Aramanın Kabulü</strong><span>AI &lt;1 saniyede yanıtlar — bekleme yok</span></div>
+        </div>
+        <div class="step">
+          <div class="num">02</div>
+          <div class="step-text"><strong>Niyet Analizi</strong><span>Randevu, bilgi, şikayet — anında tespit</span></div>
+        </div>
+        <div class="step">
+          <div class="num">03</div>
+          <div class="step-text"><strong>İşlem & Entegrasyon</strong><span>CRM ve takvime gerçek zamanlı bağlantı</span></div>
+        </div>
+        <div class="step">
+          <div class="num">04</div>
+          <div class="step-text"><strong>Çözüm & Raporlama</strong><span>Transkript ve özet otomatik oluşur</span></div>
+        </div>
+      </div>
+      <div class="bottom">
+        <div class="url">callypsotech.com</div>
+        <div class="arrow">kaydır →</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- POST 3 -->
+<div class="post-wrap">
+  <div class="post-label">POST 3 — İSTATİSTİK</div>
+  <div class="card p3">
+    <div class="bg-glow"></div>
+    <div class="grid-lines"></div>
+    <div class="content">
+      <div class="logo">Callypso<span>Tech</span></div>
+      <div class="main">
+        <div class="big-num">%94</div>
+        <div class="sub">İlk Aramada Çözüm</div>
+        <div class="desc">Tekrar arama yok. Bekleme yok.<br>Memnuniyetsiz müşteri yok.</div>
+      </div>
+      <div class="pills">
+        <div class="pill">7/24 Aktif</div>
+        <div class="pill">&lt;1sn Yanıt</div>
+        <div class="pill">Sınırsız Hat</div>
+      </div>
+      <div class="url">callypsotech.com</div>
+    </div>
+  </div>
+</div>
+
+<!-- POST 4 -->
+<div class="post-wrap">
+  <div class="post-label">POST 4 — SAĞLIK SEKTÖRÜ</div>
+  <div class="card p4">
+    <div class="accent-bar"></div>
+    <div class="bg-glow"></div>
+    <div class="content">
+      <div class="top">
+        <div class="logo">Callypso<span>Tech</span></div>
+        <div class="sector-tag">🏥 SAĞLIK</div>
+      </div>
+      <div class="mid">
+        <div class="title">Klinikler İçin<br>Kesintisiz Hizmet</div>
+        <div class="subtitle">Artık hiçbir hasta cevapsız kalmıyor.</div>
+        <div class="list">
+          <div class="item"><div class="check">✓</div>Randevu alma & iptal</div>
+          <div class="item"><div class="check">✓</div>Hasta bilgilendirme</div>
+          <div class="item"><div class="check">✓</div>Reçete hatırlatma</div>
+          <div class="item"><div class="check">✓</div>7/24 — mesai dışı bile</div>
+        </div>
+      </div>
+      <div class="url">callypsotech.com</div>
+    </div>
+  </div>
+</div>
+
+<!-- POST 5 -->
+<div class="post-wrap">
+  <div class="post-label">POST 5 — MÜŞTERİ YORUMU</div>
+  <div class="card p5">
+    <div class="bg-glow"></div>
+    <div class="border-frame"></div>
+    <div class="content">
+      <div class="logo">Callypso<span>Tech</span></div>
+      <div>
+        <div class="quote-mark">"</div>
+        <div class="quote-text">Kurulum gerçekten 48 saat içinde tamamlandı. Mevcut CRM'imizle sorunsuz entegre oldu. İlk ayda müşteri memnuniyeti puanımız 4.2'den 4.8'e çıktı.</div>
+        <div class="stars">★★★★★</div>
+        <div class="author">
+          <div class="avatar">KY</div>
+          <div>
+            <div class="author-name">Kerem Yıldız</div>
+            <div class="author-role">CTO, E-ticaret Grubu</div>
+          </div>
+        </div>
+      </div>
+      <div class="url">callypsotech.com</div>
+    </div>
+  </div>
+</div>
+
+<!-- POST 6 -->
+<div class="post-wrap">
+  <div class="post-label">POST 6 — MALİYET AVANTAJI</div>
+  <div class="card p6">
+    <div class="bg-glow"></div>
+    <div class="content">
+      <div class="top">
+        <div class="logo">Callypso<span>Tech</span></div>
+        <div class="tag">// MALİYET</div>
+      </div>
+      <div class="title">Çağrı merkezi personeli mi,<br>AI agent mı?</div>
+      <div class="compare">
+        <div class="box box-no">
+          <div class="box-head">✕ Tam zamanlı personel</div>
+          <div class="box-body">Maaş · Sigorta · Eğitim · İzin · Hastalık izni · Vardiya planlaması</div>
+        </div>
+        <div class="box box-yes">
+          <div class="box-head">✓ CallypsoTech AI Agent</div>
+          <div class="box-body">7/24 aktif · Sınırsız hat · Anında kurulum · Ölçeklenebilir</div>
+        </div>
+        <div class="saving">%60'a varan maliyet tasarrufu</div>
+      </div>
+      <div class="url">callypsotech.com</div>
+    </div>
+  </div>
+</div>
+
+<!-- POST 7 -->
+<div class="post-wrap">
+  <div class="post-label">POST 7 — E-TİCARET</div>
+  <div class="card p7">
+    <div class="accent-bar"></div>
+    <div class="bg-glow"></div>
+    <div class="content">
+      <div class="top">
+        <div class="logo">Callypso<span>Tech</span></div>
+        <div class="sector-tag">🛒 E-TİCARET</div>
+      </div>
+      <div>
+        <span class="em">📦</span>
+        <div class="title">"Siparişim nerede?"<br>sorusunu AI yanıtlasın.</div>
+        <div class="sub">E-ticaret işletmeleri için CallypsoTech:</div>
+        <div class="list">
+          <div class="item"><div class="dot"></div>Sipariş takibi otomasyonu</div>
+          <div class="item"><div class="dot"></div>İade & değişim yönetimi</div>
+          <div class="item"><div class="dot"></div>Stok ve ürün bilgisi</div>
+          <div class="item"><div class="dot"></div>Çok dilli müşteri desteği</div>
+        </div>
+      </div>
+      <div class="url">callypsotech.com</div>
+    </div>
+  </div>
+</div>
+
+<!-- POST 8 -->
+<div class="post-wrap">
+  <div class="post-label">POST 8 — ÇOK DİL DESTEĞİ</div>
+  <div class="card p8">
+    <div class="bg-glow"></div>
+    <div class="content">
+      <div class="top">
+        <div class="logo">Callypso<span>Tech</span></div>
+        <div class="globe">🌍</div>
+      </div>
+      <div class="title">Müşteriniz hangi dilde<br>konuşuyor?</div>
+      <div class="langs">
+        <div class="lang-pill tr">🇹🇷 Türkçe</div>
+        <div class="lang-pill en">🇬🇧 English</div>
+        <div class="lang-pill ar">🇸🇦 عربي</div>
+        <div class="lang-pill de">🇩🇪 Deutsch</div>
+        <div class="lang-pill ru">🇷🇺 Русский</div>
+        <div class="lang-pill more">+ daha fazla</div>
+      </div>
+      <div class="desc">CallypsoTech hepsini anlıyor, hepsinde yanıt veriyor.<br>Dil engeli iş engeli olmasın.</div>
+      <div class="url">callypsotech.com</div>
+    </div>
+  </div>
+</div>
+
+<!-- POST 9 -->
+<div class="post-wrap">
+  <div class="post-label">POST 9 — DEMO CTA</div>
+  <div class="card p9">
+    <div class="bg-glow"></div>
+    <div class="grid-lines"></div>
+    <div class="content">
+      <div class="logo">Callypso<span>Tech</span></div>
+      <div class="main">
+        <div class="big">15</div>
+        <div class="big-sub">dakikanız var mı?</div>
+        <div class="items">
+          <div class="cta-item"><span class="cta-icon">📞</span>Ücretsiz keşif görüşmesi</div>
+          <div class="cta-item"><span class="cta-icon">⏱</span>Sadece 15 dakika</div>
+          <div class="cta-item"><span class="cta-icon">🎯</span>Size özel teklif</div>
+        </div>
+        <br>
+        <div class="btn">Hemen Planla →</div>
+      </div>
+      <div class="url">cal.com/furkan-alumert</div>
+    </div>
+  </div>
+</div>
+
+<!-- POST 10 -->
+<div class="post-wrap">
+  <div class="post-label">POST 10 — DEĞER MESAJI</div>
+  <div class="card p10">
+    <div class="bg-glow"></div>
+    <div class="grid-lines"></div>
+    <div class="content">
+      <div class="logo">Callypso<span>Tech</span></div>
+      <div class="main">
+        <div class="eyebrow">// her cevapsız arama</div>
+        <div class="headline">Kaçırılan Bir<br><span class="grad">Fırsattır.</span></div>
+        <div class="sub">Artık hiçbir aramanın cevapsız kalmasına gerek yok. 7/24. Kesintisiz. Yapay zeka ile.</div>
+        <div class="tags">
+          <div class="tag">7/24</div>
+          <div class="tag">Kesintisiz</div>
+          <div class="tag">YapayZeka</div>
+          <div class="tag">Otomasyon</div>
+        </div>
+      </div>
+      <div class="footer">
+        <div class="brand-full">Callypso<span>Tech</span></div>
+        <div class="url">callypsotech.com</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- /grid -->
+
+<script>
+// Wave animation for post 1
+const w = document.getElementById('w1');
+const hs = [6,10,18,28,36,44,38,42,30,22,36,44,32,24,14,22,36,42,28,14];
+hs.forEach((h,i) => {
+  const b = document.createElement('div');
+  b.className = 'wbar';
+  b.style.height = h+'px';
+  b.style.animation = `wav 1.6s ease-in-out ${i*0.06}s infinite`;
+  w.appendChild(b);
+});
+const style = document.createElement('style');
+style.textContent = `@keyframes wav{0%,100%{height:4px;opacity:.3;}50%{height:var(--h,20px);opacity:1;}}`;
+document.head.appendChild(style);
+hs.forEach((h,i) => {
+  w.children[i].style.setProperty('--h', h+'px');
+  w.children[i].style.height = '4px';
+});
+</script>
+</body>
+</html>
