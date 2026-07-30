@@ -204,6 +204,8 @@ footer{border-top:1px solid var(--border);padding:2rem 1.5rem;}
   <div class="nav-logo-wrap">
     <a href="index.html" class="nav-parent">Callypso<span>Tech</span></a>
     <span class="nav-sep">/</span>
+    <a href="products.html" class="nav-parent" style="color:var(--muted2);" data-tr="Ürünlerimiz" data-en="Products">Ürünlerimiz</a>
+    <span class="nav-sep">/</span>
     <div class="nav-product">Inbox<span>ly</span></div>
   </div>
   <div class="nav-right">
@@ -216,10 +218,9 @@ footer{border-top:1px solid var(--border);padding:2rem 1.5rem;}
 </nav>
 
 <div class="mobile-menu" id="mobileMenu">
-  <a href="index.html" onclick="closeMenu()">← CallypsoTech</a>
+  <a href="products.html" onclick="closeMenu()" data-tr="← Ürünlerimiz" data-en="← Products">← Ürünlerimiz</a>
   <a href="#features" onclick="closeMenu()" data-tr="Özellikler" data-en="Features">Özellikler</a>
   <a href="#how" onclick="closeMenu()" data-tr="Nasıl Çalışır" data-en="How It Works">Nasıl Çalışır</a>
-  <a href="#pricing" onclick="closeMenu()" data-tr="Fiyatlar" data-en="Pricing">Fiyatlar</a>
   <div class="mobile-menu-btns">
     <button class="btn-p" style="width:100%;padding:14px;" onclick="openCal();closeMenu()" data-tr="Ücretsiz Demo →" data-en="Free Demo →">Ücretsiz Demo →</button>
   </div>
@@ -440,55 +441,6 @@ footer{border-top:1px solid var(--border);padding:2rem 1.5rem;}
             <span data-tr="Ortalama 12 saniyede" data-en="In an average of 12 seconds">Ortalama 12 saniyede</span>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- PRICING -->
-<div class="sec-bg" id="pricing">
-  <div class="sec" style="text-align:center;">
-    <div class="sec-label" data-tr="// fiyatlar" data-en="// pricing">// fiyatlar</div>
-    <div class="sec-title" data-tr="İhtiyacınıza Göre Plan" data-en="A Plan for Every Need">İhtiyacınıza Göre Plan</div>
-    <div class="sec-desc" style="margin:0 auto 3rem;" data-tr="14 gün ücretsiz deneyin. Kredi kartı gerekmez." data-en="14-day free trial. No credit card required.">14 gün ücretsiz deneyin. Kredi kartı gerekmez.</div>
-    <div class="price-grid">
-      <div class="price-card">
-        <div class="price-name" data-tr="Başlangıç" data-en="Starter">Başlangıç</div>
-        <div class="price-amount">$0<span>/ay</span></div>
-        <div class="price-tagline" data-tr="İlk WhatsApp hattınız için." data-en="For your first WhatsApp line.">İlk WhatsApp hattınız için.</div>
-        <div class="price-features">
-          <div class="price-feat" data-tr="1 kanal" data-en="1 channel">1 kanal</div>
-          <div class="price-feat" data-tr="Aylık 300 konuşma" data-en="300 chats / month">Aylık 300 konuşma</div>
-          <div class="price-feat" data-tr="AI yanıt önerisi" data-en="AI-suggested replies">AI yanıt önerisi</div>
-          <div class="price-feat" data-tr="Bilgi tabanı" data-en="Knowledge base">Bilgi tabanı</div>
-        </div>
-        <button class="price-btn price-btn-default" onclick="openCal()" data-tr="Ücretsiz Başla" data-en="Start Free">Ücretsiz Başla</button>
-      </div>
-      <div class="price-card featured">
-        <div class="featured-badge" data-tr="⭐ EN POPÜLER" data-en="⭐ MOST POPULAR">⭐ EN POPÜLER</div>
-        <div class="price-name" data-tr="Ekip" data-en="Team">Ekip</div>
-        <div class="price-amount">$59<span>/ay</span></div>
-        <div class="price-tagline" data-tr="Büyüyen destek ekipleri için." data-en="For growing support teams.">Büyüyen destek ekipleri için.</div>
-        <div class="price-features">
-          <div class="price-feat" data-tr="3 kanal (WhatsApp, IG, Web)" data-en="3 channels (WhatsApp, IG, Web)">3 kanal (WhatsApp, IG, Web)</div>
-          <div class="price-feat" data-tr="Sınırsız konuşma" data-en="Unlimited chats">Sınırsız konuşma</div>
-          <div class="price-feat" data-tr="Otomasyon kuralları" data-en="Automation rules">Otomasyon kuralları</div>
-          <div class="price-feat" data-tr="SLA & raporlar" data-en="SLA & reports">SLA & raporlar</div>
-          <div class="price-feat" data-tr="Çok dilli yanıt" data-en="Multilingual replies">Çok dilli yanıt</div>
-        </div>
-        <button class="price-btn price-btn-featured" onclick="openCal()" data-tr="Ücretsiz Dene" data-en="Start Free Trial">Ücretsiz Dene</button>
-      </div>
-      <div class="price-card">
-        <div class="price-name" data-tr="İşletme" data-en="Business">İşletme</div>
-        <div class="price-amount">$199<span>/ay</span></div>
-        <div class="price-tagline" data-tr="Çok lokasyon & markalar için." data-en="For multi-location & brands.">Çok lokasyon & markalar için.</div>
-        <div class="price-features">
-          <div class="price-feat" data-tr="Sınırsız kanal" data-en="Unlimited channels">Sınırsız kanal</div>
-          <div class="price-feat" data-tr="Roller & ekipler" data-en="Roles & teams">Roller & ekipler</div>
-          <div class="price-feat" data-tr="Özel marka tonu" data-en="Custom brand voice">Özel marka tonu</div>
-          <div class="price-feat" data-tr="Öncelikli destek" data-en="Priority support">Öncelikli destek</div>
-        </div>
-        <button class="price-btn price-btn-default" onclick="openCal()" data-tr="Bize Ulaşın" data-en="Talk to Us">Bize Ulaşın</button>
       </div>
     </div>
   </div>
