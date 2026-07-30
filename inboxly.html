@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inboxly — AI Destekli Müşteri Mesajlaşma | CallypsoTech</title>
+<meta name="description" content="WhatsApp, Instagram ve web sohbetini tek gelen kutusunda toplayın. AI her mesajı markanızın sesiyle yanıtlar.">
+<link href="https://fonts.googleapis.com/css2?family=Audiowide&family=JetBrains+Mono:wght@400;500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --primary:#3B82F6;--secondary:#8B5CF6;--accent:#06B6D4;
+  --green:#22C55E;--amber:#F59E0B;
+  --bg:#020817;--bg2:#060d1f;--bg3:#0a1428;
+  --surface:rgba(255,255,255,0.04);--surface2:rgba(255,255,255,0.06);
+  --border:rgba(255,255,255,0.08);--border2:rgba(59,130,246,0.35);
+  --text:#F0F4FF;--muted:#7A8FB0;--muted2:#9AABC8;
+  --font:'Audiowide',sans-serif;--body:'Inter',sans-serif;--mono:'JetBrains Mono',monospace;
+}
+body{background:var(--bg);color:var(--text);font-family:var(--body);font-size:15px;line-height:1.7;overflow-x:hidden;}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:200;background:rgba(2,8,23,0.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 1.5rem;height:64px;display:flex;align-items:center;justify-content:space-between;gap:1rem;}
+.nav-logo-wrap{display:flex;align-items:center;gap:12px;}
+.nav-parent{font-family:var(--font);font-size:14px;color:var(--muted);letter-spacing:1px;text-decoration:none;}
+.nav-parent span{color:var(--primary);}
+.nav-sep{color:var(--border);font-size:18px;margin:0 2px;}
+.nav-product{font-family:var(--font);font-size:15px;color:var(--text);letter-spacing:1px;}
+.nav-product span{background:linear-gradient(135deg,var(--primary),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.nav-right{display:flex;align-items:center;gap:.75rem;}
+.lang-toggle{background:rgba(255,255,255,0.06);border:1px solid var(--border);color:var(--muted);padding:6px 12px;border-radius:6px;font-size:12px;font-family:var(--mono);cursor:pointer;letter-spacing:1px;transition:all .2s;}
+.lang-toggle:hover{border-color:var(--border2);color:var(--text);}
+.nav-cta{background:var(--primary);color:#fff;border:none;padding:9px 18px;border-radius:7px;font-size:13px;font-family:var(--body);cursor:pointer;font-weight:500;}
+.nav-cta:hover{background:#2563eb;}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none;}
+.hamburger span{display:block;width:22px;height:2px;background:var(--text);border-radius:2px;transition:all .3s;}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.hamburger.open span:nth-child(2){opacity:0;}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.mobile-menu{display:none;position:fixed;top:64px;left:0;right:0;bottom:0;background:rgba(2,8,23,0.98);backdrop-filter:blur(20px);z-index:190;flex-direction:column;padding:2rem 1.5rem;border-top:1px solid var(--border);}
+.mobile-menu.open{display:flex;}
+.mobile-menu a{color:var(--muted2);text-decoration:none;font-size:17px;font-weight:500;padding:1.1rem 0;border-bottom:1px solid var(--border);display:block;}
+.mobile-menu-btns{display:flex;flex-direction:column;gap:.75rem;margin-top:1.5rem;}
+
+/* HERO */
+.hero{min-height:88vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:5rem 1.5rem 4rem;position:relative;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 55% at 50% -5%,rgba(139,92,246,0.2) 0%,transparent 60%),radial-gradient(ellipse 50% 40% at 85% 80%,rgba(59,130,246,0.12) 0%,transparent 50%),radial-gradient(ellipse 40% 30% at 15% 65%,rgba(6,182,212,0.08) 0%,transparent 50%);}
+.grid-lines{position:absolute;inset:0;background-image:linear-gradient(rgba(139,92,246,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(139,92,246,0.04) 1px,transparent 1px);background-size:64px 64px;}
+.hero-content{position:relative;z-index:2;max-width:860px;width:100%;}
+.product-badge{display:inline-flex;align-items:center;gap:10px;background:rgba(139,92,246,0.1);border:1px solid rgba(139,92,246,0.3);padding:6px 18px;border-radius:100px;font-size:11px;color:#C4B5FD;font-family:var(--mono);letter-spacing:1.5px;margin-bottom:1.5rem;}
+.badge-dot{width:6px;height:6px;background:var(--secondary);border-radius:50%;animation:blink 2s infinite;}
+@keyframes blink{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.4;transform:scale(.7);}}
+.hero-eyebrow{font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:2px;margin-bottom:1.25rem;}
+h1{font-family:var(--font);font-size:clamp(1.8rem,5vw,3.6rem);line-height:1.12;margin-bottom:1.5rem;letter-spacing:-.5px;}
+.grad-purple{background:linear-gradient(135deg,var(--secondary),var(--primary),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.hero-desc{font-size:clamp(14px,2vw,17px);color:var(--muted2);max-width:600px;margin:0 auto 2.5rem;font-weight:300;line-height:1.8;}
+.hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:3.5rem;}
+.btn-p{background:var(--secondary);color:#fff;border:none;padding:14px 32px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;font-family:var(--body);transition:background .2s;}
+.btn-p:hover{background:#7C3AED;}
+.btn-s{background:transparent;color:var(--text);border:1px solid rgba(255,255,255,0.15);padding:14px 32px;border-radius:8px;font-size:14px;cursor:pointer;font-family:var(--body);transition:border-color .2s;}
+.btn-s:hover{border-color:rgba(139,92,246,0.5);}
+
+/* INBOX MOCK */
+.inbox-mock{max-width:700px;margin:0 auto;background:rgba(10,20,40,0.8);border:1px solid rgba(139,92,246,0.2);border-radius:16px;overflow:hidden;backdrop-filter:blur(10px);}
+.inbox-topbar{background:rgba(139,92,246,0.08);border-bottom:1px solid rgba(139,92,246,0.15);padding:12px 16px;display:flex;align-items:center;gap:10px;}
+.inbox-dot{width:8px;height:8px;border-radius:50%;background:var(--green);animation:blink 1.5s infinite;}
+.inbox-title{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:1px;flex:1;}
+.inbox-channels{display:flex;gap:6px;}
+.ch-pill{padding:3px 10px;border-radius:100px;font-size:10px;font-family:var(--mono);letter-spacing:.5px;}
+.ch-wa{background:rgba(34,197,94,0.12);border:1px solid rgba(34,197,94,0.25);color:#4ADE80;}
+.ch-ig{background:rgba(251,113,133,0.1);border:1px solid rgba(251,113,133,0.2);color:#FB7185;}
+.ch-web{background:rgba(59,130,246,0.1);border:1px solid rgba(59,130,246,0.2);color:#60A5FA;}
+.inbox-body{display:grid;grid-template-columns:200px 1fr;min-height:220px;}
+.inbox-list{border-right:1px solid rgba(139,92,246,0.1);padding:8px 0;}
+.inbox-item{padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.04);cursor:pointer;transition:background .15s;}
+.inbox-item:hover,.inbox-item.active{background:rgba(139,92,246,0.08);}
+.inbox-item-name{font-size:12px;font-weight:600;color:var(--text);margin-bottom:2px;display:flex;justify-content:space-between;}
+.inbox-item-name .time{font-size:10px;color:var(--muted);font-weight:400;}
+.inbox-item-preview{font-size:11px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.inbox-item-preview .unread{color:#C4B5FD;}
+.inbox-chat{padding:14px;display:flex;flex-direction:column;gap:10px;}
+.msg{max-width:75%;padding:8px 12px;border-radius:10px;font-size:12px;line-height:1.55;}
+.msg-in{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);color:var(--muted2);align-self:flex-start;}
+.msg-ai{background:rgba(139,92,246,0.1);border:1px solid rgba(139,92,246,0.2);color:#DDD6FE;align-self:flex-end;}
+.ai-label{font-size:9px;color:var(--secondary);font-family:var(--mono);letter-spacing:1px;margin-bottom:3px;text-align:right;}
+.inbox-actions{padding:10px 14px;border-top:1px solid rgba(139,92,246,0.1);display:flex;gap:8px;align-items:center;}
+.action-btn{padding:6px 14px;border-radius:6px;font-size:11px;font-family:var(--body);cursor:pointer;border:none;}
+.action-approve{background:var(--secondary);color:#fff;font-weight:600;}
+.action-edit{background:rgba(255,255,255,0.06);color:var(--muted2);border:1px solid rgba(255,255,255,0.1)!important;}
+.action-tag{background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.2)!important;color:#4ADE80;}
+.action-ai-badge{margin-left:auto;font-size:10px;color:var(--secondary);font-family:var(--mono);background:rgba(139,92,246,0.08);border:1px solid rgba(139,92,246,0.2);padding:4px 10px;border-radius:100px;}
+
+/* STATS */
+.stats-bar{padding:2.5rem 1.5rem;border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--bg2);}
+.stats-inner{max-width:900px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:2rem;text-align:center;}
+.stat-n{font-family:var(--font);font-size:2.2rem;line-height:1;background:linear-gradient(135deg,var(--secondary),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.stat-l{font-size:12px;color:var(--muted);margin-top:.4rem;}
+
+/* SECTIONS */
+.sec{padding:5rem 1.5rem;max-width:1080px;margin:0 auto;}
+.sec-label{font-family:var(--mono);font-size:11px;color:var(--secondary);letter-spacing:2.5px;text-transform:uppercase;margin-bottom:.75rem;}
+.sec-title{font-family:var(--font);font-size:clamp(1.3rem,3vw,2.1rem);margin-bottom:.75rem;line-height:1.25;}
+.sec-desc{font-size:14px;color:var(--muted2);max-width:540px;margin-bottom:3rem;line-height:1.8;}
+.sec-bg{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+
+/* FEATURES */
+.feat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.25rem;}
+.feat-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.75rem;transition:border-color .3s,background .3s,transform .2s;}
+.feat-card:hover{border-color:rgba(139,92,246,0.4);background:rgba(139,92,246,0.05);transform:translateY(-2px);}
+.feat-icon-wrap{width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:1.1rem;font-size:20px;}
+.feat-icon-wrap.purple{background:rgba(139,92,246,0.12);border:1px solid rgba(139,92,246,0.25);}
+.feat-icon-wrap.blue{background:rgba(59,130,246,0.12);border:1px solid rgba(59,130,246,0.25);}
+.feat-icon-wrap.cyan{background:rgba(6,182,212,0.12);border:1px solid rgba(6,182,212,0.25);}
+.feat-icon-wrap.green{background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.2);}
+.feat-icon-wrap.amber{background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.2);}
+.feat-title{font-size:15px;font-weight:700;margin-bottom:.5rem;color:var(--text);}
+.feat-desc{font-size:13px;color:var(--muted);line-height:1.7;}
+
+/* HOW IT WORKS */
+.hiw-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:start;}
+.hiw-steps{display:flex;flex-direction:column;gap:0;}
+.hiw-step{display:flex;gap:1.25rem;padding:1.5rem 0;border-bottom:1px solid var(--border);}
+.hiw-step:last-child{border-bottom:none;}
+.hiw-step:hover .step-title{color:var(--secondary);}
+.step-num{width:40px;height:40px;border-radius:10px;background:rgba(139,92,246,0.1);border:1px solid rgba(139,92,246,0.25);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:13px;color:var(--secondary);flex-shrink:0;margin-top:2px;}
+.step-title{font-size:14px;font-weight:700;margin-bottom:.35rem;transition:color .2s;}
+.step-body{font-size:13px;color:var(--muted);line-height:1.65;}
+.flow-visual{background:var(--bg3);border:1px solid rgba(139,92,246,0.15);border-radius:16px;padding:1.5rem;display:flex;flex-direction:column;gap:1rem;}
+.flow-step{display:flex;align-items:center;gap:12px;padding:12px 14px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:10px;}
+.flow-icon{font-size:20px;flex-shrink:0;}
+.flow-text strong{display:block;font-size:13px;font-weight:600;color:var(--text);}
+.flow-text span{font-size:12px;color:var(--muted);}
+.flow-arrow{text-align:center;color:rgba(139,92,246,0.4);font-size:18px;}
+.flow-step.highlight{background:rgba(139,92,246,0.08);border-color:rgba(139,92,246,0.25);}
+
+/* CHANNEL SECTION */
+.channel-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;}
+.channel-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:1.5rem;text-align:center;transition:all .3s;}
+.channel-card:hover{border-color:rgba(139,92,246,0.35);transform:translateY(-2px);}
+.channel-em{font-size:36px;margin-bottom:.75rem;display:block;}
+.channel-name{font-size:14px;font-weight:700;margin-bottom:.35rem;}
+.channel-desc{font-size:12px;color:var(--muted);line-height:1.55;}
+.channel-status{display:inline-block;margin-top:.75rem;padding:3px 10px;border-radius:100px;font-size:10px;font-family:var(--mono);}
+.status-live{background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.25);color:#4ADE80;}
+.status-soon{background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.2);color:#FCD34D;}
+
+/* PRICING */
+.price-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.25rem;max-width:920px;margin:0 auto;}
+.price-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:2rem;position:relative;transition:all .3s;}
+.price-card.featured{border-color:rgba(139,92,246,0.5);background:rgba(139,92,246,0.06);}
+.featured-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--secondary);color:#fff;font-size:10px;font-family:var(--mono);letter-spacing:1px;padding:4px 14px;border-radius:100px;white-space:nowrap;}
+.price-name{font-family:var(--font);font-size:14px;color:var(--muted2);margin-bottom:.5rem;}
+.price-amount{font-family:var(--font);font-size:2.8rem;color:var(--text);line-height:1;margin-bottom:.25rem;}
+.price-amount span{font-size:1rem;color:var(--muted);}
+.price-tagline{font-size:13px;color:var(--muted);margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border);}
+.price-features{display:flex;flex-direction:column;gap:.6rem;margin-bottom:1.75rem;}
+.price-feat{display:flex;gap:.6rem;align-items:flex-start;font-size:13px;color:var(--muted2);}
+.price-feat::before{content:"✓";color:var(--green);flex-shrink:0;font-weight:700;}
+.price-btn{width:100%;padding:12px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;font-family:var(--body);border:none;transition:all .2s;}
+.price-btn-default{background:rgba(255,255,255,0.06);color:var(--text);border:1px solid rgba(255,255,255,0.1)!important;}
+.price-btn-default:hover{border-color:rgba(139,92,246,0.4)!important;}
+.price-btn-featured{background:var(--secondary);color:#fff;}
+.price-btn-featured:hover{background:#7C3AED;}
+
+/* CTA */
+.cta-sec{padding:6rem 1.5rem;text-align:center;position:relative;overflow:hidden;}
+.cta-glow{position:absolute;inset:0;background:radial-gradient(ellipse 70% 80% at 50% 50%,rgba(139,92,246,0.12) 0%,transparent 70%);}
+.cta-inner{position:relative;z-index:2;max-width:600px;margin:0 auto;}
+.cta-title{font-family:var(--font);font-size:clamp(1.4rem,3vw,2.2rem);margin-bottom:.75rem;line-height:1.25;}
+.cta-desc{color:var(--muted2);margin-bottom:2rem;font-size:15px;line-height:1.8;}
+
+/* FOOTER */
+footer{border-top:1px solid var(--border);padding:2rem 1.5rem;}
+.footer-inner{max-width:1080px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+.footer-left{font-size:12px;color:var(--muted);font-family:var(--mono);}
+.footer-right{display:flex;align-items:center;gap:1.5rem;}
+.footer-back{font-size:13px;color:var(--muted);text-decoration:none;transition:color .2s;}
+.footer-back:hover{color:var(--text);}
+.footer-logo{font-family:var(--font);font-size:14px;color:var(--text);}
+.footer-logo span{color:var(--primary);}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .nav-parent,.nav-sep{display:none;}
+  .hiw-grid{grid-template-columns:1fr;}
+  .hamburger{display:flex;}
+  .nav-cta{display:none;}
+  .inbox-body{grid-template-columns:1fr;}
+  .inbox-list{display:none;}
+  .feat-grid{grid-template-columns:1fr;}
+}
+@media(max-width:480px){
+  nav{padding:0 1rem;}
+  .hero{padding:4rem 1rem 3rem;}
+  .channel-grid{grid-template-columns:1fr 1fr;}
+  .price-grid{grid-template-columns:1fr;}
+  h1{letter-spacing:-.3px;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo-wrap">
+    <a href="index.html" class="nav-parent">Callypso<span>Tech</span></a>
+    <span class="nav-sep">/</span>
+    <div class="nav-product">Inbox<span>ly</span></div>
+  </div>
+  <div class="nav-right">
+    <button class="lang-toggle" onclick="toggleLang()" id="langBtn">EN</button>
+    <button class="nav-cta" onclick="openCal()" data-tr="Demo Planla →" data-en="Book Demo →">Demo Planla →</button>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html" onclick="closeMenu()">← CallypsoTech</a>
+  <a href="#features" onclick="closeMenu()" data-tr="Özellikler" data-en="Features">Özellikler</a>
+  <a href="#how" onclick="closeMenu()" data-tr="Nasıl Çalışır" data-en="How It Works">Nasıl Çalışır</a>
+  <a href="#pricing" onclick="closeMenu()" data-tr="Fiyatlar" data-en="Pricing">Fiyatlar</a>
+  <div class="mobile-menu-btns">
+    <button class="btn-p" style="width:100%;padding:14px;" onclick="openCal();closeMenu()" data-tr="Ücretsiz Demo →" data-en="Free Demo →">Ücretsiz Demo →</button>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="grid-lines"></div>
+  <div class="hero-content">
+    <div class="product-badge"><div class="badge-dot"></div><span data-tr="YENİ ÜRÜN · CALLYPSOTECH" data-en="NEW PRODUCT · CALLYPSOTECH">YENİ ÜRÜN · CALLYPSOTECH</span></div>
+    <div class="hero-eyebrow" data-tr="AI DESTEKLİ MÜŞTERİ MESAJLAŞMA" data-en="AI-POWERED CUSTOMER MESSAGING">AI DESTEKLİ MÜŞTERİ MESAJLAŞMA</div>
+    <h1>Müşterin yazıyor.<br><span class="grad-purple">Yanıt çoktan hazır.</span></h1>
+    <p class="hero-desc" data-tr="Inboxly; WhatsApp, Instagram ve web sohbetini tek gelen kutusunda birleştirir. Bilgi tabanınızdan beslenen AI, her mesajı markanızın sesiyle yanıtlar — ekibiniz onaylar, gerisini otomasyonlar halleder." data-en="Inboxly unifies WhatsApp, Instagram and web chat into one inbox. AI grounded in your knowledge base drafts every reply in your brand voice — your team approves, automations handle the rest.">Inboxly; WhatsApp, Instagram ve web sohbetini tek gelen kutusunda birleştirir. Bilgi tabanınızdan beslenen AI, her mesajı markanızın sesiyle yanıtlar — ekibiniz onaylar, gerisini otomasyonlar halleder.</p>
+    <div class="hero-btns">
+      <button class="btn-p" onclick="openCal()" data-tr="Ücretsiz Dene →" data-en="Try It Free →">Ücretsiz Dene →</button>
+      <button class="btn-s" onclick="document.getElementById('how').scrollIntoView({behavior:'smooth'})" data-tr="Nasıl Çalışır?" data-en="How It Works?">Nasıl Çalışır?</button>
+    </div>
+
+    <!-- INBOX MOCKUP -->
+    <div class="inbox-mock">
+      <div class="inbox-topbar">
+        <div class="inbox-dot"></div>
+        <div class="inbox-title" data-tr="GELİŞ KUTUSU · CANLI" data-en="INBOX · LIVE">GELİŞ KUTUSU · CANLI</div>
+        <div class="inbox-channels">
+          <span class="ch-pill ch-wa">WhatsApp</span>
+          <span class="ch-pill ch-ig">Instagram</span>
+          <span class="ch-pill ch-web">Web</span>
+        </div>
+      </div>
+      <div class="inbox-body">
+        <div class="inbox-list">
+          <div class="inbox-item active">
+            <div class="inbox-item-name">Ayşe K. <span class="time">12:34</span></div>
+            <div class="inbox-item-preview"><span class="unread">● Siparişim nerede?</span></div>
+          </div>
+          <div class="inbox-item">
+            <div class="inbox-item-name">Carlos M. <span class="time">12:21</span></div>
+            <div class="inbox-item-preview">What are your working hours?</div>
+          </div>
+          <div class="inbox-item">
+            <div class="inbox-item-name">محمد أ. <span class="time">11:58</span></div>
+            <div class="inbox-item-preview">هل يمكنني إرجاع المنتج؟</div>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;">
+          <div class="inbox-chat">
+            <div class="msg msg-in" data-tr="Merhaba! Siparişim 3 gündür gelmedi, nerede?" data-en="Hello! My order hasn't arrived in 3 days, where is it?">Merhaba! Siparişim 3 gündür gelmedi, nerede?</div>
+            <div style="align-self:flex-end;">
+              <div class="ai-label" data-tr="⚡ AI TASLAK" data-en="⚡ AI DRAFT">⚡ AI TASLAK</div>
+              <div class="msg msg-ai" data-tr="Merhaba Ayşe Hanım! Siparişinizi şimdi kontrol ettim — kargo #TR8821 bugün saat 17:00'ye kadar teslim edilecek. Herhangi bir sorun olursa hemen bildirin!" data-en="Hello! I checked your order — shipment #TR8821 will be delivered by 5 PM today. Let us know if there's any issue!">Merhaba Ayşe Hanım! Siparişinizi şimdi kontrol ettim — kargo #TR8821 bugün saat 17:00'ye kadar teslim edilecek. Herhangi bir sorun olursa hemen bildirin!</div>
+            </div>
+          </div>
+          <div class="inbox-actions">
+            <button class="action-btn action-approve" data-tr="✓ Onayla & Gönder" data-en="✓ Approve & Send">✓ Onayla & Gönder</button>
+            <button class="action-btn action-edit" data-tr="Düzenle" data-en="Edit">Düzenle</button>
+            <button class="action-btn action-tag" data-tr="Etiketle" data-en="Tag">Etiketle</button>
+            <div class="action-ai-badge" data-tr="Bilgi tabanından" data-en="From knowledge base">Bilgi tabanından</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div><div class="stat-n">12 sn</div><div class="stat-l" data-tr="Ortalama ilk yanıt" data-en="Avg. first response">Ortalama ilk yanıt</div></div>
+    <div><div class="stat-n">%68</div><div class="stat-l" data-tr="AI ile otomatik çözüm" data-en="Deflected by AI">AI ile otomatik çözüm</div></div>
+    <div><div class="stat-n">3+</div><div class="stat-l" data-tr="Kanal tek kutuda" data-en="Channels in one inbox">Kanal tek kutuda</div></div>
+    <div><div class="stat-n">0</div><div class="stat-l" data-tr="API anahtarı gerekmez" data-en="Keys to try it">API anahtarı gerekmez</div></div>
+  </div>
+</div>
+
+<!-- FEATURES -->
+<div id="features">
+  <div class="sec">
+    <div class="sec-label" data-tr="// özellikler" data-en="// features">// özellikler</div>
+    <div class="sec-title" data-tr="Her Mesaj Karşılanır.<br>Her Yanıt Hazırdır." data-en="Every Message Answered.<br>Every Reply Ready.">Her Mesaj Karşılanır.<br>Her Yanıt Hazırdır.</div>
+    <div class="sec-desc" data-tr="Inboxly'nin altı temel özelliği, müşteri destek sürecinizi baştan sona dönüştürür." data-en="Inboxly's six core features transform your customer support process from end to end.">Inboxly'nin altı temel özelliği, müşteri destek sürecinizi baştan sona dönüştürür.</div>
+    <div class="feat-grid">
+      <div class="feat-card">
+        <div class="feat-icon-wrap purple">💬</div>
+        <div class="feat-title" data-tr="Tek Birleşik Gelen Kutusu" data-en="One Unified Inbox">Tek Birleşik Gelen Kutusu</div>
+        <div class="feat-desc" data-tr="WhatsApp, Instagram DM ve web sohbeti tek akışta toplanır. Ekibiniz hangi kanaldan geldiğine bakmadan, sırayla yanıtlar." data-en="WhatsApp, Instagram DM and web chat flow into one stream. Your team replies in order without juggling tabs.">WhatsApp, Instagram DM ve web sohbeti tek akışta toplanır. Ekibiniz hangi kanaldan geldiğine bakmadan, sırayla yanıtlar.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon-wrap amber">✨</div>
+        <div class="feat-title" data-tr="AI Yanıt Önerisi" data-en="AI-Suggested Replies">AI Yanıt Önerisi</div>
+        <div class="feat-desc" data-tr="Her mesaja bilgi tabanından beslenen, markanızın diline uygun bir taslak yanıt hazırlanır. Düzelt, onayla, tek tıkla gönder." data-en="Every message gets a draft grounded in your knowledge base and tuned to your brand voice. Edit, approve, send in one tap.">Her mesaja bilgi tabanından beslenen, markanızın diline uygun bir taslak yanıt hazırlanır. Düzelt, onayla, tek tıkla gönder.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon-wrap blue">📚</div>
+        <div class="feat-title" data-tr="Bilgi Tabanından Beslenir" data-en="Grounded in Your Knowledge">Bilgi Tabanından Beslenir</div>
+        <div class="feat-desc" data-tr="SSS, kargo ve iade politikalarınızı ekleyin; AI cevapları uydurmaz, sizin yazdıklarınızdan alır ve kaynağını gösterir." data-en="Add your FAQs, shipping and refund policies; the AI doesn't invent answers — it cites yours and shows the source.">SSS, kargo ve iade politikalarınızı ekleyin; AI cevapları uydurmaz, sizin yazdıklarınızdan alır ve kaynağını gösterir.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon-wrap cyan">⚙️</div>
+        <div class="feat-title" data-tr="Otomasyon Kuralları" data-en="Automation Rules">Otomasyon Kuralları</div>
+        <div class="feat-desc" data-tr="Kargo takibi, sipariş durumu, çalışma saatleri gibi tekrarlayanları kurallarla otomatik kapatın; yalnızca insan gereken konular ekibe gelsin." data-en="Auto-close repetitive asks — order status, hours, tracking — with rules, so only the human-needed ones reach your team.">Kargo takibi, sipariş durumu, çalışma saatleri gibi tekrarlayanları kurallarla otomatik kapatın; yalnızca insan gereken konular ekibe gelsin.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon-wrap green">📊</div>
+        <div class="feat-title" data-tr="SLA & Yanıt Süresi" data-en="SLA & Response Time">SLA & Yanıt Süresi</div>
+        <div class="feat-desc" data-tr="İlk yanıt süresini, kuyruğu ve çözüm oranını canlı izleyin. Bir konuşma SLA'yı aşmadan önce uyarılırsınız." data-en="Track first-response time, queue depth and resolution rate live. Get warned before a chat breaches SLA.">İlk yanıt süresini, kuyruğu ve çözüm oranını canlı izleyin. Bir konuşma SLA'yı aşmadan önce uyarılırsınız.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon-wrap purple">🌍</div>
+        <div class="feat-title" data-tr="Çok Dilli Yanıt" data-en="Multilingual Replies">Çok Dilli Yanıt</div>
+        <div class="feat-desc" data-tr="Müşteri hangi dilde yazarsa yazsın, AI o dilde yanıtlar. Türkçe, İngilizce, Arapça ve daha fazlası — ekstra ekip kurmadan." data-en="Whatever language a customer writes in, the AI answers in it. Turkish, English, Arabic and more — without extra headcount.">Müşteri hangi dilde yazarsa yazsın, AI o dilde yanıtlar. Türkçe, İngilizce, Arapça ve daha fazlası — ekstra ekip kurmadan.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CHANNELS -->
+<div class="sec-bg">
+  <div class="sec">
+    <div class="sec-label" data-tr="// kanallar" data-en="// channels">// kanallar</div>
+    <div class="sec-title" data-tr="Her Kanal, Tek Kutu" data-en="Every Channel, One Inbox">Her Kanal, Tek Kutu</div>
+    <div class="sec-desc" data-tr="Müşterileriniz nerede mesaj atıyorsa, Inboxly orada." data-en="Wherever your customers message, Inboxly is there.">Müşterileriniz nerede mesaj atıyorsa, Inboxly orada.</div>
+    <div class="channel-grid">
+      <div class="channel-card">
+        <span class="channel-em">💬</span>
+        <div class="channel-name">WhatsApp</div>
+        <div class="channel-desc" data-tr="WhatsApp Business API üzerinden mesajları alın ve gönderin." data-en="Receive and send messages via WhatsApp Business API.">WhatsApp Business API üzerinden mesajları alın ve gönderin.</div>
+        <span class="channel-status status-live" data-tr="● AKTİF" data-en="● LIVE">● AKTİF</span>
+      </div>
+      <div class="channel-card">
+        <span class="channel-em">📸</span>
+        <div class="channel-name">Instagram DM</div>
+        <div class="channel-desc" data-tr="Instagram Direct mesajlarını tek akışta yönetin." data-en="Manage Instagram Direct messages in one stream.">Instagram Direct mesajlarını tek akışta yönetin.</div>
+        <span class="channel-status status-live" data-tr="● AKTİF" data-en="● LIVE">● AKTİF</span>
+      </div>
+      <div class="channel-card">
+        <span class="channel-em">🌐</span>
+        <div class="channel-name" data-tr="Web Sohbet" data-en="Web Chat">Web Sohbet</div>
+        <div class="channel-desc" data-tr="Web sitenize gömülü sohbet widget'ı ile anlık destek." data-en="Instant support with embedded chat widget on your website.">Web sitenize gömülü sohbet widget'ı ile anlık destek.</div>
+        <span class="channel-status status-live" data-tr="● AKTİF" data-en="● LIVE">● AKTİF</span>
+      </div>
+      <div class="channel-card">
+        <span class="channel-em">✉️</span>
+        <div class="channel-name" data-tr="E-posta" data-en="Email">E-posta</div>
+        <div class="channel-desc" data-tr="Gelen e-postalar da aynı kutuya düşsün, AI yanıtlasın." data-en="Incoming emails land in the same inbox, AI replies.">Gelen e-postalar da aynı kutuya düşsün, AI yanıtlasın.</div>
+        <span class="channel-status status-soon" data-tr="◌ YAKINDA" data-en="◌ COMING SOON">◌ YAKINDA</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<div id="how">
+  <div class="sec">
+    <div class="sec-label" data-tr="// nasıl çalışır" data-en="// how it works">// nasıl çalışır</div>
+    <div class="sec-title" data-tr="Mesajdan Çözüme<br>4 Adımda" data-en="From Message to Resolution<br>in 4 Steps">Mesajdan Çözüme<br>4 Adımda</div>
+    <div class="sec-desc" data-tr="Inboxly, müşteri mesajını aldığı andan çözüme ulaşana kadar tüm süreci otomatikleştirir." data-en="Inboxly automates the entire process from the moment a customer message is received to resolution.">Inboxly, müşteri mesajını aldığı andan çözüme ulaşana kadar tüm süreci otomatikleştirir.</div>
+    <div class="hiw-grid">
+      <div class="hiw-steps">
+        <div class="hiw-step">
+          <div class="step-num">01</div>
+          <div>
+            <div class="step-title" data-tr="Mesaj Alınır" data-en="Message Received">Mesaj Alınır</div>
+            <div class="step-body" data-tr="WhatsApp, Instagram veya web'den gelen mesaj anında Inboxly gelen kutusuna düşer." data-en="Messages from WhatsApp, Instagram or web land instantly in the Inboxly inbox.">WhatsApp, Instagram veya web'den gelen mesaj anında Inboxly gelen kutusuna düşer.</div>
+          </div>
+        </div>
+        <div class="hiw-step">
+          <div class="step-num">02</div>
+          <div>
+            <div class="step-title" data-tr="AI Taslağı Hazırlar" data-en="AI Drafts the Reply">AI Taslağı Hazırlar</div>
+            <div class="step-body" data-tr="Bilgi tabanınızdan beslenen AI, markanızın tonuyla doğru ve bağlamsal bir yanıt taslağı oluşturur." data-en="AI grounded in your knowledge base creates an accurate, contextual draft reply in your brand voice.">Bilgi tabanınızdan beslenen AI, markanızın tonuyla doğru ve bağlamsal bir yanıt taslağı oluşturur.</div>
+          </div>
+        </div>
+        <div class="hiw-step">
+          <div class="step-num">03</div>
+          <div>
+            <div class="step-title" data-tr="Ekip Onaylar veya Düzenler" data-en="Team Approves or Edits">Ekip Onaylar veya Düzenler</div>
+            <div class="step-body" data-tr="Ekibiniz taslağı tek tıkla gönderir ya da düzenleyip gönderir. Güvendiğiniz akışlar tam otomatik da olabilir." data-en="Your team sends the draft with one tap or edits and sends. Trusted flows can be fully automatic.">Ekibiniz taslağı tek tıkla gönderir ya da düzenleyip gönderir. Güvendiğiniz akışlar tam otomatik da olabilir.</div>
+          </div>
+        </div>
+        <div class="hiw-step">
+          <div class="step-num">04</div>
+          <div>
+            <div class="step-title" data-tr="Otomasyon Tekrarlayanları Kapatır" data-en="Automation Closes Repetitive Ones">Otomasyon Tekrarlayanları Kapatır</div>
+            <div class="step-body" data-tr="Kargo, saat, iade gibi sık sorulanlar otomasyonla anında yanıtlanır. Yalnızca gerçekten insan gereken konular ekibe gelir." data-en="FAQs like shipping, hours, returns are auto-answered instantly. Only truly human-needed issues reach the team.">Kargo, saat, iade gibi sık sorulanlar otomasyonla anında yanıtlanır. Yalnızca gerçekten insan gereken konular ekibe gelir.</div>
+          </div>
+        </div>
+      </div>
+      <div class="flow-visual">
+        <div class="flow-step">
+          <span class="flow-icon">💬</span>
+          <div class="flow-text">
+            <strong data-tr="Müşteri mesaj atıyor" data-en="Customer sends message">Müşteri mesaj atıyor</strong>
+            <span>WhatsApp · Instagram · Web</span>
+          </div>
+        </div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-step highlight">
+          <span class="flow-icon">✨</span>
+          <div class="flow-text">
+            <strong data-tr="AI taslak oluşturuyor" data-en="AI creates draft">AI taslak oluşturuyor</strong>
+            <span data-tr="Bilgi tabanından · Marka tonuyla" data-en="From knowledge base · Brand voice">Bilgi tabanından · Marka tonuyla</span>
+          </div>
+        </div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-step">
+          <span class="flow-icon">👤</span>
+          <div class="flow-text">
+            <strong data-tr="Ekip tek tıkla onaylıyor" data-en="Team approves in one tap">Ekip tek tıkla onaylıyor</strong>
+            <span data-tr="veya otomasyon kapatıyor" data-en="or automation closes it">veya otomasyon kapatıyor</span>
+          </div>
+        </div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-step" style="border-color:rgba(34,197,94,0.25);background:rgba(34,197,94,0.04);">
+          <span class="flow-icon">✅</span>
+          <div class="flow-text">
+            <strong style="color:#4ADE80;" data-tr="Müşteri memnun ayrılıyor" data-en="Customer leaves satisfied">Müşteri memnun ayrılıyor</strong>
+            <span data-tr="Ortalama 12 saniyede" data-en="In an average of 12 seconds">Ortalama 12 saniyede</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PRICING -->
+<div class="sec-bg" id="pricing">
+  <div class="sec" style="text-align:center;">
+    <div class="sec-label" data-tr="// fiyatlar" data-en="// pricing">// fiyatlar</div>
+    <div class="sec-title" data-tr="İhtiyacınıza Göre Plan" data-en="A Plan for Every Need">İhtiyacınıza Göre Plan</div>
+    <div class="sec-desc" style="margin:0 auto 3rem;" data-tr="14 gün ücretsiz deneyin. Kredi kartı gerekmez." data-en="14-day free trial. No credit card required.">14 gün ücretsiz deneyin. Kredi kartı gerekmez.</div>
+    <div class="price-grid">
+      <div class="price-card">
+        <div class="price-name" data-tr="Başlangıç" data-en="Starter">Başlangıç</div>
+        <div class="price-amount">$0<span>/ay</span></div>
+        <div class="price-tagline" data-tr="İlk WhatsApp hattınız için." data-en="For your first WhatsApp line.">İlk WhatsApp hattınız için.</div>
+        <div class="price-features">
+          <div class="price-feat" data-tr="1 kanal" data-en="1 channel">1 kanal</div>
+          <div class="price-feat" data-tr="Aylık 300 konuşma" data-en="300 chats / month">Aylık 300 konuşma</div>
+          <div class="price-feat" data-tr="AI yanıt önerisi" data-en="AI-suggested replies">AI yanıt önerisi</div>
+          <div class="price-feat" data-tr="Bilgi tabanı" data-en="Knowledge base">Bilgi tabanı</div>
+        </div>
+        <button class="price-btn price-btn-default" onclick="openCal()" data-tr="Ücretsiz Başla" data-en="Start Free">Ücretsiz Başla</button>
+      </div>
+      <div class="price-card featured">
+        <div class="featured-badge" data-tr="⭐ EN POPÜLER" data-en="⭐ MOST POPULAR">⭐ EN POPÜLER</div>
+        <div class="price-name" data-tr="Ekip" data-en="Team">Ekip</div>
+        <div class="price-amount">$59<span>/ay</span></div>
+        <div class="price-tagline" data-tr="Büyüyen destek ekipleri için." data-en="For growing support teams.">Büyüyen destek ekipleri için.</div>
+        <div class="price-features">
+          <div class="price-feat" data-tr="3 kanal (WhatsApp, IG, Web)" data-en="3 channels (WhatsApp, IG, Web)">3 kanal (WhatsApp, IG, Web)</div>
+          <div class="price-feat" data-tr="Sınırsız konuşma" data-en="Unlimited chats">Sınırsız konuşma</div>
+          <div class="price-feat" data-tr="Otomasyon kuralları" data-en="Automation rules">Otomasyon kuralları</div>
+          <div class="price-feat" data-tr="SLA & raporlar" data-en="SLA & reports">SLA & raporlar</div>
+          <div class="price-feat" data-tr="Çok dilli yanıt" data-en="Multilingual replies">Çok dilli yanıt</div>
+        </div>
+        <button class="price-btn price-btn-featured" onclick="openCal()" data-tr="Ücretsiz Dene" data-en="Start Free Trial">Ücretsiz Dene</button>
+      </div>
+      <div class="price-card">
+        <div class="price-name" data-tr="İşletme" data-en="Business">İşletme</div>
+        <div class="price-amount">$199<span>/ay</span></div>
+        <div class="price-tagline" data-tr="Çok lokasyon & markalar için." data-en="For multi-location & brands.">Çok lokasyon & markalar için.</div>
+        <div class="price-features">
+          <div class="price-feat" data-tr="Sınırsız kanal" data-en="Unlimited channels">Sınırsız kanal</div>
+          <div class="price-feat" data-tr="Roller & ekipler" data-en="Roles & teams">Roller & ekipler</div>
+          <div class="price-feat" data-tr="Özel marka tonu" data-en="Custom brand voice">Özel marka tonu</div>
+          <div class="price-feat" data-tr="Öncelikli destek" data-en="Priority support">Öncelikli destek</div>
+        </div>
+        <button class="price-btn price-btn-default" onclick="openCal()" data-tr="Bize Ulaşın" data-en="Talk to Us">Bize Ulaşın</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<section class="cta-sec">
+  <div class="cta-glow"></div>
+  <div class="cta-inner">
+    <div class="sec-label" style="text-align:center;" data-tr="// başlamaya hazır mısınız" data-en="// ready to get started">// başlamaya hazır mısınız</div>
+    <div class="cta-title" data-tr="Bekleyen Müşteri<br><span class='grad-purple'>Kalmasın.</span>" data-en="No Customer<br><span class='grad-purple'>Left Waiting.</span>">Bekleyen Müşteri<br><span class="grad-purple">Kalmasın.</span></div>
+    <p class="cta-desc" data-tr="Inboxly'yi 14 gün boyunca ücretsiz deneyin. Kredi kartı gerekmez, kurulum 30 dakika sürer." data-en="Try Inboxly free for 14 days. No credit card required, setup takes 30 minutes.">Inboxly'yi 14 gün boyunca ücretsiz deneyin. Kredi kartı gerekmez, kurulum 30 dakika sürer.</p>
+    <div class="hero-btns">
+      <button class="btn-p" onclick="openCal()" data-tr="Ücretsiz Dene →" data-en="Try It Free →">Ücretsiz Dene →</button>
+      <button class="btn-s" onclick="openCal()" data-tr="Demo İzle" data-en="Watch Demo">Demo İzle</button>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-left" data-tr="© 2025 CallypsoTech · Inboxly ürünü" data-en="© 2025 CallypsoTech · An Inboxly product">© 2025 CallypsoTech · Inboxly ürünü</div>
+    <div class="footer-right">
+      <a href="index.html" class="footer-back" data-tr="← CallypsoTech'e dön" data-en="← Back to CallypsoTech">← CallypsoTech'e dön</a>
+      <div class="footer-logo">Callypso<span>Tech</span></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+function openCal(){ window.open('https://cal.com/furkan-alumert','_blank'); }
+
+function toggleMenu(){
+  const m=document.getElementById('mobileMenu'),b=document.getElementById('hamburger');
+  m.classList.toggle('open');b.classList.toggle('open');
+  document.body.style.overflow=m.classList.contains('open')?'hidden':'';
+}
+function closeMenu(){
+  document.getElementById('mobileMenu').classList.remove('open');
+  document.getElementById('hamburger').classList.remove('open');
+  document.body.style.overflow='';
+}
+
+let currentLang='tr';
+function toggleLang(){
+  currentLang=currentLang==='tr'?'en':'tr';
+  document.getElementById('langBtn').textContent=currentLang==='tr'?'EN':'TR';
+  document.documentElement.lang=currentLang;
+  applyLang();
+}
+function applyLang(){
+  document.querySelectorAll('[data-tr]').forEach(el=>{
+    const val=el.getAttribute('data-'+currentLang);
+    if(!val)return;
+    if(el.tagName==='H1'||el.classList.contains('cta-title')||el.classList.contains('sec-title')){
+      el.innerHTML=val;
+    } else {
+      el.textContent=val;
+    }
+  });
+}
+</script>
+</body>
+</html>
