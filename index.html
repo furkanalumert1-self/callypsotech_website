@@ -184,6 +184,71 @@ footer{border-top:1px solid var(--border);padding:2.5rem 1.5rem;}
 .footer-bottom{max-width:1080px;margin:1.5rem auto 0;padding-top:1.5rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;}
 .footer-bottom p{font-size:12px;color:var(--muted);font-family:var(--mono);}
 
+/* PRODUCTS SHOWCASE */
+.products-showcase{padding:5rem 1.5rem;background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+.ps-inner{max-width:1100px;margin:0 auto;}
+.ps-header{text-align:center;margin-bottom:3rem;}
+.ps-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;}
+.ps-card{background:var(--bg3);border:1px solid var(--border);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;transition:transform .3s,border-color .3s;}
+.ps-card:hover{transform:translateY(-4px);}
+.ps-card.blue:hover{border-color:rgba(59,130,246,.4);}
+.ps-card.purple:hover{border-color:rgba(139,92,246,.4);}
+.ps-card-top{padding:2rem 2rem 1.5rem;position:relative;}
+.ps-tag{display:inline-flex;align-items:center;gap:6px;font-size:10px;font-family:var(--mono);letter-spacing:2px;padding:4px 12px;border-radius:100px;margin-bottom:1.25rem;width:fit-content;}
+.ps-tag.blue{background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.3);color:#60A5FA;}
+.ps-tag.purple{background:rgba(139,92,246,.1);border:1px solid rgba(139,92,246,.3);color:#C4B5FD;}
+.ps-tag-dot{width:5px;height:5px;border-radius:50%;}
+.ps-tag-dot.blue{background:#3B82F6;}
+.ps-tag-dot.purple{background:#8B5CF6;}
+.ps-name{font-family:var(--font);font-size:1.35rem;margin-bottom:.4rem;letter-spacing:.5px;}
+.ps-name.blue{color:var(--primary);}
+.ps-name.purple{color:var(--secondary);}
+.ps-tagline{font-size:.95rem;font-weight:600;color:var(--text);margin-bottom:.6rem;}
+.ps-desc{font-size:13px;color:var(--muted2);line-height:1.65;margin-bottom:1.25rem;}
+.ps-feats{display:flex;flex-direction:column;gap:.45rem;margin-bottom:1.5rem;}
+.ps-feat{display:flex;align-items:center;gap:.5rem;font-size:13px;color:var(--muted2);}
+.ps-feat-dot{width:5px;height:5px;border-radius:50%;flex-shrink:0;}
+.ps-feat-dot.blue{background:#3B82F6;}
+.ps-feat-dot.purple{background:#8B5CF6;}
+.ps-btn{display:flex;align-items:center;justify-content:center;gap:.4rem;padding:11px 20px;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;transition:all .2s;border:none;cursor:pointer;font-family:var(--body);width:fit-content;}
+.ps-btn.blue{background:rgba(59,130,246,.12);color:#60A5FA;border:1px solid rgba(59,130,246,.25);}
+.ps-btn.blue:hover{background:rgba(59,130,246,.2);border-color:rgba(59,130,246,.5);}
+.ps-btn.purple{background:rgba(139,92,246,.12);color:#C4B5FD;border:1px solid rgba(139,92,246,.25);}
+.ps-btn.purple:hover{background:rgba(139,92,246,.2);border-color:rgba(139,92,246,.5);}
+.ps-btn-arr{transition:transform .2s;}
+.ps-btn:hover .ps-btn-arr{transform:translateX(3px);}
+/* Voice visual */
+.voice-mini{padding:1.25rem;display:flex;flex-direction:column;gap:.75rem;background:rgba(255,255,255,.02);border-top:1px solid var(--border);}
+.vmini-row{display:flex;align-items:center;gap:.65rem;background:rgba(59,130,246,.06);border:1px solid rgba(59,130,246,.15);border-radius:8px;padding:.65rem .85rem;}
+.vmini-av{width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,#3B82F6,#06B6D4);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;}
+.vmini-info{flex:1;min-width:0;}
+.vmini-name{font-size:11px;font-weight:600;color:var(--text);}
+.vmini-sub{font-size:10px;color:var(--muted);}
+.vmini-live{font-size:9px;font-family:var(--mono);color:#22C55E;background:rgba(34,197,94,.1);padding:2px 7px;border-radius:100px;border:1px solid rgba(34,197,94,.2);}
+.vmini-bars{display:flex;align-items:center;gap:2px;height:22px;padding:0 .25rem;}
+.vmini-bar{width:3px;border-radius:2px;animation:wav3 1.4s ease-in-out infinite;}
+.vmini-bar.b{background:#3B82F6;}
+.vmini-bar.a{background:#06B6D4;}
+@keyframes wav3{0%,100%{height:3px;opacity:.3;}50%{height:var(--h);opacity:.9;}}
+.vmini-tx{background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:7px;padding:.55rem .75rem;}
+.vmini-tx-lbl{font-size:9px;color:var(--muted);font-family:var(--mono);letter-spacing:.5px;margin-bottom:.25rem;}
+.vmini-tx-line{font-size:11.5px;color:var(--muted2);}
+.vmini-tx-line strong{color:var(--text);}
+/* Inbox mini visual */
+.inbox-mini{display:flex;border-top:1px solid var(--border);background:rgba(255,255,255,.02);}
+.inbox-mini-sb{width:100px;flex-shrink:0;border-right:1px solid var(--border);padding:.7rem .45rem;display:flex;flex-direction:column;gap:.3rem;}
+.inbox-mini-sb-lbl{font-size:8px;color:var(--muted);font-family:var(--mono);letter-spacing:1px;padding:.15rem .35rem;margin-bottom:.1rem;}
+.inbox-mc{display:flex;align-items:center;gap:.35rem;padding:.25rem .35rem;border-radius:5px;}
+.inbox-mc.active{background:rgba(139,92,246,.12);}
+.mc-dot{width:5px;height:5px;border-radius:50%;flex-shrink:0;}
+.mc-name{font-size:9.5px;color:var(--muted2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.inbox-mc.active .mc-name{color:var(--text);}
+.inbox-mini-main{flex:1;padding:.7rem .85rem;display:flex;flex-direction:column;}
+.imsg{background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:7px;padding:.4rem .65rem;font-size:10px;color:var(--muted2);margin-bottom:.4rem;max-width:88%;}
+.iai-draft{margin-top:auto;background:rgba(139,92,246,.08);border:1px solid rgba(139,92,246,.25);border-radius:7px;padding:.45rem .65rem;}
+.iai-lbl{font-size:8.5px;color:#C4B5FD;font-family:var(--mono);letter-spacing:.5px;margin-bottom:.15rem;}
+.iai-text{font-size:10px;color:var(--muted2);}
+@media(max-width:900px){.ps-grid{grid-template-columns:1fr;max-width:560px;margin:0 auto;}}
 /* RESPONSIVE */
 @media(max-width:768px){
   .nav-links{display:none;}
@@ -299,6 +364,98 @@ footer{border-top:1px solid var(--border);padding:2.5rem 1.5rem;}
     <div><div class="stat-n">&lt;1sn</div><div class="stat-l" data-tr="Yanıt Süresi" data-en="Response Time">Yanıt Süresi</div></div>
     <div><div class="stat-n">50+</div><div class="stat-l" data-tr="Desteklenen Dil" data-en="Supported Languages">Desteklenen Dil</div></div>
     <div><div class="stat-n">%60</div><div class="stat-l" data-tr="Maliyet Azalması" data-en="Cost Reduction">Maliyet Azalması</div></div>
+  </div>
+</div>
+
+<!-- PRODUCTS SHOWCASE -->
+<div class="products-showcase">
+  <div class="ps-inner">
+    <div class="ps-header">
+      <div class="sec-label" data-tr="// ürünlerimiz" data-en="// our products">// ürünlerimiz</div>
+      <div class="sec-title" data-tr="Her Temas Noktasında<br>Yapay Zeka" data-en="AI at Every<br>Touchpoint">Her Temas Noktasında<br>Yapay Zeka</div>
+      <div class="sec-desc" style="margin:0 auto;" data-tr="Telefon görüşmelerini ve yazılı mesajlaşmayı ayrı ayrı çözen, birbirini tamamlayan iki ürün." data-en="Two complementary products that solve phone calls and written messaging separately.">Telefon görüşmelerini ve yazılı mesajlaşmayı ayrı ayrı çözen, birbirini tamamlayan iki ürün.</div>
+    </div>
+    <div class="ps-grid">
+
+      <!-- VOICE AGENT -->
+      <div class="ps-card blue">
+        <div class="ps-card-top">
+          <div class="ps-tag blue"><span class="ps-tag-dot blue"></span>AI VOICE AGENT</div>
+          <div class="ps-name blue">Voice Agent</div>
+          <div class="ps-tagline" data-tr="Telefonlarınızı yapay zeka yanıtlasın" data-en="Let AI answer your calls">Telefonlarınızı yapay zeka yanıtlasın</div>
+          <div class="ps-desc" data-tr="Gelen her telefonu &lt;1 saniyede yanıtlayan, doğal konuşan ve randevu & CRM sistemlerine bağlayan AI voice agent. Gece yarısı, hafta sonu, bayramda bile." data-en="An AI voice agent that answers every call in &lt;1 second, speaks naturally and connects to your CRM & calendar. Midnight, weekends, holidays included.">Gelen her telefonu &lt;1 saniyede yanıtlayan, doğal konuşan ve randevu & CRM sistemlerine bağlayan AI voice agent. Gece yarısı, hafta sonu, bayramda bile.</div>
+          <div class="ps-feats">
+            <div class="ps-feat"><span class="ps-feat-dot blue"></span><span data-tr="7/24 cevapsız arama sıfır" data-en="Zero missed calls 24/7">7/24 cevapsız arama sıfır</span></div>
+            <div class="ps-feat"><span class="ps-feat-dot blue"></span><span data-tr="Randevu alma & CRM entegrasyonu" data-en="Appointment booking & CRM integration">Randevu alma & CRM entegrasyonu</span></div>
+            <div class="ps-feat"><span class="ps-feat-dot blue"></span><span data-tr="Otomatik transkript ve özet" data-en="Auto transcript & summary">Otomatik transkript ve özet</span></div>
+            <div class="ps-feat"><span class="ps-feat-dot blue"></span><span data-tr="%60'a varan maliyet tasarrufu" data-en="Up to 60% cost savings">%60'a varan maliyet tasarrufu</span></div>
+          </div>
+          <a href="#how" class="ps-btn blue" data-tr="Nasıl Çalışır →" data-en="See How It Works →">Nasıl Çalışır <span class="ps-btn-arr">→</span></a>
+        </div>
+        <div class="voice-mini">
+          <div class="vmini-row">
+            <div class="vmini-av">AK</div>
+            <div class="vmini-info">
+              <div class="vmini-name">+90 532 *** ** 14</div>
+              <div class="vmini-sub" data-tr="Randevu sormak istiyor" data-en="Asking about appointment">Randevu sormak istiyor</div>
+            </div>
+            <div class="vmini-live" data-tr="CANLI" data-en="LIVE">CANLI</div>
+          </div>
+          <div class="vmini-bars">
+            <div class="vmini-bar b" style="--h:7px;animation-delay:.0s;"></div>
+            <div class="vmini-bar a" style="--h:15px;animation-delay:.1s;"></div>
+            <div class="vmini-bar b" style="--h:20px;animation-delay:.2s;"></div>
+            <div class="vmini-bar a" style="--h:12px;animation-delay:.3s;"></div>
+            <div class="vmini-bar b" style="--h:24px;animation-delay:.4s;"></div>
+            <div class="vmini-bar a" style="--h:16px;animation-delay:.5s;"></div>
+            <div class="vmini-bar b" style="--h:9px;animation-delay:.6s;"></div>
+            <div class="vmini-bar a" style="--h:19px;animation-delay:.7s;"></div>
+            <div class="vmini-bar b" style="--h:14px;animation-delay:.8s;"></div>
+            <div class="vmini-bar a" style="--h:22px;animation-delay:.9s;"></div>
+          </div>
+          <div class="vmini-tx">
+            <div class="vmini-tx-lbl">// TRANSKRİPT</div>
+            <div class="vmini-tx-line"><strong data-tr="Müşteri:" data-en="Customer:">Müşteri:</strong> <span data-tr="Yarın randevu alabilir miyim?" data-en="Can I book an appointment for tomorrow?">Yarın randevu alabilir miyim?</span></div>
+            <div class="vmini-tx-line"><strong style="color:#60A5FA;">AI:</strong> <span data-tr="Evet — 10:00 veya 14:30. Hangisi?" data-en="Yes — 10:00 or 14:30. Which?">Evet — 10:00 veya 14:30. Hangisi?</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- INBOXLY -->
+      <div class="ps-card purple">
+        <div class="ps-card-top">
+          <div class="ps-tag purple"><span class="ps-tag-dot purple"></span>AI MESSAGING</div>
+          <div class="ps-name purple">Inboxly</div>
+          <div class="ps-tagline" data-tr="Tüm mesaj kanallarını tek ekranda yönetin" data-en="Manage all message channels from one screen">Tüm mesaj kanallarını tek ekranda yönetin</div>
+          <div class="ps-desc" data-tr="WhatsApp, Instagram DM ve web sohbetini tek gelen kutusunda birleştiren, AI ile markanızın sesiyle yanıt taslakları oluşturan müşteri mesajlaşma platformu." data-en="A messaging platform that unifies WhatsApp, Instagram DM and web chat, with AI that drafts replies in your brand's voice.">WhatsApp, Instagram DM ve web sohbetini tek gelen kutusunda birleştiren, AI ile markanızın sesiyle yanıt taslakları oluşturan müşteri mesajlaşma platformu.</div>
+          <div class="ps-feats">
+            <div class="ps-feat"><span class="ps-feat-dot purple"></span><span data-tr="WhatsApp, Instagram & Web tek ekranda" data-en="WhatsApp, Instagram & Web in one screen">WhatsApp, Instagram & Web tek ekranda</span></div>
+            <div class="ps-feat"><span class="ps-feat-dot purple"></span><span data-tr="AI bilgi tabanı ile otomatik taslak" data-en="AI knowledge base auto-drafts replies">AI bilgi tabanı ile otomatik taslak</span></div>
+            <div class="ps-feat"><span class="ps-feat-dot purple"></span><span data-tr="Otomasyon, SLA takibi & raporlar" data-en="Automation, SLA tracking & reports">Otomasyon, SLA takibi & raporlar</span></div>
+            <div class="ps-feat"><span class="ps-feat-dot purple"></span><span data-tr="Çok dilli & çok ekipli destek" data-en="Multilingual & multi-team support">Çok dilli & çok ekipli destek</span></div>
+          </div>
+          <a href="inboxly.html" class="ps-btn purple" data-tr="Inboxly'i Keşfet →" data-en="Explore Inboxly →">Inboxly'i Keşfet <span class="ps-btn-arr">→</span></a>
+        </div>
+        <div class="inbox-mini" style="height:180px;">
+          <div class="inbox-mini-sb">
+            <div class="inbox-mini-sb-lbl" data-tr="GELEN KUTUSU" data-en="INBOX">GELEN KUTUSU</div>
+            <div class="inbox-mc active"><div class="mc-dot" style="background:#25D366;"></div><span class="mc-name">Ayşe K.</span></div>
+            <div class="inbox-mc"><div class="mc-dot" style="background:#E1306C;"></div><span class="mc-name">Marco R.</span></div>
+            <div class="inbox-mc"><div class="mc-dot" style="background:#06B6D4;"></div><span class="mc-name">Web Chat</span></div>
+            <div class="inbox-mc"><div class="mc-dot" style="background:#25D366;"></div><span class="mc-name">Fatma Y.</span></div>
+            <div class="inbox-mc"><div class="mc-dot" style="background:#E1306C;"></div><span class="mc-name">Lena M.</span></div>
+          </div>
+          <div class="inbox-mini-main">
+            <div class="imsg" data-tr="Ürün iadesi yapmak istiyorum" data-en="I'd like to return a product">Ürün iadesi yapmak istiyorum</div>
+            <div class="iai-draft">
+              <div class="iai-lbl">✦ AI TASLAK</div>
+              <div class="iai-text" data-tr="Merhaba Ayşe Hanım! Sipariş numaranızı paylaşır mısınız? 30 gün içindeki alışverişler ücretsiz iade hakkına sahiptir." data-en="Hello Ayşe! Please share your order number. Purchases within 30 days qualify for free returns.">Merhaba Ayşe Hanım! Sipariş numaranızı paylaşır mısınız? 30 gün içindeki alışverişler ücretsiz iade hakkına sahiptir.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
   </div>
 </div>
 
