@@ -10,7 +10,7 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 :root{
   --primary:#3B82F6;--secondary:#8B5CF6;--accent:#06B6D4;
-  --bg:#0d1b2e;--bg2:#152338;--bg3:#1c2d4a;
+  --bg:#1a2540;--bg2:#203050;--bg3:#273a5e;
   --surface:rgba(255,255,255,0.04);--surface2:rgba(255,255,255,0.06);
   --border:rgba(255,255,255,0.08);--border2:rgba(59,130,246,0.35);
   --text:#F0F4FF;--muted:#7A8FB0;--muted2:#9AABC8;
@@ -19,7 +19,7 @@
 body{background:var(--bg);color:var(--text);font-family:var(--body);font-size:15px;line-height:1.7;overflow-x:hidden;}
 
 /* NAV */
-nav{position:sticky;top:0;z-index:200;background:rgba(13,27,46,0.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 1.5rem;height:64px;display:flex;align-items:center;justify-content:space-between;gap:1rem;}
+nav{position:sticky;top:0;z-index:200;background:rgba(26,37,64,0.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 1.5rem;height:64px;display:flex;align-items:center;justify-content:space-between;gap:1rem;}
 .logo{font-family:var(--font);font-size:17px;color:var(--text);letter-spacing:1px;white-space:nowrap;flex-shrink:0;text-decoration:none;}
 .logo span{color:var(--primary);}
 .nav-right{display:flex;align-items:center;gap:.75rem;flex-shrink:0;}
@@ -32,7 +32,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(13,27,46,0.95);backdrop-fi
 .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
 .hamburger.open span:nth-child(2){opacity:0;}
 .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
-.mobile-menu{display:none;position:fixed;top:64px;left:0;right:0;bottom:0;background:rgba(13,27,46,0.98);backdrop-filter:blur(20px);z-index:190;flex-direction:column;padding:2rem 1.5rem;border-top:1px solid var(--border);}
+.mobile-menu{display:none;position:fixed;top:64px;left:0;right:0;bottom:0;background:rgba(26,37,64,0.98);backdrop-filter:blur(20px);z-index:190;flex-direction:column;padding:2rem 1.5rem;border-top:1px solid var(--border);}
 .mobile-menu.open{display:flex;}
 .mobile-menu a{color:var(--muted2);text-decoration:none;font-size:17px;font-weight:500;padding:1.1rem 0;border-bottom:1px solid var(--border);display:block;}
 .mobile-menu-btns{display:flex;flex-direction:column;gap:.75rem;margin-top:1.5rem;}
@@ -380,28 +380,25 @@ footer{border-top:1px solid var(--border);padding:1.5rem;display:flex;align-item
       <div class="card-glow-green"></div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start;">
         <div>
-          <div class="prod-tag green"><span class="tag-dot green"></span>B2B SALES OUTREACH</div>
+          <div class="prod-tag green"><span class="tag-dot green"></span>EMAIL MARKETING & OTOMASYON</div>
           <div class="prod-name green">Callypso Engage</div>
-          <div class="prod-tagline" data-tr="Lead'lerinize otomatik & kişiselleştirilmiş outreach" data-en="Automated & personalized outreach to your leads">Lead'lerinize otomatik & kişiselleştirilmiş outreach</div>
-          <div class="prod-desc" data-tr="B2B satış ekiplerinin lead listelerini Email ve SMS üzerinden otomatik, kişiselleştirilmiş sekanslarla beslemesini sağlayan sales engagement platformu. SDR ekipleriniz için tasarlandı." data-en="A sales engagement platform that helps B2B sales teams nurture lead lists through automated, personalized Email and SMS sequences. Built for SDR teams.">B2B satış ekiplerinin lead listelerini Email ve SMS üzerinden otomatik, kişiselleştirilmiş sekanslarla beslemesini sağlayan sales engagement platformu. SDR ekipleriniz için tasarlandı.</div>
+          <div class="prod-tagline" data-tr="E-posta ile büyüyün, otomasyonla kazanın" data-en="Grow with email, earn with automation">E-posta ile büyüyün, otomasyonla kazanın</div>
+          <div class="prod-desc" data-tr="Sürükle-bırak e-posta editörü, görsel otomasyon akışları, davranışsal segmentasyon ve kampanya başına gelir takibiyle büyüyen markalar ve e-ticaret işletmeleri için tasarlanmış tam e-posta pazarlama platformu." data-en="A full email marketing platform built for growing brands and e-commerce: drag-and-drop builder, visual automation flows, behavioral segmentation, and per-campaign revenue tracking.">Sürükle-bırak e-posta editörü, görsel otomasyon akışları, davranışsal segmentasyon ve kampanya başına gelir takibiyle büyüyen markalar ve e-ticaret işletmeleri için tasarlanmış tam e-posta pazarlama platformu.</div>
           <div class="prod-features">
-            <div class="prod-feat"><span class="feat-check green">✓</span><span data-tr="Email & SMS outreach kampanyaları" data-en="Email & SMS outreach campaigns">Email & SMS outreach kampanyaları</span></div>
-            <div class="prod-feat"><span class="feat-check green">✓</span><span data-tr="Otomatik follow-up sekansları" data-en="Automated follow-up sequences">Otomatik follow-up sekansları</span></div>
-            <div class="prod-feat"><span class="feat-check green">✓</span><span data-tr="İsim, şirket, pozisyona göre kişiselleştirme" data-en="Personalization by name, company, position">İsim, şirket, pozisyona göre kişiselleştirme</span></div>
-            <div class="prod-feat"><span class="feat-check green">✓</span><span data-tr="Duplicate tespiti & lead yönetimi" data-en="Duplicate detection & lead management">Duplicate tespiti & lead yönetimi</span></div>
-            <div class="prod-feat"><span class="feat-check green">✓</span><span data-tr="Kampanya analitiği & yanıt takibi" data-en="Campaign analytics & reply tracking">Kampanya analitiği & yanıt takibi</span></div>
-            <div class="prod-feat"><span class="feat-check green">✓</span><span data-tr="Çoklu mailbox desteği" data-en="Multi-mailbox support">Çoklu mailbox desteği</span></div>
+            <div class="prod-feat"><span class="feat-check green">✓</span><span data-tr="Sürükle-bırak e-posta tasarımcısı" data-en="Drag-and-drop email builder">Sürükle-bırak e-posta tasarımcısı</span></div>
+            <div class="prod-feat"><span class="feat-check green">✓</span><span data-tr="Hoş geldin, terk edilen sepet & geri kazanım akışları" data-en="Welcome, abandoned cart & win-back flows">Hoş geldin, terk edilen sepet & geri kazanım akışları</span></div>
+            <div class="prod-feat"><span class="feat-check green">✓</span><span data-tr="Davranışsal segmentasyon & A/B testi" data-en="Behavioral segmentation & A/B testing">Davranışsal segmentasyon & A/B testi</span></div>
+            <div class="prod-feat"><span class="feat-check green">✓</span><span data-tr="Shopify entegrasyonu & kampanya başına gelir" data-en="Shopify integration & per-campaign revenue">Shopify entegrasyonu & kampanya başına gelir</span></div>
+            <div class="prod-feat"><span class="feat-check green">✓</span><span data-tr="Teslim edilebilirlik paneli (SPF, DKIM, DMARC)" data-en="Deliverability panel (SPF, DKIM, DMARC)">Teslim edilebilirlik paneli (SPF, DKIM, DMARC)</span></div>
+            <div class="prod-feat"><span class="feat-check green">✓</span><span data-tr="Bağlantı ısı haritası & huni analizi" data-en="Link heatmaps & funnel analysis">Bağlantı ısı haritası & huni analizi</span></div>
           </div>
           <div class="prod-channels" style="margin-bottom:1.5rem;">
-            <span class="ch-pill green">📧 Email Outreach</span>
-            <span class="ch-pill green">📱 SMS</span>
-            <span class="ch-pill green" data-tr="🏢 B2B Satış" data-en="🏢 B2B Sales">🏢 B2B Satış</span>
-            <span class="ch-pill green">🎯 SDR / BDR</span>
+            <span class="ch-pill green">📧 Email Marketing</span>
+            <span class="ch-pill green" data-tr="🛒 E-Ticaret" data-en="🛒 E-Commerce">🛒 E-Ticaret</span>
+            <span class="ch-pill green" data-tr="✍️ İçerik Üreticileri" data-en="✍️ Creators">✍️ İçerik Üreticileri</span>
+            <span class="ch-pill green">⚡ Shopify</span>
           </div>
-          <div style="display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;">
-            <span style="display:inline-flex;align-items:center;gap:.4rem;background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.25);color:#34D399;padding:7px 16px;border-radius:8px;font-size:12px;font-family:var(--mono);letter-spacing:.5px;">● <span data-tr="YAKINDA" data-en="COMING SOON">YAKINDA</span></span>
-            <button onclick="openCal()" class="prod-btn blue" style="width:auto;" data-tr="Demo İste →" data-en="Request Demo →">Demo İste <span class="prod-btn-arrow">→</span></button>
-          </div>
+          <button onclick="openCal()" class="prod-btn green" style="width:auto;" data-tr="Callypso Engage'i Keşfedin →" data-en="Explore Callypso Engage →">Callypso Engage'i Keşfedin <span class="prod-btn-arrow">→</span></button>
         </div>
         <div class="engage-visual prod-visual" style="margin-bottom:0;">
           <div class="engage-campaign">
