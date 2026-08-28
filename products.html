@@ -10,7 +10,7 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 :root{
   --primary:#3B82F6;--secondary:#8B5CF6;--accent:#06B6D4;
-  --bg:#020817;--bg2:#060d1f;--bg3:#0a1428;
+  --bg:#0d1b2e;--bg2:#152338;--bg3:#1c2d4a;
   --surface:rgba(255,255,255,0.04);--surface2:rgba(255,255,255,0.06);
   --border:rgba(255,255,255,0.08);--border2:rgba(59,130,246,0.35);
   --text:#F0F4FF;--muted:#7A8FB0;--muted2:#9AABC8;
@@ -19,7 +19,7 @@
 body{background:var(--bg);color:var(--text);font-family:var(--body);font-size:15px;line-height:1.7;overflow-x:hidden;}
 
 /* NAV */
-nav{position:sticky;top:0;z-index:200;background:rgba(2,8,23,0.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 1.5rem;height:64px;display:flex;align-items:center;justify-content:space-between;gap:1rem;}
+nav{position:sticky;top:0;z-index:200;background:rgba(13,27,46,0.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 1.5rem;height:64px;display:flex;align-items:center;justify-content:space-between;gap:1rem;}
 .logo{font-family:var(--font);font-size:17px;color:var(--text);letter-spacing:1px;white-space:nowrap;flex-shrink:0;text-decoration:none;}
 .logo span{color:var(--primary);}
 .nav-right{display:flex;align-items:center;gap:.75rem;flex-shrink:0;}
@@ -32,7 +32,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(2,8,23,0.95);backdrop-filt
 .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
 .hamburger.open span:nth-child(2){opacity:0;}
 .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
-.mobile-menu{display:none;position:fixed;top:64px;left:0;right:0;bottom:0;background:rgba(2,8,23,0.98);backdrop-filter:blur(20px);z-index:190;flex-direction:column;padding:2rem 1.5rem;border-top:1px solid var(--border);}
+.mobile-menu{display:none;position:fixed;top:64px;left:0;right:0;bottom:0;background:rgba(13,27,46,0.98);backdrop-filter:blur(20px);z-index:190;flex-direction:column;padding:2rem 1.5rem;border-top:1px solid var(--border);}
 .mobile-menu.open{display:flex;}
 .mobile-menu a{color:var(--muted2);text-decoration:none;font-size:17px;font-weight:500;padding:1.1rem 0;border-bottom:1px solid var(--border);display:block;}
 .mobile-menu-btns{display:flex;flex-direction:column;gap:.75rem;margin-top:1.5rem;}
@@ -60,6 +60,8 @@ nav{position:sticky;top:0;z-index:200;background:rgba(2,8,23,0.95);backdrop-filt
 .prod-card.blue:hover{border-color:rgba(59,130,246,0.5);}
 .prod-card.purple{border-color:rgba(139,92,246,0.25);}
 .prod-card.purple:hover{border-color:rgba(139,92,246,0.5);}
+.prod-card.green{border-color:rgba(16,185,129,0.25);}
+.prod-card.green:hover{border-color:rgba(16,185,129,0.5);}
 
 .card-glow-blue{position:absolute;top:-60px;right:-60px;width:220px;height:220px;background:radial-gradient(circle,rgba(59,130,246,0.12) 0%,transparent 70%);pointer-events:none;}
 .card-glow-purple{position:absolute;top:-60px;right:-60px;width:220px;height:220px;background:radial-gradient(circle,rgba(139,92,246,0.12) 0%,transparent 70%);pointer-events:none;}
@@ -67,9 +69,11 @@ nav{position:sticky;top:0;z-index:200;background:rgba(2,8,23,0.95);backdrop-filt
 .prod-tag{display:inline-flex;align-items:center;gap:6px;font-size:10px;font-family:var(--mono);letter-spacing:2px;padding:4px 12px;border-radius:100px;margin-bottom:1.5rem;width:fit-content;}
 .prod-tag.blue{background:rgba(59,130,246,0.1);border:1px solid rgba(59,130,246,0.3);color:#60A5FA;}
 .prod-tag.purple{background:rgba(139,92,246,0.1);border:1px solid rgba(139,92,246,0.3);color:#C4B5FD;}
+.prod-tag.green{background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.3);color:#34D399;}
 .tag-dot{width:5px;height:5px;border-radius:50%;}
 .tag-dot.blue{background:#3B82F6;}
 .tag-dot.purple{background:#8B5CF6;}
+.tag-dot.green{background:#10B981;}
 
 .prod-icon{width:56px;height:56px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;margin-bottom:1.25rem;}
 .prod-icon.blue{background:rgba(59,130,246,0.12);border:1px solid rgba(59,130,246,0.2);}
@@ -78,6 +82,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(2,8,23,0.95);backdrop-filt
 .prod-name{font-family:var(--font);font-size:1.5rem;margin-bottom:.5rem;letter-spacing:.5px;}
 .prod-name.blue{color:var(--primary);}
 .prod-name.purple{color:var(--secondary);}
+.prod-name.green{color:#10B981;}
 
 .prod-tagline{font-size:1.05rem;font-weight:600;color:var(--text);margin-bottom:.75rem;line-height:1.4;}
 .prod-desc{font-size:14px;color:var(--muted2);margin-bottom:2rem;line-height:1.7;}
@@ -87,6 +92,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(2,8,23,0.95);backdrop-filt
 .feat-check{width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:10px;}
 .feat-check.blue{background:rgba(59,130,246,0.15);color:#60A5FA;}
 .feat-check.purple{background:rgba(139,92,246,0.15);color:#C4B5FD;}
+.feat-check.green{background:rgba(16,185,129,0.15);color:#34D399;}
 
 .prod-divider{height:1px;background:var(--border);margin:1.5rem 0;}
 
@@ -94,12 +100,39 @@ nav{position:sticky;top:0;z-index:200;background:rgba(2,8,23,0.95);backdrop-filt
 .ch-pill{font-size:11px;padding:4px 10px;border-radius:100px;font-family:var(--mono);letter-spacing:.5px;}
 .ch-pill.blue{background:rgba(59,130,246,0.08);border:1px solid rgba(59,130,246,0.2);color:#60A5FA;}
 .ch-pill.purple{background:rgba(139,92,246,0.08);border:1px solid rgba(139,92,246,0.2);color:#C4B5FD;}
+.ch-pill.green{background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.2);color:#34D399;}
 
 .prod-btn{display:flex;align-items:center;justify-content:center;gap:.5rem;border:none;border-radius:9px;padding:13px 24px;font-size:14px;font-weight:600;cursor:pointer;font-family:var(--body);text-decoration:none;transition:all .2s;width:100%;}
 .prod-btn.blue{background:var(--primary);color:#fff;}
 .prod-btn.blue:hover{background:#2563eb;}
 .prod-btn.purple{background:var(--secondary);color:#fff;}
 .prod-btn.purple:hover{background:#7c3aed;}
+.prod-btn.green{background:#10B981;color:#fff;}
+.prod-btn.green:hover{background:#059669;}
+.card-glow-green{position:absolute;top:-60px;right:-60px;width:220px;height:220px;background:radial-gradient(circle,rgba(16,185,129,0.12) 0%,transparent 70%);pointer-events:none;}
+/* Engage visual */
+.engage-visual{padding:1.25rem;display:flex;flex-direction:column;gap:.75rem;background:rgba(255,255,255,.02);}
+.engage-campaign{background:rgba(16,185,129,0.06);border:1px solid rgba(16,185,129,0.18);border-radius:10px;padding:.85rem 1rem;}
+.engage-camp-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:.6rem;}
+.engage-camp-name{font-size:12px;font-weight:600;color:var(--text);}
+.engage-camp-status{font-size:9px;font-family:var(--mono);color:#10B981;background:rgba(16,185,129,0.1);padding:2px 8px;border-radius:100px;border:1px solid rgba(16,185,129,0.25);}
+.engage-stats-row{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:.4rem;}
+.engage-stat{text-align:center;}
+.engage-stat-n{font-size:13px;font-weight:700;color:#10B981;font-family:var(--mono);}
+.engage-stat-l{font-size:8.5px;color:var(--muted);font-family:var(--mono);letter-spacing:.3px;}
+.engage-seq{background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:8px;padding:.65rem .85rem;}
+.engage-seq-lbl{font-size:9px;color:var(--muted);font-family:var(--mono);letter-spacing:.5px;margin-bottom:.4rem;}
+.engage-seq-steps{display:flex;align-items:center;gap:.3rem;flex-wrap:wrap;}
+.seq-step{display:flex;align-items:center;gap:.3rem;}
+.seq-box{font-size:9px;padding:3px 8px;border-radius:5px;font-family:var(--mono);}
+.seq-box.sent{background:rgba(16,185,129,0.12);color:#34D399;border:1px solid rgba(16,185,129,0.2);}
+.seq-box.open{background:rgba(59,130,246,0.12);color:#60A5FA;border:1px solid rgba(59,130,246,0.2);}
+.seq-box.follow{background:rgba(245,158,11,0.12);color:#FCD34D;border:1px solid rgba(245,158,11,0.2);}
+.seq-box.reply{background:rgba(139,92,246,0.12);color:#C4B5FD;border:1px solid rgba(139,92,246,0.2);}
+.seq-arr{color:var(--muted);font-size:10px;}
+.engage-leads{display:flex;gap:.4rem;flex-wrap:wrap;}
+.lead-chip{display:flex;align-items:center;gap:.3rem;background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:6px;padding:3px 8px;font-size:10px;color:var(--muted2);}
+.lead-dot{width:5px;height:5px;border-radius:50%;background:#10B981;}
 .prod-btn-arrow{transition:transform .2s;}
 .prod-btn:hover .prod-btn-arrow{transform:translateX(3px);}
 
@@ -342,6 +375,65 @@ footer{border-top:1px solid var(--border);padding:1.5rem;display:flex;align-item
       <a href="inboxly.html" class="prod-btn purple" data-tr="Inboxly'i Keşfet →" data-en="Explore Inboxly →">Inboxly'i Keşfet <span class="prod-btn-arrow">→</span></a>
     </div>
 
+    <!-- CALLYPSO ENGAGE -->
+    <div class="prod-card green" style="grid-column:1/-1;max-width:800px;margin:0 auto;width:100%;">
+      <div class="card-glow-green"></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start;">
+        <div>
+          <div class="prod-tag green"><span class="tag-dot green"></span>B2B SALES OUTREACH</div>
+          <div class="prod-name green">Callypso Engage</div>
+          <div class="prod-tagline" data-tr="Lead'lerinize otomatik & kişiselleştirilmiş outreach" data-en="Automated & personalized outreach to your leads">Lead'lerinize otomatik & kişiselleştirilmiş outreach</div>
+          <div class="prod-desc" data-tr="B2B satış ekiplerinin lead listelerini Email ve SMS üzerinden otomatik, kişiselleştirilmiş sekanslarla beslemesini sağlayan sales engagement platformu. SDR ekipleriniz için tasarlandı." data-en="A sales engagement platform that helps B2B sales teams nurture lead lists through automated, personalized Email and SMS sequences. Built for SDR teams.">B2B satış ekiplerinin lead listelerini Email ve SMS üzerinden otomatik, kişiselleştirilmiş sekanslarla beslemesini sağlayan sales engagement platformu. SDR ekipleriniz için tasarlandı.</div>
+          <div class="prod-features">
+            <div class="prod-feat"><span class="feat-check green">✓</span><span data-tr="Email & SMS outreach kampanyaları" data-en="Email & SMS outreach campaigns">Email & SMS outreach kampanyaları</span></div>
+            <div class="prod-feat"><span class="feat-check green">✓</span><span data-tr="Otomatik follow-up sekansları" data-en="Automated follow-up sequences">Otomatik follow-up sekansları</span></div>
+            <div class="prod-feat"><span class="feat-check green">✓</span><span data-tr="İsim, şirket, pozisyona göre kişiselleştirme" data-en="Personalization by name, company, position">İsim, şirket, pozisyona göre kişiselleştirme</span></div>
+            <div class="prod-feat"><span class="feat-check green">✓</span><span data-tr="Duplicate tespiti & lead yönetimi" data-en="Duplicate detection & lead management">Duplicate tespiti & lead yönetimi</span></div>
+            <div class="prod-feat"><span class="feat-check green">✓</span><span data-tr="Kampanya analitiği & yanıt takibi" data-en="Campaign analytics & reply tracking">Kampanya analitiği & yanıt takibi</span></div>
+            <div class="prod-feat"><span class="feat-check green">✓</span><span data-tr="Çoklu mailbox desteği" data-en="Multi-mailbox support">Çoklu mailbox desteği</span></div>
+          </div>
+          <div class="prod-channels" style="margin-bottom:1.5rem;">
+            <span class="ch-pill green">📧 Email Outreach</span>
+            <span class="ch-pill green">📱 SMS</span>
+            <span class="ch-pill green" data-tr="🏢 B2B Satış" data-en="🏢 B2B Sales">🏢 B2B Satış</span>
+            <span class="ch-pill green">🎯 SDR / BDR</span>
+          </div>
+          <a href="https://callypso-engage.vercel.app/" target="_blank" class="prod-btn green" data-tr="Engage'i Keşfet →" data-en="Explore Engage →">Engage'i Keşfet <span class="prod-btn-arrow">→</span></a>
+        </div>
+        <div class="engage-visual prod-visual" style="margin-bottom:0;">
+          <div class="engage-campaign">
+            <div class="engage-camp-header">
+              <div class="engage-camp-name" data-tr="Q3 SaaS Outreach Kampanyası" data-en="Q3 SaaS Outreach Campaign">Q3 SaaS Outreach Kampanyası</div>
+              <div class="engage-camp-status" data-tr="AKTİF" data-en="ACTIVE">AKTİF</div>
+            </div>
+            <div class="engage-stats-row">
+              <div class="engage-stat"><div class="engage-stat-n">847</div><div class="engage-stat-lbl" data-tr="LEAD" data-en="LEADS">LEAD</div></div>
+              <div class="engage-stat"><div class="engage-stat-n">68%</div><div class="engage-stat-lbl" data-tr="TESLİMAT" data-en="DELIVERY">TESLİMAT</div></div>
+              <div class="engage-stat"><div class="engage-stat-n">24%</div><div class="engage-stat-lbl" data-tr="AÇILMA" data-en="OPEN RATE">AÇILMA</div></div>
+              <div class="engage-stat"><div class="engage-stat-n">31</div><div class="engage-stat-lbl" data-tr="YANIT" data-en="REPLIES">YANIT</div></div>
+            </div>
+          </div>
+          <div class="engage-seq">
+            <div class="engage-seq-lbl">// SEQUENCE</div>
+            <div class="engage-seq-steps">
+              <div class="seq-step"><div class="seq-box sent" data-tr="Gün 1: Email" data-en="Day 1: Email">Gün 1: Email</div></div>
+              <div class="seq-arr">→</div>
+              <div class="seq-step"><div class="seq-box open" data-tr="Gün 3: Follow-up" data-en="Day 3: Follow-up">Gün 3: Follow-up</div></div>
+              <div class="seq-arr">→</div>
+              <div class="seq-step"><div class="seq-box follow" data-tr="Gün 7: SMS" data-en="Day 7: SMS">Gün 7: SMS</div></div>
+              <div class="seq-arr">→</div>
+              <div class="seq-step"><div class="seq-box reply" data-tr="Gün 10: Son Email" data-en="Day 10: Final Email">Gün 10: Son Email</div></div>
+            </div>
+          </div>
+          <div class="engage-leads">
+            <div class="lead-chip"><span class="lead-dot"></span>Ahmet K. — CTO, TechCorp</div>
+            <div class="lead-chip"><span class="lead-dot"></span>Sara M. — VP Sales, SaaSCo</div>
+            <div class="lead-chip"><span class="lead-dot"></span>Marco R. — Founder, AgencyX</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>
 
@@ -349,47 +441,55 @@ footer{border-top:1px solid var(--border);padding:1.5rem;display:flex;align-item
 <div class="compare-sec">
   <div class="compare-wrap">
     <h2 class="compare-title" data-tr="Hangisi size uygun?" data-en="Which one fits you?">Hangisi size uygun?</h2>
-    <p class="compare-desc" data-tr="İkisi birbirini tamamlar — en güçlü sonuç için beraber kullanın." data-en="They complement each other — use both for the best results.">İkisi birbirini tamamlar — en güçlü sonuç için beraber kullanın.</p>
-    <div class="compare-table">
-      <div class="comp-head">
+    <p class="compare-desc" data-tr="Üç ürün birbirini tamamlar — hepsini birlikte kullanarak tam bir müşteri deneyimi oluşturun." data-en="All three complement each other — use them together for a complete customer experience.">Üç ürün birbirini tamamlar — hepsini birlikte kullanarak tam bir müşteri deneyimi oluşturun.</p>
+    <div class="compare-table" style="--cols:1fr 1fr 1fr 1fr;">
+      <div class="comp-head" style="grid-template-columns:1fr 1fr 1fr 1fr;">
         <div class="comp-h" style="color:var(--muted);"></div>
         <div class="comp-h">Voice Agent</div>
-        <div class="comp-h">Inboxly</div>
+        <div class="comp-h" style="color:#C4B5FD;background:rgba(139,92,246,0.04);border-left:1px solid var(--border);border-right:1px solid var(--border);">Inboxly</div>
+        <div class="comp-h" style="color:#34D399;background:rgba(16,185,129,0.04);">Engage</div>
       </div>
-      <div class="comp-row">
+      <div class="comp-row" style="grid-template-columns:1fr 1fr 1fr 1fr;">
         <div class="comp-cell" data-tr="Kanal" data-en="Channel">Kanal</div>
-        <div class="comp-cell" data-tr="📞 Telefon görüşmesi" data-en="📞 Phone calls">📞 Telefon görüşmesi</div>
-        <div class="comp-cell" data-tr="💬 Yazılı mesaj" data-en="💬 Text messages">💬 Yazılı mesaj</div>
+        <div class="comp-cell">📞 Telefon</div>
+        <div class="comp-cell" style="border-left:1px solid rgba(255,255,255,0.04);border-right:1px solid rgba(255,255,255,0.04);">💬 WhatsApp / IG / Web</div>
+        <div class="comp-cell">📧 Email / SMS</div>
       </div>
-      <div class="comp-row">
-        <div class="comp-cell" data-tr="AI yanıtı" data-en="AI response">AI yanıtı</div>
-        <div class="comp-cell comp-yes">✓ Sesli & otomatik</div>
-        <div class="comp-cell comp-yes">✓ Taslak & onay</div>
+      <div class="comp-row" style="grid-template-columns:1fr 1fr 1fr 1fr;">
+        <div class="comp-cell" data-tr="Hedef" data-en="Target">Hedef</div>
+        <div class="comp-cell" data-tr="Gelen aramalar" data-en="Inbound calls">Gelen aramalar</div>
+        <div class="comp-cell" style="border-left:1px solid rgba(255,255,255,0.04);border-right:1px solid rgba(255,255,255,0.04);" data-tr="Gelen mesajlar" data-en="Inbound messages">Gelen mesajlar</div>
+        <div class="comp-cell" data-tr="Giden outreach" data-en="Outbound outreach">Giden outreach</div>
       </div>
-      <div class="comp-row">
-        <div class="comp-cell" data-tr="7/24 otomasyon" data-en="24/7 automation">7/24 otomasyon</div>
-        <div class="comp-cell comp-yes">✓</div>
-        <div class="comp-cell comp-yes">✓</div>
+      <div class="comp-row" style="grid-template-columns:1fr 1fr 1fr 1fr;">
+        <div class="comp-cell" data-tr="AI otomasyonu" data-en="AI automation">AI otomasyonu</div>
+        <div class="comp-cell comp-yes">✓ Sesli & anlık</div>
+        <div class="comp-cell comp-yes" style="border-left:1px solid rgba(255,255,255,0.04);border-right:1px solid rgba(255,255,255,0.04);">✓ Taslak & onay</div>
+        <div class="comp-cell comp-yes">✓ Sekanslı</div>
       </div>
-      <div class="comp-row">
-        <div class="comp-cell" data-tr="CRM entegrasyonu" data-en="CRM integration">CRM entegrasyonu</div>
+      <div class="comp-row" style="grid-template-columns:1fr 1fr 1fr 1fr;">
+        <div class="comp-cell" data-tr="Kişiselleştirme" data-en="Personalization">Kişiselleştirme</div>
         <div class="comp-cell comp-yes">✓</div>
-        <div class="comp-cell comp-yes">✓</div>
+        <div class="comp-cell comp-yes" style="border-left:1px solid rgba(255,255,255,0.04);border-right:1px solid rgba(255,255,255,0.04);">✓</div>
+        <div class="comp-cell comp-yes">✓ İsim, şirket, pozisyon</div>
       </div>
-      <div class="comp-row">
-        <div class="comp-cell" data-tr="Randevu yönetimi" data-en="Appointment management">Randevu yönetimi</div>
-        <div class="comp-cell comp-yes">✓</div>
+      <div class="comp-row" style="grid-template-columns:1fr 1fr 1fr 1fr;">
+        <div class="comp-cell" data-tr="Lead yönetimi" data-en="Lead management">Lead yönetimi</div>
         <div class="comp-cell comp-no">—</div>
+        <div class="comp-cell comp-no" style="border-left:1px solid rgba(255,255,255,0.04);border-right:1px solid rgba(255,255,255,0.04);">—</div>
+        <div class="comp-cell comp-yes">✓ Import & segment</div>
       </div>
-      <div class="comp-row">
+      <div class="comp-row" style="grid-template-columns:1fr 1fr 1fr 1fr;">
         <div class="comp-cell" data-tr="Çok kanal inbox" data-en="Multi-channel inbox">Çok kanal inbox</div>
         <div class="comp-cell comp-no">—</div>
-        <div class="comp-cell comp-yes">✓</div>
-      </div>
-      <div class="comp-row">
-        <div class="comp-cell" data-tr="SLA & raporlar" data-en="SLA & reports">SLA & raporlar</div>
+        <div class="comp-cell comp-yes" style="border-left:1px solid rgba(255,255,255,0.04);border-right:1px solid rgba(255,255,255,0.04);">✓</div>
         <div class="comp-cell comp-no">—</div>
+      </div>
+      <div class="comp-row" style="grid-template-columns:1fr 1fr 1fr 1fr;">
+        <div class="comp-cell" data-tr="Analitik & raporlar" data-en="Analytics & reports">Analitik & raporlar</div>
         <div class="comp-cell comp-yes">✓</div>
+        <div class="comp-cell comp-yes" style="border-left:1px solid rgba(255,255,255,0.04);border-right:1px solid rgba(255,255,255,0.04);">✓ SLA</div>
+        <div class="comp-cell comp-yes">✓ Kampanya</div>
       </div>
     </div>
   </div>
