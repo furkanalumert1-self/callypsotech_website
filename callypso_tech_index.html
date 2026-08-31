@@ -213,6 +213,23 @@ h1{font-family:var(--display);font-size:clamp(2rem,4.5vw,3.8rem);font-weight:800
 .uc-ico{width:42px;height:42px;border-radius:10px;background:var(--card);border:1px solid var(--edge);display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:1rem;}
 .uc-title{font-size:14px;font-weight:600;margin-bottom:.3rem;}
 .uc-desc{font-size:12.5px;color:var(--sub);line-height:1.6;}
+/* Inboxly Visual */
+.inboxly-vis{background:var(--card);border:1px solid var(--edge);border-radius:16px;padding:1.25rem;display:flex;flex-direction:column;gap:.85rem;min-width:260px;}
+.inboxly-vis-lbl{font-family:var(--mono);font-size:10px;color:var(--violet);letter-spacing:2px;}
+.inbox-tabs{display:flex;gap:.4rem;overflow-x:auto;}
+.inbox-tab{font-family:var(--mono);font-size:10px;padding:4px 10px;border-radius:6px;border:1px solid var(--edge);color:var(--faint);cursor:pointer;white-space:nowrap;flex-shrink:0;}
+.inbox-tab.active{background:var(--violet-d);border-color:var(--violet-r);color:#BFA8FF;}
+.inbox-msgs{display:flex;flex-direction:column;gap:.5rem;}
+.inbox-msg{display:flex;gap:.75rem;align-items:flex-start;padding:.7rem .85rem;border-radius:10px;border:1px solid var(--edge);background:var(--raise);transition:border-color .2s;}
+.inbox-msg.unread{border-color:rgba(139,92,246,0.2);}
+.inbox-ch{width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:9px;font-weight:600;flex-shrink:0;}
+.inbox-body{flex:1;min-width:0;}
+.inbox-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:2px;}
+.inbox-name{font-size:11.5px;font-weight:600;color:var(--text);}
+.inbox-time{font-family:var(--mono);font-size:9px;color:var(--faint);}
+.inbox-preview{font-size:11.5px;color:var(--sub);line-height:1.4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.inbox-ai-tag{display:inline-block;margin-top:4px;font-family:var(--mono);font-size:9px;padding:2px 6px;border-radius:4px;background:rgba(139,92,246,0.1);border:1px solid rgba(139,92,246,0.2);color:#BFA8FF;}
+.inbox-status-row{display:flex;justify-content:space-between;padding-top:.4rem;border-top:1px solid var(--edge);}
 /* Benefits */
 .ben-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;}
 .ben-card{background:var(--raise);border:1px solid var(--edge);border-radius:12px;padding:1.5rem;display:flex;gap:1rem;align-items:flex-start;transition:border-color .2s;}
@@ -307,6 +324,7 @@ footer{border-top:1px solid var(--edge);padding:4rem 2rem 2.5rem;}
 <nav>
   <a class="nav-logo" href="#">Callypso<em>Tech</em></a>
   <ul class="nav-links">
+    <li><a href="#" data-tr="Ana Sayfa" data-en="Home">Ana Sayfa</a></li>
     <li><a href="#urunler" data-tr="Urunlerimiz" data-en="Products">Urunlerimiz</a></li>
     <li><a href="#nasil-calisir" data-tr="Nasil Calisir" data-en="How It Works">Nasil Calisir</a></li>
     <li><a href="#ozellikler" data-tr="Ozellikler" data-en="Features">Ozellikler</a></li>
@@ -324,6 +342,7 @@ footer{border-top:1px solid var(--edge);padding:4rem 2rem 2.5rem;}
     <button class="drawer-close" onclick="closeDrawer()" aria-label="Kapat">&#x2715;</button>
   </div>
   <nav class="drawer-nav">
+    <a href="#" onclick="closeDrawer()" data-tr="Ana Sayfa" data-en="Home">Ana Sayfa</a>
     <a href="#urunler" onclick="closeDrawer()" data-tr="Urunlerimiz" data-en="Products">Urunlerimiz</a>
     <a href="#nasil-calisir" onclick="closeDrawer()" data-tr="Nasil Calisir" data-en="How It Works">Nasil Calisir</a>
     <a href="#ozellikler" onclick="closeDrawer()" data-tr="Ozellikler" data-en="Features">Ozellikler</a>
@@ -413,19 +432,68 @@ footer{border-top:1px solid var(--edge);padding:4rem 2rem 2.5rem;}
         </div>
         <a href="#nasil-calisir" class="prod-cta pc-cta-b">Voice Agent'i Kesfedin &rarr;</a>
       </div>
-      <div class="prod-card pc-violet reveal" style="transition-delay:.1s;">
-        <div class="prod-tag pt-v">&#128172; INBOXLY</div>
-        <div>
-          <div class="prod-name" data-tr="Tum Mesajlariniz Tek Ekranda" data-en="All Your Messages One Screen">Tum Mesajlariniz Tek Ekranda</div>
-          <p class="prod-tagline" style="margin-top:.5rem;" data-tr="WhatsApp, Instagram, e-posta ve web chat'i tek platformda birlestiriyor. AI otomatik yanitlar hazirladi." data-en="Unifies WhatsApp, Instagram, email and web chat in one platform. AI drafts automatic replies.">WhatsApp, Instagram, e-posta ve web chat'i tek platformda birlestiriyor. AI otomatik yanitlar hazirladi.</p>
+      <div class="prod-card pc-violet full reveal" style="transition-delay:.1s;">
+        <div class="engage-inner" style="gap:2rem;">
+          <div style="display:flex;flex-direction:column;gap:1.25rem;">
+            <div class="prod-tag pt-v">&#128172; INBOXLY</div>
+            <div>
+              <div class="prod-name" data-tr="Tum Mesajlariniz Tek Ekranda" data-en="All Your Messages One Screen">Tum Mesajlariniz Tek Ekranda</div>
+              <p class="prod-tagline" style="margin-top:.5rem;" data-tr="WhatsApp, Instagram, e-posta ve web chat'i tek platformda birlestiriyor. AI otomatik yanitlar hazirladi." data-en="Unifies WhatsApp, Instagram, email and web chat in one platform. AI drafts automatic replies.">WhatsApp, Instagram, e-posta ve web chat'i tek platformda birlestiriyor. AI otomatik yanitlar hazirladi.</p>
+            </div>
+            <div class="prod-feats">
+              <div class="pf"><div class="pf-dot pd-v"></div><span><strong>Omnichannel Gelen Kutusu</strong> - tum kanallar tek yerde</span></div>
+              <div class="pf"><div class="pf-dot pd-v"></div><span><strong>AI Yanit Taslaklari</strong> - tek tikla gonder</span></div>
+              <div class="pf"><div class="pf-dot pd-v"></div><span><strong>Akilli Siniflandirma</strong> - oncelik ve konu tespiti</span></div>
+              <div class="pf"><div class="pf-dot pd-v"></div><span><strong>Ekip Is Birligi</strong> - atama, not, ic yorum</span></div>
+            </div>
+            <a href="https://callypso-inbox.vercel.app/" target="_blank" class="prod-cta pc-cta-v">Inboxly'i Kesfedin &rarr;</a>
+          </div>
+          <div class="inboxly-vis">
+            <div class="inboxly-vis-lbl">GELEN KUTUSU</div>
+            <div class="inbox-tabs">
+              <div class="inbox-tab active">Tumu</div>
+              <div class="inbox-tab">WhatsApp</div>
+              <div class="inbox-tab">Instagram</div>
+              <div class="inbox-tab">E-posta</div>
+            </div>
+            <div class="inbox-msgs">
+              <div class="inbox-msg unread">
+                <div class="inbox-ch" style="background:rgba(37,211,102,0.15);color:#25D366;">WA</div>
+                <div class="inbox-body">
+                  <div class="inbox-head"><span class="inbox-name">Ahmet Y.</span><span class="inbox-time">2dk</span></div>
+                  <div class="inbox-preview">Siparisim ne zaman gelecek?</div>
+                  <div class="inbox-ai-tag">AI taslak hazir</div>
+                </div>
+              </div>
+              <div class="inbox-msg unread">
+                <div class="inbox-ch" style="background:rgba(225,48,108,0.15);color:#E1306C;">IG</div>
+                <div class="inbox-body">
+                  <div class="inbox-head"><span class="inbox-name">zeynep_style</span><span class="inbox-time">8dk</span></div>
+                  <div class="inbox-preview">Kargo takip numarasi?</div>
+                  <div class="inbox-ai-tag">AI taslak hazir</div>
+                </div>
+              </div>
+              <div class="inbox-msg">
+                <div class="inbox-ch" style="background:rgba(61,123,255,0.15);color:#7EB3FF;">EP</div>
+                <div class="inbox-body">
+                  <div class="inbox-head"><span class="inbox-name">info@firma.com</span><span class="inbox-time">23dk</span></div>
+                  <div class="inbox-preview">Toplu siparis teklifi istiyoruz.</div>
+                </div>
+              </div>
+              <div class="inbox-msg">
+                <div class="inbox-ch" style="background:rgba(139,92,246,0.15);color:#BFA8FF;">WC</div>
+                <div class="inbox-body">
+                  <div class="inbox-head"><span class="inbox-name">Web Ziyaretci</span><span class="inbox-time">1sa</span></div>
+                  <div class="inbox-preview">Fiyat bilgisi alabilir miyim?</div>
+                </div>
+              </div>
+            </div>
+            <div class="inbox-status-row">
+              <span style="font-family:var(--mono);font-size:10px;color:var(--faint);">4 yanitsiz mesaj</span>
+              <span style="font-family:var(--mono);font-size:10px;color:#BFA8FF;">AI otomatik siniflandirdi</span>
+            </div>
+          </div>
         </div>
-        <div class="prod-feats">
-          <div class="pf"><div class="pf-dot pd-v"></div><span><strong>Omnichannel Gelen Kutusu</strong> - tum kanallar tek yerde</span></div>
-          <div class="pf"><div class="pf-dot pd-v"></div><span><strong>AI Yanit Taslaklari</strong> - tek tikla gonder</span></div>
-          <div class="pf"><div class="pf-dot pd-v"></div><span><strong>Akilli Siniflandirma</strong> - oncelik ve konu tespiti</span></div>
-          <div class="pf"><div class="pf-dot pd-v"></div><span><strong>Ekip Is Birligi</strong> - atama, not, ic yorum</span></div>
-        </div>
-        <a href="#" onclick="openCal();return false;" class="prod-cta pc-cta-v">Inboxly'i Kesfedin &rarr;</a>
       </div>
       <div class="prod-card pc-jade full reveal" style="transition-delay:.2s;">
         <div class="engage-inner">
@@ -441,7 +509,7 @@ footer{border-top:1px solid var(--edge);padding:4rem 2rem 2.5rem;}
               <div class="pf"><div class="pf-dot pd-j"></div><span><strong>Davranissal Segmentasyon</strong> - A/B testi dahil</span></div>
               <div class="pf"><div class="pf-dot pd-j"></div><span><strong>Shopify Entegrasyonu</strong> - gelir takibi ve otomatik tetikleyiciler</span></div>
             </div>
-            <a href="#" onclick="openCal();return false;" class="prod-cta pc-cta-j">Callypso Engage'i Kesfedin &rarr;</a>
+            <a href="https://callypso-engage.vercel.app/" target="_blank" class="prod-cta pc-cta-j">Callypso Engage'i Kesfedin &rarr;</a>
           </div>
           <div class="engage-vis">
             <div class="engage-vis-lbl">KAMPANYANIZIN PERFORMANSI</div>
