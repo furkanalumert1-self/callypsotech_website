@@ -213,6 +213,35 @@ h1{font-family:var(--display);font-size:clamp(2rem,4.5vw,3.8rem);font-weight:800
 .uc-ico{width:42px;height:42px;border-radius:10px;background:var(--card);border:1px solid var(--edge);display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:1rem;}
 .uc-title{font-size:14px;font-weight:600;margin-bottom:.3rem;}
 .uc-desc{font-size:12.5px;color:var(--sub);line-height:1.6;}
+
+/* Callypso Studio amber */
+.pc-amber{border-color:rgba(245,158,11,0.15);}
+.pc-amber:hover{border-color:rgba(245,158,11,0.35);}
+.pc-amber::after{background:linear-gradient(90deg,#F59E0B,#FCD34D);}
+.pt-a{background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.3);color:#FCD34D;}
+.pd-a{background:#F59E0B;}
+.pc-cta-a{background:rgba(245,158,11,0.12);border:1px solid rgba(245,158,11,0.3);color:#FCD34D;}
+.pc-cta-a:hover{background:rgba(245,158,11,0.2);}
+/* Studio mini visual */
+.studio-mini-wrap{background:var(--card);border:1px solid var(--edge);border-radius:14px;padding:1.1rem;display:flex;flex-direction:column;gap:.75rem;}
+.studio-scene-row{display:flex;gap:.35rem;flex-wrap:wrap;}
+.studio-sc{font-size:9px;padding:3px 9px;border-radius:5px;font-family:var(--mono);border:1px solid var(--edge);color:var(--faint);cursor:pointer;}
+.studio-sc.on{background:rgba(245,158,11,0.12);border-color:rgba(245,158,11,0.3);color:#FCD34D;}
+.studio-bar-bg{height:4px;background:var(--lift);border-radius:2px;overflow:hidden;margin:.2rem 0;}
+.studio-bar-fill{height:100%;width:87%;background:linear-gradient(90deg,#F59E0B,#FCD34D);border-radius:2px;animation:sbar 2s ease-in-out infinite;}
+@keyframes sbar{0%,100%{opacity:1;}50%{opacity:.65;}}
+.studio-thumbs{display:grid;grid-template-columns:repeat(3,1fr);gap:.4rem;}
+.studio-thumb{aspect-ratio:1;background:rgba(245,158,11,0.07);border:1px solid rgba(245,158,11,0.18);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;}
+/* HIW tabs */
+.hiw-tabs{display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:2rem;}
+.hiw-tab{background:transparent;border:1px solid var(--edge);color:var(--sub);padding:7px 18px;border-radius:100px;font-family:var(--mono);font-size:11px;letter-spacing:.5px;cursor:pointer;transition:all .2s;}
+.hiw-tab.active-b{background:var(--blue-d);border-color:var(--blue-r);color:#7EB3FF;}
+.hiw-tab.active-v{background:var(--violet-d);border-color:var(--violet-r);color:#BFA8FF;}
+.hiw-tab.active-j{background:var(--jade-d);border-color:var(--jade-r);color:#5EDBBC;}
+.hiw-tab.active-a{background:rgba(245,158,11,0.12);border-color:rgba(245,158,11,0.3);color:#FCD34D;}
+.hiw-panel{display:none;}
+.hiw-panel.active{display:block;}
+
 /* App Screenshot */
 .app-screenshot-wrap{border-radius:12px;overflow:hidden;border:1px solid var(--rim);background:var(--raise);width:100%;max-height:440px;overflow-y:auto;scrollbar-width:thin;scrollbar-color:var(--lift) transparent;box-shadow:0 12px 40px rgba(0,0,0,0.45);}
 .app-screenshot-wrap::-webkit-scrollbar{width:4px;}
@@ -427,8 +456,8 @@ footer{border-top:1px solid var(--edge);padding:4rem 2rem 2.5rem;}
   <div class="sec-inner">
     <div class="sec-hdr reveal">
       <span class="eyebrow">// urunlerimiz</span>
-      <h2 class="sec-title" data-tr="Uc Platform, Bir Ekosistem" data-en="Three Platforms, One Ecosystem">Uc Platform, Bir Ekosistem</h2>
-      <p class="sec-desc" data-tr="Her kanal icin ozel tasarlanmis AI platformlari - birlikte kullanildiginda musteri iletisimini uctan uca kapsar." data-en="AI platforms purpose-built for each channel - together they cover customer communication end-to-end.">Her kanal icin ozel tasarlanmis AI platformlari - birlikte kullanildiginda musteri iletisimini uctan uca kapsar.</p>
+      <h2 class="sec-title" data-tr="Dort Platform, Bir Ekosistem" data-en="Four Platforms, One Ecosystem">Dort Platform, Bir Ekosistem</h2>
+      <p class="sec-desc" data-tr="Her kanal icin ozel tasarlanmis AI platformlari: telefon, mesaj, e-posta ve gorsel uretim - birlikte musteri iletisimini uctan uca kapsar." data-en="AI platforms for every channel: calls, messaging, email marketing and visual production.">Her kanal icin ozel tasarlanmis AI platformlari: telefon, mesaj, e-posta ve gorsel uretim - birlikte musteri iletisimini uctan uca kapsar.</p>
     </div>
     <div class="prod-grid">
       <div class="prod-card pc-blue reveal">
@@ -499,6 +528,57 @@ footer{border-top:1px solid var(--edge);padding:4rem 2rem 2.5rem;}
           </div>
         </div>
       </div>
+
+      <div class="prod-card pc-amber full reveal" style="transition-delay:.3s;">
+        <div class="engage-inner">
+          <div style="display:flex;flex-direction:column;gap:1.25rem;">
+            <div class="prod-tag pt-a">&#128247; CALLYPSO STUDIO</div>
+            <div>
+              <div class="prod-name" style="color:#F59E0B;">Tek Fotograftan Satis Gorseline</div>
+              <p class="prod-tagline" style="margin-top:.5rem;max-width:100%;" data-tr="Urun fotografinizi AI'a verin; mermer studyo, altin saat, kafe gibi sahnelerde satisa hazir kreatifler uretin." data-en="Give AI your product photo; produce sales-ready creatives in marble studio, golden hour, cafe scenes.">Urun fotografinizi AI'a verin; mermer studyo, altin saat, kafe gibi sahnelerde satisa hazir kreatifler uretin.</p>
+            </div>
+            <div class="prod-feats">
+              <div class="pf"><div class="pf-dot pd-a"></div><span><strong>1 Fotograf → 12+ Kreatif</strong> - yaklasik 90 saniyede</span></div>
+              <div class="pf"><div class="pf-dot pd-a"></div><span><strong>Sahne Kutuphanesi</strong> - mermer, altin saat, kafe, beyaz zemin</span></div>
+              <div class="pf"><div class="pf-dot pd-a"></div><span><strong>Shopify Senkronizasyonu</strong> - tek tikla magaza guncelleme</span></div>
+              <div class="pf"><div class="pf-dot pd-a"></div><span><strong>%96 Maliyet Tasarrufu</strong> - geleneksel studyoya kiyasla</span></div>
+            </div>
+            <button onclick="openCal()" class="prod-cta pc-cta-a" style="border:none;cursor:pointer;font-family:var(--body);">Demo Planla &rarr;</button>
+          </div>
+          <div class="studio-mini-wrap">
+            <div style="font-family:var(--mono);font-size:10px;color:rgba(245,158,11,0.7);letter-spacing:1.5px;">AI STUDYO — URETIM PANELI</div>
+            <div style="background:var(--raise);border:1px solid rgba(245,158,11,0.15);border-radius:10px;padding:.75rem;display:flex;align-items:center;gap:.75rem;">
+              <div style="width:36px;height:36px;border-radius:8px;background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.2);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;">&#128247;</div>
+              <div>
+                <div style="font-size:11px;font-weight:600;color:var(--text);">krem_kase.jpg</div>
+                <div style="font-size:9.5px;color:var(--sub);font-family:var(--mono);">512x512 · Arka plan temizlendi</div>
+              </div>
+            </div>
+            <div>
+              <div style="font-size:9.5px;font-family:var(--mono);color:var(--faint);letter-spacing:1px;margin-bottom:.4rem;">SAHNE SEC</div>
+              <div class="studio-scene-row">
+                <div class="studio-sc on">Mermer Studyo</div>
+                <div class="studio-sc">Altin Saat</div>
+                <div class="studio-sc">Kafe Yasam</div>
+                <div class="studio-sc">Sade Beyaz</div>
+              </div>
+            </div>
+            <div style="background:var(--raise);border:1px solid var(--edge);border-radius:8px;padding:.65rem .85rem;">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.35rem;">
+                <span style="font-size:9.5px;font-family:var(--mono);color:var(--sub);">&#10024; AI URETIYOR — 12 KREATİF</span>
+                <span style="font-size:10px;font-family:var(--mono);color:#F59E0B;font-weight:600;">87%</span>
+              </div>
+              <div class="studio-bar-bg"><div class="studio-bar-fill"></div></div>
+            </div>
+            <div class="studio-thumbs">
+              <div class="studio-thumb">&#128444;&#65039;</div>
+              <div class="studio-thumb">&#128444;&#65039;</div>
+              <div class="studio-thumb">&#128444;&#65039;</div>
+            </div>
+            <div style="font-family:var(--mono);font-size:9px;color:rgba(245,158,11,0.6);text-align:center;">10 / 12 kreatif hazir &middot; Shopify'a aktar</div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -506,47 +586,143 @@ footer{border-top:1px solid var(--edge);padding:4rem 2rem 2.5rem;}
   <div class="sec-inner">
     <div class="sec-hdr reveal">
       <span class="eyebrow">// nasil calisir</span>
-      <h2 class="sec-title" data-tr="Aramanin Ilk Saniyesinden Cozume Kadar" data-en="From the First Second of the Call to Resolution">Aramanin Ilk Saniyesinden Cozume Kadar</h2>
-      <p class="sec-desc" data-tr="Voice Agent'in her gorusmede izledigi surec - otomatik, olceklenebilir, kayipsiz." data-en="The process Voice Agent follows on every call - automatic, scalable, lossless.">Voice Agent'in her gorusmede izledigi surec - otomatik, olceklenebilir, kayipsiz.</p>
+      <h2 class="sec-title">Her Platform, Adim Adim</h2>
+      <p class="sec-desc">Hangi urunu incelemek istedigini sec — her platformun calisma mantigini gorsel olarak takip et.</p>
     </div>
-    <div class="hiw-layout">
-      <div class="hiw-steps reveal">
-        <div class="hiw-step">
-          <div class="step-ind"><div class="step-circle">01</div><div class="step-line"></div></div>
-          <div class="step-body"><div class="step-title">Aramanin Kabulu</div><div class="step-desc">Musteri arar, AI agent 1 saniyenin altinda yanitlar. Bekleme yok, mesgul tonu yok - her cagri aninda karsilanir.</div></div>
+    <!-- Tabs -->
+    <div class="hiw-tabs reveal">
+      <button class="hiw-tab active-b" onclick="switchHiw('voice',this)">&#128222; Voice Agent</button>
+      <button class="hiw-tab" onclick="switchHiw('inbox',this)">&#128172; Inboxly</button>
+      <button class="hiw-tab" onclick="switchHiw('engage',this)">&#128231; Callypso Engage</button>
+      <button class="hiw-tab" onclick="switchHiw('studio',this)">&#128247; Callypso Studio</button>
+    </div>
+
+    <!-- VOICE AGENT -->
+    <div class="hiw-panel active" id="hiw-voice">
+      <div class="hiw-layout">
+        <div class="hiw-steps">
+          <div class="hiw-step"><div class="step-ind"><div class="step-circle" style="border-color:var(--blue-r);color:#7EB3FF;">01</div><div class="step-line"></div></div><div class="step-body"><div class="step-title">Aramanin Kabulu</div><div class="step-desc">Musteri arar, AI agent 1 saniyenin altinda yanitlar. Bekleme yok, mesgul tonu yok - her cagri aninda karsilanir.</div></div></div>
+          <div class="hiw-step"><div class="step-ind"><div class="step-circle" style="border-color:var(--blue-r);color:#7EB3FF;">02</div><div class="step-line"></div></div><div class="step-body"><div class="step-title">Niyet Analizi</div><div class="step-desc">Dogal dil isleme ile musterinin ne istedigini anlar; randevu, bilgi, sikayet veya yonlendirme ihtiyacini tespit eder.</div></div></div>
+          <div class="hiw-step"><div class="step-ind"><div class="step-circle" style="border-color:var(--blue-r);color:#7EB3FF;">03</div><div class="step-line"></div></div><div class="step-body"><div class="step-title">Islem &amp; Entegrasyon</div><div class="step-desc">CRM, takvim ve ic sistemlerinize baglanarak randevu olusturur, kayit gunceller, bilgi ceker - gercek zamanli.</div></div></div>
+          <div class="hiw-step"><div class="step-ind"><div class="step-circle" style="border-color:var(--blue-r);color:#7EB3FF;">04</div></div><div class="step-body"><div class="step-title">Cozum &amp; Raporlama</div><div class="step-desc">Her gorusme transkript ve ozet ile kayit altina alinir. Gerekirse insan temsilciye yonlendirir - hicbir baglam kaybolmaz.</div></div></div>
         </div>
-        <div class="hiw-step">
-          <div class="step-ind"><div class="step-circle">02</div><div class="step-line"></div></div>
-          <div class="step-body"><div class="step-title">Niyet Analizi</div><div class="step-desc">Dogal dil isleme ile musterinin ne istedigini anlar; randevu, bilgi, sikayet veya yonlendirme ihtiyacini tespit eder.</div></div>
-        </div>
-        <div class="hiw-step">
-          <div class="step-ind"><div class="step-circle">03</div><div class="step-line"></div></div>
-          <div class="step-body"><div class="step-title">Islem &amp; Entegrasyon</div><div class="step-desc">CRM, takvim ve ic sistemlerinize baglanarak randevu olusturur, kayit gunceller, bilgi ceker - gercek zamanli.</div></div>
-        </div>
-        <div class="hiw-step">
-          <div class="step-ind"><div class="step-circle">04</div></div>
-          <div class="step-body"><div class="step-title">Cozum &amp; Raporlama</div><div class="step-desc">Her gorusme transkript ve ozet ile kayit altina alinir. Gerekirse insan temsilciye yonlendirir - hicbir baglam kaybolmaz.</div></div>
-        </div>
-      </div>
-      <div class="hiw-visual reveal" style="transition-delay:.15s;position:relative;">
-        <div class="call-status">
-          <div class="cs-l"><div class="cs-dot"></div><span class="cs-lbl">CANLI GORUSME</span></div>
-          <span class="cs-t">03:12</span>
-        </div>
-        <div class="conv">
-          <div class="cv-row"><div class="cv-av ai">AI</div><div class="cv-bbl">Merhaba, randevu hattina hos geldiniz!</div></div>
-          <div class="cv-row r"><div class="cv-av u">MU</div><div class="cv-bbl">Hafta ici 14:00-16:00 arasi musait misiniz?</div></div>
-          <div class="cv-row"><div class="cv-av ai">AI</div><div class="cv-bbl">Evet! Sali 15:00 veya Carsamba 14:30 uygun mu?</div></div>
-          <div class="cv-row r"><div class="cv-av u">MU</div><div class="cv-bbl">Sali olsun.</div></div>
-          <div class="cv-row"><div class="cv-av ai">AI</div><div class="cv-bbl" style="color:#86EFAC;">&#10003; Randevu olusturuldu. SMS yollandi.</div></div>
-        </div>
-        <div class="call-metrics">
-          <div class="cm"><div class="cm-v">0.8sn</div><div class="cm-l">YANIT</div></div>
-          <div class="cm"><div class="cm-v">%98</div><div class="cm-l">DOGRULUK</div></div>
-          <div class="cm"><div class="cm-v">3:12</div><div class="cm-l">SURE</div></div>
+        <div class="hiw-visual" style="position:relative;">
+          <div class="call-status"><div class="cs-l"><div class="cs-dot"></div><span class="cs-lbl">CANLI GORUSME</span></div><span class="cs-t">03:12</span></div>
+          <div class="conv">
+            <div class="cv-row"><div class="cv-av ai">AI</div><div class="cv-bbl">Merhaba, randevu hattina hos geldiniz!</div></div>
+            <div class="cv-row r"><div class="cv-av u">MU</div><div class="cv-bbl">Hafta ici 14:00-16:00 arasi musait misiniz?</div></div>
+            <div class="cv-row"><div class="cv-av ai">AI</div><div class="cv-bbl">Evet! Sali 15:00 veya Carsamba 14:30 uygun mu?</div></div>
+            <div class="cv-row r"><div class="cv-av u">MU</div><div class="cv-bbl">Sali olsun.</div></div>
+            <div class="cv-row"><div class="cv-av ai">AI</div><div class="cv-bbl" style="color:#86EFAC;">&#10003; Randevu olusturuldu. SMS yollandi.</div></div>
+          </div>
+          <div class="call-metrics"><div class="cm"><div class="cm-v">0.8sn</div><div class="cm-l">YANIT</div></div><div class="cm"><div class="cm-v">%98</div><div class="cm-l">DOGRULUK</div></div><div class="cm"><div class="cm-v">3:12</div><div class="cm-l">SURE</div></div></div>
         </div>
       </div>
     </div>
+
+    <!-- INBOXLY -->
+    <div class="hiw-panel" id="hiw-inbox">
+      <div class="hiw-layout">
+        <div class="hiw-steps">
+          <div class="hiw-step"><div class="step-ind"><div class="step-circle" style="border-color:var(--violet-r);color:#BFA8FF;">01</div><div class="step-line"></div></div><div class="step-body"><div class="step-title">Mesajin Alinmasi</div><div class="step-desc">WhatsApp, Instagram DM, web chat veya e-postadan gelen mesaj tek gelen kutusuna dusar. Hicbir kanal kacirilmaz.</div></div></div>
+          <div class="hiw-step"><div class="step-ind"><div class="step-circle" style="border-color:var(--violet-r);color:#BFA8FF;">02</div><div class="step-line"></div></div><div class="step-body"><div class="step-title">AI Siniflandirma</div><div class="step-desc">Yapay zeka mesajin konusunu, oncelik seviyesini ve hangi ekip uyesine atanacagini otomatik tespit eder.</div></div></div>
+          <div class="hiw-step"><div class="step-ind"><div class="step-circle" style="border-color:var(--violet-r);color:#BFA8FF;">03</div><div class="step-line"></div></div><div class="step-body"><div class="step-title">Yanit Taslagi</div><div class="step-desc">AI, bilgi tabanindan beslenerek markanizin sesiyle bir yanit taslagi hazirlar. Ekip tek tikla onaylar veya duzenler.</div></div></div>
+          <div class="hiw-step"><div class="step-ind"><div class="step-circle" style="border-color:var(--violet-r);color:#BFA8FF;">04</div></div><div class="step-body"><div class="step-title">Gonderim &amp; Raporlama</div><div class="step-desc">Yanit gonderilir, konusmaya not eklenir. SLA takibi, musteri gecmisi ve ekip performansi anlık raporlanir.</div></div></div>
+        </div>
+        <div class="hiw-visual" style="position:relative;background:var(--raise);border:1px solid var(--rim);border-radius:16px;padding:1.5rem;">
+          <div style="font-family:var(--mono);font-size:10px;color:#BFA8FF;letter-spacing:1.5px;margin-bottom:.9rem;">GELEN KUTUSU — CANLI</div>
+          <div style="display:flex;flex-direction:column;gap:.55rem;margin-bottom:1rem;">
+            <div style="background:var(--card);border:1px solid rgba(139,92,246,0.2);border-radius:9px;padding:.65rem .85rem;display:flex;align-items:center;gap:.65rem;">
+              <div style="width:28px;height:28px;border-radius:7px;background:rgba(37,211,102,0.15);color:#25D366;display:flex;align-items:center;justify-content:center;font-size:9px;font-family:var(--mono);font-weight:600;flex-shrink:0;">WA</div>
+              <div style="flex:1;min-width:0;"><div style="font-size:11px;font-weight:600;">Ayse K. <span style="font-size:9px;color:#BFA8FF;font-family:var(--mono);background:rgba(139,92,246,0.1);padding:1px 6px;border-radius:4px;margin-left:4px;">AI TASLAK HAZIR</span></div><div style="font-size:10.5px;color:var(--sub);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Siparisim ne zaman gelecek?</div></div>
+              <div style="font-family:var(--mono);font-size:9px;color:var(--faint);">2dk</div>
+            </div>
+            <div style="background:var(--card);border:1px solid rgba(139,92,246,0.2);border-radius:9px;padding:.65rem .85rem;display:flex;align-items:center;gap:.65rem;">
+              <div style="width:28px;height:28px;border-radius:7px;background:rgba(225,48,108,0.15);color:#E1306C;display:flex;align-items:center;justify-content:center;font-size:9px;font-family:var(--mono);font-weight:600;flex-shrink:0;">IG</div>
+              <div style="flex:1;min-width:0;"><div style="font-size:11px;font-weight:600;">zeynep_style <span style="font-size:9px;color:#BFA8FF;font-family:var(--mono);background:rgba(139,92,246,0.1);padding:1px 6px;border-radius:4px;margin-left:4px;">AI TASLAK HAZIR</span></div><div style="font-size:10.5px;color:var(--sub);">Kargo takip numarasi?</div></div>
+              <div style="font-family:var(--mono);font-size:9px;color:var(--faint);">8dk</div>
+            </div>
+            <div style="background:var(--raise);border:1px solid var(--edge);border-radius:9px;padding:.65rem .85rem;display:flex;align-items:center;gap:.65rem;opacity:.7;">
+              <div style="width:28px;height:28px;border-radius:7px;background:var(--blue-d);color:#7EB3FF;display:flex;align-items:center;justify-content:center;font-size:9px;font-family:var(--mono);font-weight:600;flex-shrink:0;">EP</div>
+              <div style="flex:1;min-width:0;"><div style="font-size:11px;font-weight:600;">info@firma.com</div><div style="font-size:10.5px;color:var(--sub);">Toplu siparis teklifi...</div></div>
+              <div style="font-family:var(--mono);font-size:9px;color:var(--faint);">23dk</div>
+            </div>
+          </div>
+          <div style="background:rgba(139,92,246,0.06);border:1px solid rgba(139,92,246,0.18);border-radius:10px;padding:.8rem 1rem;">
+            <div style="font-size:9px;font-family:var(--mono);color:#BFA8FF;margin-bottom:.4rem;">&#10024; AI YANIT TASLAGI</div>
+            <div style="font-size:11.5px;color:var(--sub);line-height:1.55;">Merhaba Ayse Hanim! Siparisim kontrol ettim — kargo #TR8821 bugun saat 17:00'ye kadar teslim edilecek.</div>
+          </div>
+          <div class="call-metrics" style="margin-top:.9rem;"><div class="cm"><div class="cm-v" style="color:#BFA8FF;">12sn</div><div class="cm-l">YANIT</div></div><div class="cm"><div class="cm-v" style="color:#BFA8FF;">%68</div><div class="cm-l">OTOMASYON</div></div><div class="cm"><div class="cm-v" style="color:#BFA8FF;">4.9</div><div class="cm-l">CSAT</div></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ENGAGE -->
+    <div class="hiw-panel" id="hiw-engage">
+      <div class="hiw-layout">
+        <div class="hiw-steps">
+          <div class="hiw-step"><div class="step-ind"><div class="step-circle" style="border-color:var(--jade-r);color:#5EDBBC;">01</div><div class="step-line"></div></div><div class="step-body"><div class="step-title">Kampanya Olusturma</div><div class="step-desc">Surukle-birak editorde e-posta tasarlayin. Hazir sablonlar veya sifirdan baslama secenegi. Kod gerektirmez.</div></div></div>
+          <div class="hiw-step"><div class="step-ind"><div class="step-circle" style="border-color:var(--jade-r);color:#5EDBBC;">02</div><div class="step-line"></div></div><div class="step-body"><div class="step-title">Segmentasyon &amp; Hedefleme</div><div class="step-desc">Davranisa gore segmente ayin: sayfayi gordulerse, sepete ekledilerse, 30 gundur giris yapmadillarsa — dogru insana dogru mesaj.</div></div></div>
+          <div class="hiw-step"><div class="step-ind"><div class="step-circle" style="border-color:var(--jade-r);color:#5EDBBC;">03</div><div class="step-line"></div></div><div class="step-body"><div class="step-title">Otomasyon Akisi</div><div class="step-desc">Hos geldin serisi, terk edilmis sepet, win-back — tetikleyiciler ve gecikmelerle tam otomatik alisveris akislari kurun.</div></div></div>
+          <div class="hiw-step"><div class="step-ind"><div class="step-circle" style="border-color:var(--jade-r);color:#5EDBBC;">04</div></div><div class="step-body"><div class="step-title">Gelir Takibi &amp; A/B Testi</div><div class="step-desc">Her kampanyanin acilma orani, tiklanma ve dogrudan geliri gorun. A/B testi ile en iyi konu satirini bulun.</div></div></div>
+        </div>
+        <div class="hiw-visual" style="position:relative;background:var(--raise);border:1px solid var(--rim);border-radius:16px;padding:1.5rem;">
+          <div style="font-family:var(--mono);font-size:10px;color:#5EDBBC;letter-spacing:1.5px;margin-bottom:.85rem;">KAMPANYA PANELI</div>
+          <div style="background:rgba(16,185,129,0.06);border:1px solid rgba(16,185,129,0.2);border-radius:10px;padding:.8rem 1rem;margin-bottom:.75rem;">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.5rem;"><span style="font-size:11px;font-weight:600;">Terk Edilmis Sepet Akisi</span><span style="font-size:9px;font-family:var(--mono);color:#10B981;background:rgba(16,185,129,0.1);padding:2px 7px;border-radius:100px;border:1px solid rgba(16,185,129,0.2);">AKTIF</span></div>
+            <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:.4rem;text-align:center;">
+              <div><div style="font-family:var(--mono);font-size:13px;color:#5EDBBC;font-weight:600;">847</div><div style="font-size:9px;color:var(--faint);font-family:var(--mono);">HEDEF</div></div>
+              <div><div style="font-family:var(--mono);font-size:13px;color:#5EDBBC;font-weight:600;">24%</div><div style="font-size:9px;color:var(--faint);font-family:var(--mono);">ACILMA</div></div>
+              <div><div style="font-family:var(--mono);font-size:13px;color:#5EDBBC;font-weight:600;">$2.4k</div><div style="font-size:9px;color:var(--faint);font-family:var(--mono);">GELIR</div></div>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;gap:.35rem;flex-wrap:wrap;margin-bottom:.75rem;">
+            <div style="font-size:9px;padding:3px 9px;border-radius:5px;font-family:var(--mono);background:rgba(16,185,129,0.12);color:#5EDBBC;border:1px solid rgba(16,185,129,0.2);">Gun 1: Email</div>
+            <div style="color:var(--faint);font-size:10px;">→</div>
+            <div style="font-size:9px;padding:3px 9px;border-radius:5px;font-family:var(--mono);background:var(--blue-d);color:#7EB3FF;border:1px solid var(--blue-r);">Gun 3: Takip</div>
+            <div style="color:var(--faint);font-size:10px;">→</div>
+            <div style="font-size:9px;padding:3px 9px;border-radius:5px;font-family:var(--mono);background:rgba(245,158,11,0.1);color:#FCD34D;border:1px solid rgba(245,158,11,0.2);">Gun 7: Indirim</div>
+          </div>
+          <div class="call-metrics"><div class="cm"><div class="cm-v" style="color:#5EDBBC;">%38</div><div class="cm-l">KURTARMA</div></div><div class="cm"><div class="cm-v" style="color:#5EDBBC;">$39k</div><div class="cm-l">AY GELIRI</div></div><div class="cm"><div class="cm-v" style="color:#5EDBBC;">A/B</div><div class="cm-l">TEST AKTIF</div></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STUDIO -->
+    <div class="hiw-panel" id="hiw-studio">
+      <div class="hiw-layout">
+        <div class="hiw-steps">
+          <div class="hiw-step"><div class="step-ind"><div class="step-circle" style="border-color:rgba(245,158,11,0.4);color:#FCD34D;">01</div><div class="step-line"></div></div><div class="step-body"><div class="step-title">Fotograf Yukle</div><div class="step-desc">Urunun tek fotografini yukleyin. AI arka plani otomatik temizler, urunu izole eder — her formatta, her boyutta calisir.</div></div></div>
+          <div class="hiw-step"><div class="step-ind"><div class="step-circle" style="border-color:rgba(245,158,11,0.4);color:#FCD34D;">02</div><div class="step-line"></div></div><div class="step-body"><div class="step-title">Sahne &amp; Stil Sec</div><div class="step-desc">Mermer studyo, altin saat isigi, kafe atmosferi, sade beyaz zemin ve daha fazlasi. Her sahne marka kimliginize uyarlanir.</div></div></div>
+          <div class="hiw-step"><div class="step-ind"><div class="step-circle" style="border-color:rgba(245,158,11,0.4);color:#FCD34D;">03</div><div class="step-line"></div></div><div class="step-body"><div class="step-title">AI Uretim (~90sn)</div><div class="step-desc">Yapay zeka sectiginiz her sahne icin ayri kreatifler olusturur. 12+ gorsel yaklasik 90 saniyede hazir, toplu indirme destekli.</div></div></div>
+          <div class="hiw-step"><div class="step-ind"><div class="step-circle" style="border-color:rgba(245,158,11,0.4);color:#FCD34D;">04</div></div><div class="step-body"><div class="step-title">Yayinla &amp; Senkronize Et</div><div class="step-desc">Shopify magazaniza tek tikla aktar ya da sosyal medya formatinda indir. Sezonluk guncellemeler dakikalar icerisinde tamamlanir.</div></div></div>
+        </div>
+        <div class="hiw-visual" style="position:relative;background:var(--raise);border:1px solid var(--rim);border-radius:16px;padding:1.5rem;">
+          <div style="font-family:var(--mono);font-size:10px;color:#F59E0B;letter-spacing:1.5px;margin-bottom:.85rem;">AI STUDYO — URETIM SURECI</div>
+          <div style="background:rgba(245,158,11,0.06);border:1px dashed rgba(245,158,11,0.25);border-radius:10px;padding:.75rem 1rem;display:flex;align-items:center;gap:.75rem;margin-bottom:.75rem;">
+            <div style="font-size:1.4rem;">&#128247;</div>
+            <div><div style="font-size:11px;font-weight:600;">krem_kase.jpg</div><div style="font-size:9.5px;color:var(--sub);font-family:var(--mono);">512x512 · Arka plan temizlendi &#10003;</div></div>
+          </div>
+          <div style="display:flex;gap:.35rem;flex-wrap:wrap;margin-bottom:.75rem;">
+            <span style="font-size:9px;padding:3px 9px;border-radius:5px;font-family:var(--mono);background:rgba(245,158,11,0.12);color:#FCD34D;border:1px solid rgba(245,158,11,0.25);">Mermer Studyo</span>
+            <span style="font-size:9px;padding:3px 9px;border-radius:5px;font-family:var(--mono);background:var(--card);color:var(--sub);border:1px solid var(--edge);">Altin Saat</span>
+            <span style="font-size:9px;padding:3px 9px;border-radius:5px;font-family:var(--mono);background:var(--card);color:var(--sub);border:1px solid var(--edge);">Kafe Yasam</span>
+            <span style="font-size:9px;padding:3px 9px;border-radius:5px;font-family:var(--mono);background:var(--card);color:var(--sub);border:1px solid var(--edge);">Sade Beyaz</span>
+          </div>
+          <div style="background:var(--card);border:1px solid var(--edge);border-radius:8px;padding:.65rem .85rem;margin-bottom:.75rem;">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.35rem;"><span style="font-size:9.5px;font-family:var(--mono);color:var(--sub);">&#10024; URETILIYOR — 12 KREATİF</span><span style="font-size:10px;font-family:var(--mono);color:#F59E0B;font-weight:600;">87%</span></div>
+            <div style="height:4px;background:var(--lift);border-radius:2px;overflow:hidden;"><div style="height:100%;width:87%;background:linear-gradient(90deg,#F59E0B,#FCD34D);border-radius:2px;"></div></div>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:.4rem;margin-bottom:.6rem;">
+            <div style="aspect-ratio:1;background:rgba(245,158,11,0.06);border:1px solid rgba(245,158,11,0.18);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;">&#128444;&#65039;</div>
+            <div style="aspect-ratio:1;background:rgba(245,158,11,0.06);border:1px solid rgba(245,158,11,0.18);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;">&#128444;&#65039;</div>
+            <div style="aspect-ratio:1;background:rgba(245,158,11,0.06);border:1px solid rgba(245,158,11,0.18);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;">&#128444;&#65039;</div>
+          </div>
+          <div class="call-metrics"><div class="cm"><div class="cm-v" style="color:#F59E0B;">90sn</div><div class="cm-l">SURE</div></div><div class="cm"><div class="cm-v" style="color:#F59E0B;">12+</div><div class="cm-l">KREATİF</div></div><div class="cm"><div class="cm-v" style="color:#F59E0B;">%96</div><div class="cm-l">TASARRUF</div></div></div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>
 <section class="sec" id="ozellikler">
@@ -1044,6 +1220,14 @@ function toggleFaq(btn){
   const item=btn.parentElement,open=item.classList.contains('open');
   document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
   if(!open)item.classList.add('open');
+}
+
+function switchHiw(id, btn) {
+  document.querySelectorAll('.hiw-panel').forEach(function(p){ p.classList.remove('active'); });
+  document.getElementById('hiw-' + id).classList.add('active');
+  var colors = {voice:'active-b', inbox:'active-v', engage:'active-j', studio:'active-a'};
+  document.querySelectorAll('.hiw-tab').forEach(function(t){ t.className = 'hiw-tab'; });
+  btn.classList.add(colors[id]);
 }
 function openCal(){window.open('https://cal.com/furkan-alumert','_blank');}
 function openDrawer(){document.getElementById('drawer').classList.add('open');document.body.style.overflow='hidden';}
