@@ -155,6 +155,38 @@ h1{font-family:var(--font);font-size:clamp(1.7rem,5vw,3.4rem);line-height:1.15;m
 .test-name{font-size:13px;font-weight:600;}
 .test-role{font-size:11px;color:var(--muted);}
 
+
+/* Callypso Studio - Amber */
+.ps-card.amber{border-color:rgba(245,158,11,0.2);}
+.ps-card.amber:hover{border-color:rgba(245,158,11,0.45);}
+.ps-tag.amber{background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.3);color:#FCD34D;}
+.ps-tag-dot.amber{background:#F59E0B;}
+.ps-feat-dot.amber{background:#F59E0B;}
+.ps-name.amber{color:#F59E0B;}
+.ps-btn.amber{background:rgba(245,158,11,.12);color:#FCD34D;border:1px solid rgba(245,158,11,.25);}
+.ps-btn.amber:hover{background:rgba(245,158,11,.2);border-color:rgba(245,158,11,.5);}
+/* Studio mini visual */
+.studio-mini{padding:1rem;background:rgba(255,255,255,.02);border-top:1px solid var(--border);display:flex;flex-direction:column;gap:.65rem;}
+.studio-upload{background:rgba(245,158,11,.06);border:1px dashed rgba(245,158,11,.3);border-radius:10px;padding:.9rem;display:flex;align-items:center;gap:.75rem;}
+.studio-upload-ico{width:36px;height:36px;border-radius:8px;background:rgba(245,158,11,.12);border:1px solid rgba(245,158,11,.25);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
+.studio-upload-info{flex:1;}
+.studio-upload-name{font-size:11px;font-weight:600;color:var(--text);}
+.studio-upload-sub{font-size:9.5px;color:var(--muted);font-family:var(--mono);}
+.studio-scenes{display:flex;gap:.35rem;flex-wrap:wrap;}
+.studio-scene{font-size:9px;padding:3px 8px;border-radius:5px;font-family:var(--mono);cursor:pointer;transition:background .15s;}
+.studio-scene.active{background:rgba(245,158,11,.18);color:#FCD34D;border:1px solid rgba(245,158,11,.3);}
+.studio-scene:not(.active){background:rgba(255,255,255,.04);color:var(--muted);border:1px solid var(--border);}
+.studio-progress{background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:8px;padding:.7rem .85rem;}
+.studio-progress-hd{display:flex;justify-content:space-between;align-items:center;margin-bottom:.45rem;}
+.studio-progress-lbl{font-size:10px;font-family:var(--mono);color:var(--muted);}
+.studio-progress-pct{font-size:10px;font-family:var(--mono);color:#F59E0B;font-weight:600;}
+.studio-bar-bg{height:4px;background:var(--border);border-radius:2px;overflow:hidden;}
+.studio-bar-fill{height:100%;width:87%;background:linear-gradient(90deg,#F59E0B,#FBBF24);border-radius:2px;animation:studio-pulse 2s ease-in-out infinite;}
+@keyframes studio-pulse{0%,100%{opacity:1;}50%{opacity:.7;}}
+.studio-results{display:grid;grid-template-columns:repeat(3,1fr);gap:.4rem;}
+.studio-thumb{aspect-ratio:1;border-radius:7px;border:1px solid rgba(245,158,11,.2);background:rgba(245,158,11,.06);display:flex;align-items:center;justify-content:center;font-size:14px;}
+.studio-result-lbl{font-size:9px;font-family:var(--mono);color:#F59E0B;text-align:center;margin-top:.25rem;}
+
 /* FAQ */
 .faq-list{display:flex;flex-direction:column;gap:.75rem;max-width:720px;margin:0 auto;}
 .faq-item{background:var(--surface);border:1px solid var(--border);border-radius:10px;overflow:hidden;}
@@ -353,6 +385,7 @@ footer{border-top:1px solid var(--border);padding:2.5rem 1.5rem;}
       <a href="#products" style="display:inline-flex;align-items:center;gap:.5rem;background:rgba(59,130,246,.12);border:1px solid rgba(59,130,246,.3);color:#60A5FA;padding:7px 16px;border-radius:100px;font-size:12px;font-family:var(--mono);text-decoration:none;letter-spacing:.5px;transition:background .2s;" onmouseover="this.style.background='rgba(59,130,246,.2)'" onmouseout="this.style.background='rgba(59,130,246,.12)'">📞 Voice Agent</a>
       <a href="#products" style="display:inline-flex;align-items:center;gap:.5rem;background:rgba(139,92,246,.12);border:1px solid rgba(139,92,246,.3);color:#C4B5FD;padding:7px 16px;border-radius:100px;font-size:12px;font-family:var(--mono);text-decoration:none;letter-spacing:.5px;transition:background .2s;" onmouseover="this.style.background='rgba(139,92,246,.2)'" onmouseout="this.style.background='rgba(139,92,246,.12)'">💬 Inboxly</a>
       <a href="#products" style="display:inline-flex;align-items:center;gap:.5rem;background:rgba(16,185,129,.12);border:1px solid rgba(16,185,129,.3);color:#34D399;padding:7px 16px;border-radius:100px;font-size:12px;font-family:var(--mono);text-decoration:none;letter-spacing:.5px;transition:background .2s;" onmouseover="this.style.background='rgba(16,185,129,.2)'" onmouseout="this.style.background='rgba(16,185,129,.12)'">📧 Engage</a>
+      <a href="#products" style="display:inline-flex;align-items:center;gap:.5rem;background:rgba(245,158,11,.12);border:1px solid rgba(245,158,11,.3);color:#FCD34D;padding:7px 16px;border-radius:100px;font-size:12px;font-family:var(--mono);text-decoration:none;letter-spacing:.5px;transition:background .2s;" onmouseover="this.style.background='rgba(245,158,11,.2)'" onmouseout="this.style.background='rgba(245,158,11,.12)'">📸 Studio</a>
     </div>
 
     <div class="hero-btns">
@@ -407,7 +440,7 @@ footer{border-top:1px solid var(--border);padding:2.5rem 1.5rem;}
     <div class="ps-header">
       <div class="sec-label" data-tr="// ürünlerimiz" data-en="// our products">// ürünlerimiz</div>
       <div class="sec-title" data-tr="Her Temas Noktasında<br>Yapay Zeka" data-en="AI at Every<br>Touchpoint">Her Temas Noktasında<br>Yapay Zeka</div>
-      <div class="sec-desc" style="margin:0 auto;" data-tr="Her temas noktasını otomatize eden üç ürün: gelen aramaları, yazılı mesajları ve giden outreach'i ayrı ayrı çözen, birbirini tamamlayan AI platformları." data-en="Three products that automate every touchpoint: inbound calls, written messages, and outbound outreach — each solving a distinct channel.">Her temas noktasını otomatize eden üç ürün: gelen aramaları, yazılı mesajları ve giden outreach'i ayrı ayrı çözen, birbirini tamamlayan AI platformları.</div>
+      <div class="sec-desc" style="margin:0 auto;" data-tr="Her temas noktasını ve görsel içerik üretimini otomatize eden dört ürün: gelen aramalar, yazılı mesajlar, e-posta pazarlama ve AI fotoğraf stüdyosu — birbirini tamamlayan AI platformları." data-en="Three products that automate every touchpoint: inbound calls, written messages, and outbound outreach — each solving a distinct channel.">Her temas noktasını ve görsel içerik üretimini otomatize eden dört ürün: gelen aramalar, yazılı mesajlar, e-posta pazarlama ve AI fotoğraf stüdyosu — birbirini tamamlayan AI platformları.</div>
     </div>
     <div class="ps-grid">
 
