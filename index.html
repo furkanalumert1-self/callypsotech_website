@@ -321,6 +321,16 @@ nav{
 .btn-ow{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.4);padding:12px 26px;border-radius:var(--r);font-size:14px;font-weight:600;cursor:pointer;margin-left:.6rem;transition:border-color .15s;}
 .btn-ow:hover{border-color:rgba(255,255,255,.8);}
 
+/* LEGAL BAND */
+.legal-band{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+.legal-inner{max-width:1080px;margin:0 auto;padding:2.75rem 2.5rem;display:grid;grid-template-columns:1fr 1fr 1fr;gap:2rem;}
+.legal-col-title{font-family:var(--mono);font-size:10px;color:var(--blue);letter-spacing:2px;text-transform:uppercase;margin-bottom:.75rem;}
+.legal-col p{font-size:12.5px;color:var(--muted);line-height:1.65;}
+.legal-col strong{color:var(--sub);font-weight:600;}
+.legal-col a{color:var(--blue);text-decoration:none;}
+.legal-col a:hover{text-decoration:underline;}
+@media(max-width:680px){.legal-inner{grid-template-columns:1fr;gap:1.5rem;}}
+
 /* FOOTER */
 .footer-wrap{background:#fff;border-top:1px solid var(--border);}
 footer{max-width:1080px;margin:0 auto;padding:2.25rem 2.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;}
@@ -896,6 +906,37 @@ footer{max-width:1080px;margin:0 auto;padding:2.25rem 2.5rem;display:flex;align-
   <button class="btn-ow" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">Ürünleri İncele</button>
 </div>
 
+<!-- LEGAL BAND -->
+<div class="legal-band">
+  <div class="legal-inner">
+    <div class="legal-col">
+      <div class="legal-col-title">// Şirket Bilgileri</div>
+      <p>
+        <strong>CallypsoTech</strong><br>
+        Şahıs Girişimi<br>
+        İstanbul, Türkiye<br><br>
+        AI destekli müşteri iletişim ve görünürlük platformları geliştiren bireysel bir teknoloji girişimi.
+      </p>
+    </div>
+    <div class="legal-col">
+      <div class="legal-col-title">// İletişim</div>
+      <p>
+        <strong>Furkan Alumert</strong><br>
+        Kurucu &amp; Geliştirici<br><br>
+        <a href="mailto:furkanalumert1@gmail.com">furkanalumert1@gmail.com</a><br><br>
+        Sorularınız ve iş birliği için <a href="https://cal.com/furkan-alumert" target="_blank">görüşme planlayabilirsiniz →</a>
+      </p>
+    </div>
+    <div class="legal-col">
+      <div class="legal-col-title">// Yasal Bildirim</div>
+      <p>
+        Bu web sitesi ve sunulan platformlar (GeoAdra, Callypso Engage, Voice Agent, Inboxly, Studio, Decor) CallypsoTech bünyesinde bireysel girişim kapsamında sunulmaktadır.<br><br>
+        Tüm hakları saklıdır. Hizmet koşulları ve gizlilik politikası için iletişime geçin.
+      </p>
+    </div>
+  </div>
+</div>
+
 <!-- FOOTER -->
 <div class="footer-wrap">
   <footer>
@@ -905,7 +946,7 @@ footer{max-width:1080px;margin:0 auto;padding:2.25rem 2.5rem;display:flex;align-
       <a href="#how">Nasıl Çalışır</a>
       <a href="#features">Özellikler</a>
     </div>
-    <div class="fc2">© 2024 CallypsoTech</div>
+    <div class="fc2">© 2026 CallypsoTech · İstanbul, Türkiye</div>
   </footer>
 </div>
 
