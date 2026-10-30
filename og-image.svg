@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#FFFFFF"/>
+  <rect width="1200" height="4" y="0" fill="#2563EB"/>
+  <!-- dot grid -->
+  <defs>
+    <pattern id="dots" x="0" y="0" width="30" height="30" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r="1" fill="#E4E7EC"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#dots)" opacity="0.6"/>
+  <!-- logo -->
+  <text x="80" y="130" font-family="system-ui,sans-serif" font-size="52" font-weight="800" fill="#101828" letter-spacing="-2">Callypso<tspan fill="#2563EB">Tech</tspan></text>
+  <!-- tagline -->
+  <text x="80" y="185" font-family="system-ui,sans-serif" font-size="22" fill="#667085">İstanbul · AI Müşteri İletişim &amp; Görünürlük Platformları</text>
+  <!-- products row -->
+  <rect x="80" y="240" width="240" height="72" rx="12" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1.5"/>
+  <text x="200" y="272" font-family="system-ui,sans-serif" font-size="13" fill="#2563EB" font-weight="700" text-anchor="middle">Voice Agent</text>
+  <text x="200" y="294" font-family="system-ui,sans-serif" font-size="11" fill="#64748B" text-anchor="middle">AI Telefon Yanıtlama</text>
+
+  <rect x="340" y="240" width="240" height="72" rx="12" fill="#F5F3FF" stroke="#DDD6FE" stroke-width="1.5"/>
+  <text x="460" y="272" font-family="system-ui,sans-serif" font-size="13" fill="#6D28D9" font-weight="700" text-anchor="middle">Inboxly</text>
+  <text x="460" y="294" font-family="system-ui,sans-serif" font-size="11" fill="#64748B" text-anchor="middle">Omnichannel Inbox</text>
+
+  <rect x="600" y="240" width="240" height="72" rx="12" fill="#ECFDF5" stroke="#6EE7B7" stroke-width="1.5"/>
+  <text x="720" y="272" font-family="system-ui,sans-serif" font-size="13" fill="#047857" font-weight="700" text-anchor="middle">Callypso Engage</text>
+  <text x="720" y="294" font-family="system-ui,sans-serif" font-size="11" fill="#64748B" text-anchor="middle">WhatsApp &amp; E-posta Otomasyon</text>
+
+  <rect x="860" y="240" width="260" height="72" rx="12" fill="#e7f2ea" stroke="#a8ccb0" stroke-width="1.5"/>
+  <text x="990" y="272" font-family="system-ui,sans-serif" font-size="13" fill="#2f6b45" font-weight="700" text-anchor="middle">GeoAdra</text>
+  <text x="990" y="294" font-family="system-ui,sans-serif" font-size="11" fill="#64748B" text-anchor="middle">AI Görünürlük &amp; ChatGPT Ads</text>
+
+  <!-- big claim -->
+  <text x="80" y="390" font-family="system-ui,sans-serif" font-size="38" font-weight="800" fill="#101828" letter-spacing="-1">Her Kanalda Yapay Zeka.</text>
+  <text x="80" y="440" font-family="system-ui,sans-serif" font-size="19" fill="#667085">Telefon · WhatsApp · E-posta · AI Arama</text>
+
+  <!-- proof -->
+  <rect x="80" y="500" width="200" height="42" rx="8" fill="#2563EB"/>
+  <text x="180" y="527" font-family="system-ui,sans-serif" font-size="14" fill="#fff" font-weight="600" text-anchor="middle">callypsotech.com</text>
+
+  <text x="300" y="527" font-family="system-ui,sans-serif" font-size="13" fill="#94A3B8">İstanbul, Türkiye · support@callypsotech.com</text>
+</svg>
