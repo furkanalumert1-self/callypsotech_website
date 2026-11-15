@@ -483,24 +483,6 @@ nav{
 .sq.s2{background:var(--blue-s);color:var(--blue);border:1px solid var(--blue-m);}
 .sq.s3{background:var(--vio-s);color:var(--violet);border:1px solid var(--vio-m);}
 .sq-arr{color:var(--faint);font-size:10px;flex-shrink:0;}
-/* studio */
-.su{background:#fff;border:1.5px dashed var(--border);border-radius:var(--r);padding:.8rem;display:flex;align-items:center;gap:.7rem;}
-.su-ico{width:34px;height:34px;border-radius:8px;background:var(--amb-s);border:1px solid var(--amb-m);display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0;}
-.su-name{font-size:11.5px;font-weight:600;color:var(--text);}
-.su-sub{font-size:9.5px;color:var(--muted);font-family:var(--mono);}
-.sc-row{display:flex;gap:.3rem;flex-wrap:wrap;}
-.sc{font-size:9.5px;font-family:var(--mono);padding:4px 9px;border-radius:6px;}
-.sc.on{background:var(--amb-s);color:var(--amber);border:1px solid var(--amb-m);}
-.sc.off{background:#fff;color:var(--muted);border:1px solid var(--border);}
-.sp{background:#fff;border:1px solid var(--border);border-radius:var(--r);padding:.75rem;}
-.sp-hd{display:flex;justify-content:space-between;margin-bottom:.4rem;}
-.sp-lbl{font-size:10.5px;font-family:var(--mono);color:var(--muted);}
-.sp-pct{font-size:10.5px;font-family:var(--mono);color:var(--amber);font-weight:600;}
-.sb{height:4px;background:var(--border);border-radius:2px;overflow:hidden;}
-.sb-fill{height:100%;width:87%;background:linear-gradient(90deg,var(--amber),#F59E0B);border-radius:2px;animation:sbp 2.2s ease-in-out infinite;}
-@keyframes sbp{0%,100%{opacity:1;}50%{opacity:.55;}}
-.s-thumbs{display:grid;grid-template-columns:repeat(3,1fr);gap:.35rem;}
-.s-thumb{aspect-ratio:1;background:var(--amb-s);border:1px solid var(--amb-m);border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:13px;}
 
 /* HOW IT WORKS */
 .hiw-tabs{display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:2.25rem;}
@@ -632,14 +614,12 @@ footer{max-width:1080px;margin:0 auto;padding:2.25rem 2.5rem;display:flex;align-
   <div class="hero-inner">
     <div class="hero-badge">AI MÜŞTERİ İLETİŞİM PLATFORMLARI</div>
     <h1>Her Kanalda<br><em>Yapay Zeka</em></h1>
-    <p class="hero-desc">Telefon, mesaj, e-posta ve ürün görseli — müşteri iletişiminin her adımını otomatize eden dört AI platformu.</p>
+    <p class="hero-desc">Telefon, mesaj, e-posta ve AI görünürlüğü — müşteri iletişiminin her adımını otomatize eden dört AI platformu.</p>
     <div class="pill-row">
       <span class="pill blue">📞 Voice Agent</span>
       <span class="pill violet">💬 Inboxly</span>
       <span class="pill jade">📧 Engage</span>
       <span class="pill teal">🔍 GeoAdra</span>
-      <span class="pill amber">📸 Studio</span>
-      <span class="pill rose">🏠 Decor</span>
     </div>
     <div class="hero-btns">
       <button class="btn-p" onclick="openCal()">Ücretsiz Demo Planla →</button>
@@ -815,86 +795,6 @@ footer{max-width:1080px;margin:0 auto;padding:2.25rem 2.5rem;display:flex;align-
         </div>
       </div>
 
-      <div class="pc pc-full">
-        <div class="pc-bar a"></div>
-        <div class="pc-split pc-body">
-          <div>
-            <div class="pc-tag a"><span class="pc-dot a"></span>AI ÜRÜN FOTOĞRAFLARI</div>
-            <div class="pc-name a">Callypso Studio</div>
-            <div class="pc-tagline">1 fotoğraf → 12+ satış görseli, 90 saniyede</div>
-            <p class="pc-desc">Ürün fotoğrafınızı yükleyin, sahne seçin — AI saniyeler içinde profesyonel e-ticaret görselleri üretir. %96 maliyet tasarrufu.</p>
-            <div class="pc-feats">
-              <div class="pc-feat"><span class="pf-dot a"></span>Mermer stüdyo, altın saat, kafe, beyaz fon sahneleri</div>
-              <div class="pc-feat"><span class="pf-dot a"></span>1 görselden 12+ farklı kreatifte çıktı</div>
-              <div class="pc-feat"><span class="pf-dot a"></span>Shopify ile tek tıkla senkronizasyon</div>
-              <div class="pc-feat"><span class="pf-dot a"></span>Geleneksel stüdyoya kıyasla %96 maliyet tasarrufu</div>
-            </div>
-            <button class="pc-btn a" onclick="openCal()">Demo Planla →</button>
-          </div>
-          <div class="mini-bg">
-            <div class="su">
-              <div class="su-ico">📦</div>
-              <div><div class="su-name">product_shot.jpg</div><div class="su-sub">2.4 MB · JPG · hazır</div></div>
-            </div>
-            <div class="sc-row">
-              <div class="sc on">mermer stüdyo</div>
-              <div class="sc off">altın saat</div>
-              <div class="sc off">kafe masası</div>
-              <div class="sc off">beyaz fon</div>
-            </div>
-            <div class="sp">
-              <div class="sp-hd"><span class="sp-lbl">12 görsel üretiliyor</span><span class="sp-pct">87%</span></div>
-              <div class="sb"><div class="sb-fill"></div></div>
-            </div>
-            <div class="s-thumbs">
-              <div class="s-thumb">🖼️</div>
-              <div class="s-thumb">🖼️</div>
-              <div class="s-thumb">🖼️</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="pc pc-full">
-        <div class="pc-bar r"></div>
-        <div class="pc-split pc-body">
-          <div>
-            <div class="pc-tag r"><span class="pc-dot r"></span>AI İÇ MEKAN TASARIM</div>
-            <div class="pc-name r">Callypso Decor</div>
-            <div class="pc-tagline">Bir oda fotoğrafını yeni bir hayata dönüştür</div>
-            <p class="pc-desc">Oda fotoğrafınızı yükleyin, stil seçin — AI saniyeler içinde yeniden tasarlanmış profesyonel görseller üretir. Satın almadan önce hayal edin, beğendiğinizi uygulayın.</p>
-            <div class="pc-feats">
-              <div class="pc-feat"><span class="pf-dot r"></span>İskandinav, Bohem, Japon, Modern, Akdeniz stil seçenekleri</div>
-              <div class="pc-feat"><span class="pf-dot r"></span>Gerçekçi öncesi/sonrası karşılaştırma galerisi</div>
-              <div class="pc-feat"><span class="pf-dot r"></span>Otomatik alışveriş listesi ve maliyet tahmini</div>
-              <div class="pc-feat"><span class="pf-dot r"></span>Tasarım panosu ve inspirasyon arşivi</div>
-            </div>
-            <button class="pc-btn r" onclick="openCal()">Callypso Decor'u Dene →</button>
-          </div>
-          <div class="mini-bg">
-            <div style="background:#fff;border:1.5px dashed var(--rose-m);border-radius:var(--r);padding:.8rem;display:flex;align-items:center;gap:.7rem;margin-bottom:.55rem;">
-              <div style="width:34px;height:34px;border-radius:8px;background:var(--rose-s);border:1px solid var(--rose-m);display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0;">🏠</div>
-              <div><div style="font-size:11.5px;font-weight:600;color:var(--text);">oturma_odasi.jpg</div><div style="font-size:9.5px;color:var(--muted);font-family:var(--mono);">3.1 MB · hazır</div></div>
-            </div>
-            <div style="display:flex;gap:.3rem;flex-wrap:wrap;margin-bottom:.55rem;">
-              <div style="font-size:9.5px;font-family:var(--mono);padding:4px 9px;border-radius:6px;background:var(--rose-s);color:var(--rose);border:1px solid var(--rose-m);">İskandinav</div>
-              <div style="font-size:9.5px;font-family:var(--mono);padding:4px 9px;border-radius:6px;background:#fff;color:var(--muted);border:1px solid var(--border);">Japandi</div>
-              <div style="font-size:9.5px;font-family:var(--mono);padding:4px 9px;border-radius:6px;background:#fff;color:var(--muted);border:1px solid var(--border);">Bohem</div>
-              <div style="font-size:9.5px;font-family:var(--mono);padding:4px 9px;border-radius:6px;background:#fff;color:var(--muted);border:1px solid var(--border);">Modern</div>
-            </div>
-            <div style="background:#fff;border:1px solid var(--border);border-radius:var(--r);padding:.75rem;margin-bottom:.55rem;">
-              <div style="display:flex;justify-content:space-between;margin-bottom:.4rem;"><span style="font-size:10.5px;font-family:var(--mono);color:var(--muted);">3 tasarım üretiliyor</span><span style="font-size:10.5px;font-family:var(--mono);color:var(--rose);font-weight:600;">72%</span></div>
-              <div style="height:4px;background:var(--border);border-radius:2px;overflow:hidden;"><div style="height:100%;width:72%;background:linear-gradient(90deg,var(--rose),#F43F5E);border-radius:2px;animation:sbp 2.2s ease-in-out infinite;"></div></div>
-            </div>
-            <div class="m-grid">
-              <div class="mc"><div class="mn" style="color:var(--rose);">6</div><div class="ml">STİL</div></div>
-              <div class="mc"><div class="mn" style="color:var(--rose);">3</div><div class="ml">TASARIM</div></div>
-              <div class="mc"><div class="mn" style="color:var(--rose);">₺2.4K</div><div class="ml">TAHMİN</div></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
     </div>
   </div>
 </div>
@@ -911,8 +811,6 @@ footer{max-width:1080px;margin:0 auto;padding:2.25rem 2.5rem;display:flex;align-
       <button class="hiw-tab" onclick="switchHiw('inbox',this)">Inboxly</button>
       <button class="hiw-tab" onclick="switchHiw('engage',this)">Engage</button>
       <button class="hiw-tab" onclick="switchHiw('geoadra',this)">GeoAdra</button>
-      <button class="hiw-tab" onclick="switchHiw('studio',this)">Studio</button>
-      <button class="hiw-tab" onclick="switchHiw('decor',this)">Decor</button>
     </div>
 
     <div id="hiw-voice" class="hiw-panel active">
@@ -1043,76 +941,6 @@ footer{max-width:1080px;margin:0 auto;padding:2.25rem 2.5rem;display:flex;align-
         </div>
       </div>
     </div>
-    <div id="hiw-studio" class="hiw-panel">
-      <div class="hiw-grid">
-        <div>
-          <p style="font-family:var(--font);font-size:1.1rem;font-weight:700;margin-bottom:1.4rem;">Callypso Studio Adım Adım</p>
-          <div class="hiw-steps">
-            <div class="hiw-step"><div class="sn-box a">01</div><div><div class="st">Ürün Fotoğrafını Yükle</div><div class="sb2">Sıradan bir ürün fotoğrafı yeter. Beyaz fon, stüdyo ışığı ya da mobil çekim — AI gerisini halleder.</div></div></div>
-            <div class="hiw-step"><div class="sn-box a">02</div><div><div class="st">Sahne & Stil Seç</div><div class="sb2">Mermer stüdyo, altın saat, kafe masası, beyaz fon gibi hazır sahnelerden birini seç.</div></div></div>
-            <div class="hiw-step"><div class="sn-box a">03</div><div><div class="st">AI Görsel Üretir</div><div class="sb2">~90 saniyede 12+ farklı formatta profesyonel görsel: Instagram, story, banner, ürün sayfası.</div></div></div>
-            <div class="hiw-step"><div class="sn-box a">04</div><div><div class="st">Shopify'a Aktar veya İndir</div><div class="sb2">Tek tıkla Shopify ürün sayfasına yükle ya da PNG/JPG olarak indir. %96 maliyet tasarrufu.</div></div></div>
-          </div>
-        </div>
-        <div class="hiw-vis">
-          <div class="vis-lbl">Studio · Üretim Paneli</div>
-          <div class="su" style="margin-bottom:.7rem;">
-            <div class="su-ico">📦</div>
-            <div><div class="su-name">urun_fotografi.jpg</div><div class="su-sub">2.4 MB · yüklendi</div></div>
-          </div>
-          <div class="sc-row" style="margin-bottom:.7rem;">
-            <div class="sc on">mermer stüdyo</div>
-            <div class="sc off">altın saat</div>
-            <div class="sc off">kafe masası</div>
-          </div>
-          <div class="sp" style="margin-bottom:.7rem;">
-            <div class="sp-hd"><span class="sp-lbl">12 görsel üretiliyor</span><span class="sp-pct">87%</span></div>
-            <div class="sb"><div class="sb-fill"></div></div>
-          </div>
-          <div class="m-grid">
-            <div class="mc"><div class="mn" style="color:var(--amber);">90sn</div><div class="ml">ÜRETİM</div></div>
-            <div class="mc"><div class="mn" style="color:var(--amber);">12+</div><div class="ml">GÖRSEL</div></div>
-            <div class="mc"><div class="mn" style="color:var(--amber);">%96</div><div class="ml">TASARRUF</div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div id="hiw-decor" class="hiw-panel">
-      <div class="hiw-grid">
-        <div>
-          <p style="font-family:var(--font);font-size:1.1rem;font-weight:700;margin-bottom:1.4rem;">Callypso Decor Adım Adım</p>
-          <div class="hiw-steps">
-            <div class="hiw-step"><div class="sn-box r">01</div><div><div class="st">Oda Fotoğrafını Yükle</div><div class="sb2">Akıllı telefonla çekilmiş sıradan bir oda fotoğrafı yeter. Işık koşuluna ya da düzensizliğe bakmaz.</div></div></div>
-            <div class="hiw-step"><div class="sn-box r">02</div><div><div class="st">Dekorasyon Stilini Seç</div><div class="sb2">İskandinav, Bohem, Japandi, Modern, Akdeniz veya Endüstriyel — 6 farklı stil arasından seçim yap.</div></div></div>
-            <div class="hiw-step"><div class="sn-box r">03</div><div><div class="st">AI Odayı Yeniden Tasarlar</div><div class="sb2">Birkaç saniye içinde odanın seçilen stilde dönüştürülmüş, fotogerçekçi görüntüleri hazır olur.</div></div></div>
-            <div class="hiw-step"><div class="sn-box r">04</div><div><div class="st">Alışveriş Listesi & Bütçe</div><div class="sb2">Beğendiğin tasarım için ürün önerileri ve tahmini maliyet otomatik çıkar. İstersen kataloğa ekle.</div></div></div>
-          </div>
-        </div>
-        <div class="hiw-vis">
-          <div class="vis-lbl">Decor · Tasarım Paneli</div>
-          <div style="background:var(--rose-s);border:1.5px dashed var(--rose-m);border-radius:var(--r);padding:.8rem;display:flex;align-items:center;gap:.7rem;margin-bottom:.7rem;">
-            <div style="width:34px;height:34px;border-radius:8px;background:#fff;border:1px solid var(--rose-m);display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0;">🏠</div>
-            <div><div style="font-size:11.5px;font-weight:600;color:var(--text);">salon_fotografim.jpg</div><div style="font-size:9.5px;color:var(--muted);font-family:var(--mono);">yüklendi · hazır</div></div>
-          </div>
-          <div style="display:flex;gap:.3rem;flex-wrap:wrap;margin-bottom:.7rem;">
-            <div style="font-size:9.5px;font-family:var(--mono);padding:4px 9px;border-radius:6px;background:var(--rose-s);color:var(--rose);border:1px solid var(--rose-m);">İskandinav ✓</div>
-            <div style="font-size:9.5px;font-family:var(--mono);padding:4px 9px;border-radius:6px;background:#fff;color:var(--muted);border:1px solid var(--border);">Japandi</div>
-            <div style="font-size:9.5px;font-family:var(--mono);padding:4px 9px;border-radius:6px;background:#fff;color:var(--muted);border:1px solid var(--border);">Bohem</div>
-          </div>
-          <div style="background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:.75rem;display:flex;align-items:center;justify-content:space-between;margin-bottom:.7rem;">
-            <div style="font-size:10.5px;color:var(--sub);">🛒 Alışveriş Listesi</div>
-            <div style="font-size:11px;font-family:var(--mono);font-weight:700;color:var(--rose);">₺2.4K tahmini</div>
-          </div>
-          <div class="m-grid">
-            <div class="mc"><div class="mn" style="color:var(--rose);">6</div><div class="ml">STİL</div></div>
-            <div class="mc"><div class="mn" style="color:var(--rose);">8sn</div><div class="ml">ÜRETIM</div></div>
-            <div class="mc"><div class="mn" style="color:var(--rose);">3+</div><div class="ml">TASARIM</div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
   </div>
 </div>
 
@@ -1207,7 +1035,7 @@ footer{max-width:1080px;margin:0 auto;padding:2.25rem 2.5rem;display:flex;align-
     <div class="legal-col">
       <div class="legal-col-title">// Yasal Bildirim</div>
       <p>
-        Bu web sitesi ve sunulan platformlar (GeoAdra, Callypso Engage, Voice Agent, Inboxly, Studio, Decor) CallypsoTech bünyesinde bireysel girişim kapsamında sunulmaktadır.<br><br>
+        Bu web sitesi ve sunulan platformlar (GeoAdra, Callypso Engage, Voice Agent, Inboxly) CallypsoTech bünyesinde bireysel girişim kapsamında sunulmaktadır.<br><br>
         Tüm hakları saklıdır. Hizmet koşulları ve gizlilik politikası için iletişime geçin.
       </p>
     </div>
@@ -1240,7 +1068,7 @@ function closeMob(){
 function switchHiw(id,btn){
   document.querySelectorAll('.hiw-panel').forEach(function(p){p.classList.remove('active');});
   document.getElementById('hiw-'+id).classList.add('active');
-  var map={voice:'ab',inbox:'av',engage:'aj',studio:'aa',decor:'ar',geoadra:'at'};
+  var map={voice:'ab',inbox:'av',engage:'aj',geoadra:'at'};
   document.querySelectorAll('.hiw-tab').forEach(function(t){t.className='hiw-tab';});
   btn.classList.add(map[id]);
 }
