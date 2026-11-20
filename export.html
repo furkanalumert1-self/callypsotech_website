@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Callypso Export Agent | İhracat Satış Otomasyonu</title>
+<meta name="description" content="İhracatçılar için AI destekli yurt dışı müşteri araştırması, ilk temas ve teklif takip otomasyonu. Tekstil, mobilya, makine ve daha fazlası için.">
+<link rel="canonical" href="https://callypsotech.com/export">
+<meta property="og:title" content="Callypso Export Agent | İhracat Satış Otomasyonu">
+<meta property="og:description" content="Yurt dışı müşteri araştırması, kişiselleştirilmiş ilk temas ve teklif takibi — AI destekli, insan onaylı.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+<style>
+:root {
+  --bg:#F6F5F2; --bg2:#EFEDE8; --bg3:#E3E1DB; --dark:#0D1117; --dark2:#161C26;
+  --surface:#FFFFFF; --text:#0D1117; --sub:#374151; --muted:#6A7280; --faint:#98A0AB;
+  --inv:#F6F5F2; --border:#E3E1DB;
+  --green:#0A6E4A; --green-d:#085A3C; --green-s:#E6F4EE; --green-m:#A7D4BE;
+  --r:8px; --r-lg:14px; --r-xl:20px;
+  --sh:0 1px 3px rgba(0,0,0,.06),0 4px 16px rgba(0,0,0,.06);
+  --sh-lg:0 2px 8px rgba(0,0,0,.06),0 12px 40px rgba(0,0,0,.09);
+  --font-h:'Instrument Serif',Georgia,serif; --font-b:'Plus Jakarta Sans',system-ui,sans-serif;
+  color-scheme:light;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:var(--font-b);font-size:15px;line-height:1.65;overflow-x:hidden;}
+a{text-decoration:none;color:inherit;}
+img{max-width:100%;display:block;}
+button{cursor:pointer;font-family:var(--font-b);}
+
+.wrap{max-width:1100px;margin:0 auto;padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px));}
+.sec{padding:88px 0;}
+.sec-sm{padding:64px 0;}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:200;background:rgba(13,17,23,.97);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.07);height:62px;}
+.nav-inner{max-width:1100px;margin:0 auto;height:100%;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px));}
+.logo{font-family:var(--font-b);font-size:17px;font-weight:800;color:#fff;letter-spacing:-.3px;}
+.logo span{color:#1355FF;}
+.nav-back{font-size:13px;color:rgba(255,255,255,.45);display:flex;align-items:center;gap:6px;transition:color .15s;}
+.nav-back:hover{color:#fff;}
+.btn-nav{background:var(--green);color:#fff;font-size:13px;font-weight:600;padding:8px 18px;border-radius:var(--r);border:none;white-space:nowrap;transition:background .15s;}
+.btn-nav:hover{background:var(--green-d);}
+
+/* HERO */
+.hero{background:var(--dark);padding:88px 0 72px;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;top:-80px;right:-60px;width:600px;height:400px;background:radial-gradient(ellipse,rgba(10,110,74,.2) 0%,transparent 65%);pointer-events:none;}
+.hero-inner{position:relative;z-index:1;}
+.hero-breadcrumb{display:flex;align-items:center;gap:8px;font-size:12px;color:rgba(255,255,255,.3);margin-bottom:20px;}
+.hero-breadcrumb a{color:rgba(255,255,255,.3);transition:color .15s;}
+.hero-breadcrumb a:hover{color:rgba(255,255,255,.65);}
+.hero-breadcrumb span{color:rgba(255,255,255,.15);}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:11.5px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:rgba(255,255,255,.4);border:1px solid rgba(255,255,255,.1);padding:5px 14px;border-radius:100px;margin-bottom:24px;}
+.hero-eyebrow::before{content:'';width:7px;height:7px;background:var(--green);border-radius:50%;box-shadow:0 0 8px rgba(10,110,74,.5);}
+h1.hero-h1{font-family:var(--font-h);font-size:clamp(36px,5.5vw,60px);font-weight:400;line-height:1.1;letter-spacing:-.4px;color:#F6F5F2;text-wrap:balance;margin-bottom:20px;max-width:680px;}
+h1.hero-h1 em{font-style:italic;color:rgba(246,245,242,.6);}
+.hero-sub{font-size:17px;color:rgba(246,245,242,.5);line-height:1.65;max-width:520px;margin-bottom:32px;}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:52px;}
+.btn-primary{background:var(--green);color:#fff;font-size:14px;font-weight:700;padding:13px 26px;border-radius:var(--r);border:none;display:inline-flex;align-items:center;gap:7px;transition:background .15s;}
+.btn-primary:hover{background:var(--green-d);}
+.btn-secondary{background:rgba(255,255,255,.07);color:rgba(246,245,242,.8);font-size:14px;font-weight:500;padding:13px 26px;border-radius:var(--r);border:1px solid rgba(255,255,255,.12);display:inline-flex;align-items:center;gap:7px;transition:all .15s;}
+.btn-secondary:hover{background:rgba(255,255,255,.12);}
+.hero-targets{display:flex;gap:10px;flex-wrap:wrap;}
+.target-pill{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:var(--r);padding:7px 14px;font-size:12.5px;font-weight:600;color:rgba(255,255,255,.6);}
+
+/* SECTION HEADINGS */
+.sec-label{font-size:11.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:14px;}
+.sec-label.green{color:var(--green);}
+h2.sec-h{font-family:var(--font-h);font-size:clamp(26px,3.5vw,40px);font-weight:400;line-height:1.15;letter-spacing:-.3px;color:var(--text);text-wrap:balance;margin-bottom:14px;}
+.sec-desc{font-size:16px;color:var(--muted);line-height:1.65;max-width:520px;}
+
+/* WORKFLOW */
+#workflow{background:var(--bg2);}
+.workflow-steps{display:flex;flex-direction:column;gap:0;margin-top:48px;max-width:720px;}
+.wf-step{display:flex;gap:24px;padding:28px 0;border-bottom:1px solid var(--border);}
+.wf-step:last-child{border-bottom:none;}
+.wf-num{width:40px;height:40px;border-radius:50%;background:var(--surface);border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:var(--font-h);font-size:16px;color:var(--green);flex-shrink:0;margin-top:2px;box-shadow:var(--sh);}
+.wf-h{font-size:16px;font-weight:700;color:var(--text);margin-bottom:7px;}
+.wf-p{font-size:13.5px;color:var(--muted);line-height:1.6;}
+
+/* USE CASES */
+#sectors{background:var(--bg);}
+.sector-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px;}
+@media(max-width:800px){.sector-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:500px){.sector-grid{grid-template-columns:1fr;}}
+.sector-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);padding:24px;box-shadow:var(--sh);}
+.sector-ico{font-size:22px;margin-bottom:12px;}
+.sector-h{font-size:15px;font-weight:700;color:var(--text);margin-bottom:7px;}
+.sector-p{font-size:13px;color:var(--muted);line-height:1.6;}
+
+/* DEMO PREVIEW */
+#demo{background:var(--dark);}
+#demo .sec-label{color:rgba(255,255,255,.3);}
+#demo h2.sec-h{color:var(--inv);}
+#demo .sec-desc{color:rgba(255,255,255,.4);}
+.demo-screen{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:var(--r-xl);padding:28px;margin-top:40px;max-width:680px;}
+.demo-bar{display:flex;align-items:center;gap:8px;margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,.08);}
+.demo-dot{width:10px;height:10px;border-radius:50%;}
+.demo-title{font-size:12px;font-weight:600;color:rgba(255,255,255,.35);margin-left:4px;letter-spacing:.5px;}
+.demo-row{display:flex;align-items:flex-start;gap:14px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.06);}
+.demo-row:last-child{border-bottom:none;}
+.demo-step-badge{font-size:10.5px;font-weight:700;padding:3px 9px;border-radius:5px;white-space:nowrap;flex-shrink:0;margin-top:1px;}
+.demo-step-badge.new{background:rgba(10,110,74,.2);color:#34D399;border:1px solid rgba(10,110,74,.3);}
+.demo-step-badge.pending{background:rgba(255,180,0,.12);color:#FCD34D;border:1px solid rgba(255,180,0,.2);}
+.demo-step-badge.sent{background:rgba(99,102,241,.15);color:#A5B4FC;border:1px solid rgba(99,102,241,.25);}
+.demo-co{font-size:13.5px;font-weight:600;color:rgba(255,255,255,.75);}
+.demo-detail{font-size:12px;color:rgba(255,255,255,.35);margin-top:2px;}
+
+/* FAQ */
+#faq{background:var(--bg2);}
+.faq-list{display:flex;flex-direction:column;gap:12px;margin-top:40px;max-width:720px;}
+.faq-item{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;}
+.faq-q{padding:20px 24px;font-size:14.5px;font-weight:700;color:var(--text);cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;user-select:none;}
+.faq-q::after{content:'+';font-size:20px;color:var(--faint);flex-shrink:0;transition:transform .2s;}
+.faq-item.open .faq-q::after{transform:rotate(45deg);}
+.faq-a{display:none;padding:0 24px 20px;font-size:13.5px;color:var(--muted);line-height:1.65;}
+.faq-item.open .faq-a{display:block;}
+
+/* CTA BAND */
+.cta-band{background:var(--dark);border-radius:var(--r-xl);padding:52px 48px;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;}
+@media(max-width:600px){.cta-band{padding:36px 24px;}}
+.cta-band-h{font-family:var(--font-h);font-size:clamp(22px,3.5vw,34px);color:#F6F5F2;line-height:1.15;max-width:400px;text-wrap:balance;}
+.cta-band-sub{font-size:14px;color:rgba(255,255,255,.4);margin-top:10px;max-width:360px;}
+.btn-cta-main{background:var(--green);color:#fff;font-size:14px;font-weight:700;padding:14px 28px;border-radius:var(--r-lg);border:none;display:inline-flex;align-items:center;gap:8px;transition:background .15s;}
+.btn-cta-main:hover{background:var(--green-d);}
+
+/* FOOTER */
+footer{background:var(--dark);border-top:1px solid rgba(255,255,255,.07);padding:24px 0;}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+.footer-logo{font-family:var(--font-b);font-size:15px;font-weight:800;color:rgba(255,255,255,.5);letter-spacing:-.2px;}
+.footer-logo span{color:#1355FF;}
+.footer-links{display:flex;gap:20px;}
+.footer-links a{font-size:12.5px;color:rgba(255,255,255,.3);transition:color .15s;}
+.footer-links a:hover{color:rgba(255,255,255,.65);}
+.footer-copy{font-size:12px;color:rgba(255,255,255,.25);}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Callypso Export Agent","applicationCategory":"BusinessApplication","operatingSystem":"Web","description":"İhracatçılar için AI destekli yurt dışı müşteri araştırması, kişiselleştirilmiş ilk temas ve teklif takip otomasyonu.","url":"https://callypsotech.com/export","offers":{"@type":"Offer","availability":"https://schema.org/InStock"},"publisher":{"@type":"Organization","name":"CallypsoTech","url":"https://callypsotech.com"}}
+</script>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">Callypso<span>Tech</span></a>
+    <a href="index.html" class="nav-back">← Ana Sayfa</a>
+    <button class="btn-nav" onclick="openCal()">Demo Talep Et →</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-inner">
+    <div class="hero-breadcrumb">
+      <a href="index.html">CallypsoTech</a>
+      <span>/</span>
+      <span>Export Agent</span>
+    </div>
+    <div class="hero-eyebrow">İhracat Satış Otomasyonu</div>
+    <h1 class="hero-h1">Yurt dışı müşteri kazanımını<br><em>sistematik hale getirin</em></h1>
+    <p class="hero-sub">Hedef pazar araştırması, kişiselleştirilmiş ilk temas ve teklif takibi — AI hazırlar, siz onaylarsınız, müşteri adınıza gönderilir.</p>
+    <div class="hero-btns">
+      <button class="btn-primary" onclick="openCal()">Ücretsiz Demo Talep Et →</button>
+      <button class="btn-secondary" onclick="document.getElementById('workflow').scrollIntoView({behavior:'smooth'})">Nasıl Çalışır</button>
+    </div>
+    <div class="hero-targets">
+      <div class="target-pill">Tekstil &amp; Hazır Giyim</div>
+      <div class="target-pill">Mobilya &amp; Dekorasyon</div>
+      <div class="target-pill">Makine &amp; Ekipman</div>
+      <div class="target-pill">Gıda &amp; Tarım</div>
+      <div class="target-pill">Dış Ticaret Ekipleri</div>
+    </div>
+  </div>
+</section>
+
+<!-- WORKFLOW -->
+<section id="workflow" class="sec">
+  <div class="wrap">
+    <div class="sec-label green">Nasıl Çalışır</div>
+    <h2 class="sec-h">AI hazırlar, siz onaylarsınız</h2>
+    <p class="sec-desc">Her adımda kontrolü elinizde tutun. Agent araştırır ve önerir — nihai karar sizin.</p>
+
+    <div class="workflow-steps">
+      <div class="wf-step">
+        <div class="wf-num">1</div>
+        <div>
+          <div class="wf-h">Hedef Pazar ve Müşteri Araştırması</div>
+          <div class="wf-p">Ürün grubunuz ve hedef pazarınıza göre potansiyel ithalatçı ve distribütörleri araştırır. Her firma için web sitesi, iletişim bilgisi ve sektörel bilgi derlenir.</div>
+        </div>
+      </div>
+      <div class="wf-step">
+        <div class="wf-num">2</div>
+        <div>
+          <div class="wf-h">Kişiselleştirilmiş İlk Temas Hazırlığı</div>
+          <div class="wf-p">Her firma için özelleştirilmiş ilk temas mesajı hazırlanır. Firmanın sektörü, ürün alanı ve ihtiyaçları gözetilerek yazılır. Siz onayladıktan sonra gönderilir.</div>
+        </div>
+      </div>
+      <div class="wf-step">
+        <div class="wf-num">3</div>
+        <div>
+          <div class="wf-h">Numune ve Fiyat Talebi Yönetimi</div>
+          <div class="wf-p">Gelen talepleri kategorize eder, öncelik sıralar ve yanıt taslakları hazırlar. Numune takip süreci otomatik hatırlatmalarla yürütülür.</div>
+        </div>
+      </div>
+      <div class="wf-step">
+        <div class="wf-num">4</div>
+        <div>
+          <div class="wf-h">Teklif Süreci Yönetimi</div>
+          <div class="wf-p">Fiyat tekliflerini takip eder, cevap gelmeyenleri belirler ve takip mesajı taslakları hazırlar. Açık teklifler ve potansiyel değeri tek panelde görüntülenir.</div>
+        </div>
+      </div>
+      <div class="wf-step">
+        <div class="wf-num">5</div>
+        <div>
+          <div class="wf-h">Otomatik Satış Takip Akışları</div>
+          <div class="wf-p">Belirlenen süre içinde yanıt gelmezse otomatik takip mesajları hazırlanır. Her müşteriyle ilişki tarihi, iletişim geçmişi ve sonraki adım takip edilir.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTORS -->
+<section id="sectors" class="sec">
+  <div class="wrap">
+    <div class="sec-label">Hedef Sektörler</div>
+    <h2 class="sec-h">Hangi işletmeler için?</h2>
+    <p class="sec-desc">Yurt dışına ürün satan veya satmayı hedefleyen her B2B işletme için.</p>
+
+    <div class="sector-grid">
+      <div class="sector-card">
+        <div class="sector-ico">👕</div>
+        <div class="sector-h">Tekstil &amp; Hazır Giyim</div>
+        <div class="sector-p">AB, Ortadoğu ve Amerika'daki distribütör ve toptan alıcılara sistematik ulaşım.</div>
+      </div>
+      <div class="sector-card">
+        <div class="sector-ico">🪑</div>
+        <div class="sector-h">Mobilya &amp; Dekorasyon</div>
+        <div class="sector-p">İnegöl ve çevresi başta olmak üzere mobilya ihracatçıları için yurt dışı müşteri geliştirme.</div>
+      </div>
+      <div class="sector-card">
+        <div class="sector-ico">⚙️</div>
+        <div class="sector-h">Makine &amp; Ekipman</div>
+        <div class="sector-p">Teknik ürünler için hedef pazar araştırması ve teknik teklif süreçlerinin yönetimi.</div>
+      </div>
+      <div class="sector-card">
+        <div class="sector-ico">🌾</div>
+        <div class="sector-h">Gıda &amp; Tarım Ürünleri</div>
+        <div class="sector-p">Sertifikasyon gereklilikleri ve hedef pazar alıcılarına özelleştirilmiş temas.</div>
+      </div>
+      <div class="sector-card">
+        <div class="sector-ico">🏭</div>
+        <div class="sector-h">İmalat &amp; Kimya</div>
+        <div class="sector-p">OEM ve private label üreticiler için hedef alıcı araştırması ve ilk temas.</div>
+      </div>
+      <div class="sector-card">
+        <div class="sector-ico">📦</div>
+        <div class="sector-h">Diğer B2B İhracatçılar</div>
+        <div class="sector-p">Farklı bir sektördeyseniz görüşmede değerlendiririz. Neredeyse her ihracat alanına uyarlanabilir.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEMO PREVIEW -->
+<section id="demo" class="sec-sm">
+  <div class="wrap">
+    <div class="sec-label">Platform Önizlemesi</div>
+    <h2 class="sec-h">Export Agent dashboard'u böyle görünür</h2>
+    <p class="sec-desc">Gerçek demo için görüşme talep edin — kendi firmanızın verisiyle çalışan bir demo hazırlıyoruz.</p>
+
+    <div class="demo-screen">
+      <div class="demo-bar">
+        <div class="demo-dot" style="background:#FF605C;"></div>
+        <div class="demo-dot" style="background:#FFBD44;"></div>
+        <div class="demo-dot" style="background:#00CA4E;"></div>
+        <div class="demo-title">EXPORT AGENT · GENEL BAKIŞ</div>
+      </div>
+
+      <div class="demo-row">
+        <div class="demo-step-badge new">Yeni Talep</div>
+        <div>
+          <div class="demo-co">Nordhaus Bürowelt GmbH · Almanya</div>
+          <div class="demo-detail">200 adet ofis koltuğu talebi · TLP-1042 · Bugün geldi</div>
+        </div>
+      </div>
+      <div class="demo-row">
+        <div class="demo-step-badge pending">Onay Bekliyor</div>
+        <div>
+          <div class="demo-co">Van Dijk Office BV · Hollanda</div>
+          <div class="demo-detail">TKF-2029 takip mesajı hazır · €11.520 açık teklif</div>
+        </div>
+      </div>
+      <div class="demo-row">
+        <div class="demo-step-badge sent">Teklif Gönderildi</div>
+        <div>
+          <div class="demo-co">Lumière Bureau SARL · Fransa</div>
+          <div class="demo-detail">TKF-2031 · €16.080 · 10 gündür yanıt yok</div>
+        </div>
+      </div>
+      <div class="demo-row">
+        <div class="demo-step-badge new">Numune Talebi</div>
+        <div>
+          <div class="demo-co">Gulf Interiors LLC · BAE</div>
+          <div class="demo-detail">Executive X300 numune talebi · 18 Kas deadline</div>
+        </div>
+      </div>
+    </div>
+    <p style="font-size:12px;color:rgba(255,255,255,.25);margin-top:16px;">Yukarıdaki veriler demo amaçlı örnek kayıtlardır.</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="sec">
+  <div class="wrap">
+    <div class="sec-label">Sık Sorulan Sorular</div>
+    <h2 class="sec-h">Merak edilenler</h2>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Export Agent müşteri adına mı yazışıyor?</div>
+        <div class="faq-a">Evet, ancak her mesaj sizin onayınızdan geçtikten sonra gönderilir. AI taslağı hazırlar, siz onaylarsınız, firma adınıza gönderilir. Hiçbir şey onaysız gitmiyor.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Hangi dillerde iletişim kurabiliyor?</div>
+        <div class="faq-a">Öncelikli olarak İngilizce, Almanca, Fransızca ve Arapça desteklenmektedir. Hedef pazarınıza göre özel dil desteği için görüşme talep edin.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Zaten bir CRM kullanıyoruz. Entegre olabilir mi?</div>
+        <div class="faq-a">HubSpot ve Pipedrive entegrasyonu mevcuttur. Farklı bir CRM kullanıyorsanız görüşmede değerlendirilebilir.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Pilot uygulama mümkün mü?</div>
+        <div class="faq-a">Evet. Tipik pilot süreç: 2 hafta, gerçek müşteri listesi ve ürün grubuyla. Pilot sonunda sonuçları birlikte değerlendiririz.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Export Agent henüz yurt dışı müşterimiz yoksa da işe yarar mı?</div>
+        <div class="faq-a">Evet, özellikle bu durum için tasarlandı. Hedef pazar seçimi, ilk liste oluşturma ve ilk temas akışının kurulmasını baştan biz yürütürüz.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="sec">
+  <div class="wrap">
+    <div class="cta-band">
+      <div>
+        <div class="cta-band-h">Export Agent'ın işletmenize nasıl uyarlanabileceğini görelim</div>
+        <div class="cta-band-sub">Ücretsiz 15 dakikalık keşif görüşmesi · Kendi ürün grubunuza özel senaryo</div>
+      </div>
+      <button class="btn-cta-main" onclick="openCal()">Ücretsiz Demo Planla →</button>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-inner">
+      <div class="footer-logo">Callypso<span>Tech</span></div>
+      <div class="footer-links">
+        <a href="index.html">Ana Sayfa</a>
+        <a href="engage.html">Callypso Engage</a>
+        <a href="mailto:support@callypsotech.com">İletişim</a>
+      </div>
+      <div class="footer-copy">© 2026 CallypsoTech · İstanbul</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+function openCal(){window.open('https://cal.com/furkan-alumert','_blank');}
+function toggleFaq(el){var item=el.parentElement;item.classList.toggle('open');}
+</script>
+</body>
+</html>

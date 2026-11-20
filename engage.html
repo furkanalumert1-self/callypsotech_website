@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Callypso Engage | E-ticaret Satış Otomasyonu</title>
+<meta name="description" content="Sepet terk edenlerden gelir kazanın, tekrar satın almayı otomatikleştirin. E-ticaret markaları için WhatsApp, SMS ve e-posta otomasyon platformu.">
+<link rel="canonical" href="https://callypsotech.com/engage">
+<meta property="og:title" content="Callypso Engage | E-ticaret Satış Otomasyonu">
+<meta property="og:description" content="Müşteri davranışlarına dayalı otomasyon akışları. Shopify, ikas, Ticimax entegrasyonu.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+<style>
+:root {
+  --bg:#F6F5F2; --bg2:#EFEDE8; --bg3:#E3E1DB; --dark:#0D1117; --dark2:#161C26;
+  --surface:#FFFFFF; --text:#0D1117; --sub:#374151; --muted:#6A7280; --faint:#98A0AB;
+  --inv:#F6F5F2; --border:#E3E1DB;
+  --blue:#1355FF; --blue-d:#0B3FD0; --blue-s:#EDF2FF; --blue-m:#C0D0FF;
+  --r:8px; --r-lg:14px; --r-xl:20px;
+  --sh:0 1px 3px rgba(0,0,0,.06),0 4px 16px rgba(0,0,0,.06);
+  --sh-lg:0 2px 8px rgba(0,0,0,.06),0 12px 40px rgba(0,0,0,.09);
+  --font-h:'Instrument Serif',Georgia,serif; --font-b:'Plus Jakarta Sans',system-ui,sans-serif;
+  color-scheme:light;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:var(--font-b);font-size:15px;line-height:1.65;overflow-x:hidden;}
+a{text-decoration:none;color:inherit;}
+img{max-width:100%;display:block;}
+button{cursor:pointer;font-family:var(--font-b);}
+
+.wrap{max-width:1100px;margin:0 auto;padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px));}
+.sec{padding:88px 0;}
+.sec-sm{padding:64px 0;}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:200;background:rgba(13,17,23,.97);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.07);height:62px;}
+.nav-inner{max-width:1100px;margin:0 auto;height:100%;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px));}
+.logo{font-family:var(--font-b);font-size:17px;font-weight:800;color:#fff;letter-spacing:-.3px;}
+.logo span{color:var(--blue);}
+.nav-back{font-size:13px;color:rgba(255,255,255,.45);display:flex;align-items:center;gap:6px;transition:color .15s;}
+.nav-back:hover{color:#fff;}
+.btn-nav{background:var(--blue);color:#fff;font-size:13px;font-weight:600;padding:8px 18px;border-radius:var(--r);border:none;white-space:nowrap;transition:background .15s;}
+.btn-nav:hover{background:var(--blue-d);}
+
+/* HERO */
+.hero{background:var(--dark);padding:88px 0 72px;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;top:-80px;left:-60px;width:600px;height:400px;background:radial-gradient(ellipse,rgba(19,85,255,.2) 0%,transparent 65%);pointer-events:none;}
+.hero-inner{position:relative;z-index:1;}
+.hero-breadcrumb{display:flex;align-items:center;gap:8px;font-size:12px;color:rgba(255,255,255,.3);margin-bottom:20px;}
+.hero-breadcrumb a{color:rgba(255,255,255,.3);transition:color .15s;}
+.hero-breadcrumb a:hover{color:rgba(255,255,255,.65);}
+.hero-breadcrumb span{color:rgba(255,255,255,.15);}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:11.5px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:rgba(255,255,255,.4);border:1px solid rgba(255,255,255,.1);padding:5px 14px;border-radius:100px;margin-bottom:24px;}
+.hero-eyebrow::before{content:'';width:7px;height:7px;background:var(--blue);border-radius:50%;box-shadow:0 0 8px rgba(19,85,255,.5);}
+h1.hero-h1{font-family:var(--font-h);font-size:clamp(36px,5.5vw,60px);font-weight:400;line-height:1.1;letter-spacing:-.4px;color:#F6F5F2;text-wrap:balance;margin-bottom:20px;max-width:680px;}
+h1.hero-h1 em{font-style:italic;color:rgba(246,245,242,.6);}
+.hero-sub{font-size:17px;color:rgba(246,245,242,.5);line-height:1.65;max-width:520px;margin-bottom:32px;}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:52px;}
+.btn-primary{background:var(--blue);color:#fff;font-size:14px;font-weight:700;padding:13px 26px;border-radius:var(--r);border:none;display:inline-flex;align-items:center;gap:7px;transition:background .15s;}
+.btn-primary:hover{background:var(--blue-d);}
+.btn-secondary{background:rgba(255,255,255,.07);color:rgba(246,245,242,.8);font-size:14px;font-weight:500;padding:13px 26px;border-radius:var(--r);border:1px solid rgba(255,255,255,.12);display:inline-flex;align-items:center;gap:7px;transition:all .15s;}
+.btn-secondary:hover{background:rgba(255,255,255,.12);}
+.hero-stats{display:flex;gap:32px;flex-wrap:wrap;}
+.hero-stat-num{font-family:var(--font-h);font-size:28px;color:#F6F5F2;}
+.hero-stat-lbl{font-size:12px;color:rgba(255,255,255,.35);margin-top:2px;}
+
+/* SECTION HEADINGS */
+.sec-label{font-size:11.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:14px;}
+.sec-label.blue{color:var(--blue);}
+h2.sec-h{font-family:var(--font-h);font-size:clamp(26px,3.5vw,40px);font-weight:400;line-height:1.15;letter-spacing:-.3px;color:var(--text);text-wrap:balance;margin-bottom:14px;}
+.sec-desc{font-size:16px;color:var(--muted);line-height:1.65;max-width:520px;}
+
+/* HOW IT WORKS */
+#how{background:var(--bg2);}
+.use-cases{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:48px;}
+@media(max-width:650px){.use-cases{grid-template-columns:1fr;}}
+.uc-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);padding:28px;box-shadow:var(--sh);}
+.uc-num{font-family:var(--font-h);font-size:13px;color:var(--faint);margin-bottom:12px;}
+.uc-h{font-size:16px;font-weight:700;color:var(--text);margin-bottom:8px;line-height:1.3;}
+.uc-p{font-size:13.5px;color:var(--muted);line-height:1.6;}
+.uc-tag{display:inline-block;margin-top:12px;font-size:11px;font-weight:600;padding:3px 10px;border-radius:100px;background:var(--blue-s);color:var(--blue);border:1px solid var(--blue-m);}
+
+/* FEATURES */
+#features{background:var(--bg);}
+.feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px;}
+@media(max-width:800px){.feat-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:500px){.feat-grid{grid-template-columns:1fr;}}
+.feat-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);padding:24px;box-shadow:var(--sh);}
+.feat-ico{font-size:22px;margin-bottom:12px;}
+.feat-h{font-size:14.5px;font-weight:700;color:var(--text);margin-bottom:7px;}
+.feat-p{font-size:13px;color:var(--muted);line-height:1.6;}
+
+/* INTEGRATIONS */
+#integrations{background:var(--dark);}
+#integrations .sec-label{color:rgba(255,255,255,.3);}
+#integrations h2.sec-h{color:var(--inv);}
+#integrations .sec-desc{color:rgba(255,255,255,.4);}
+.int-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:36px;}
+.int-pill{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:var(--r);padding:10px 20px;font-size:13.5px;font-weight:600;color:rgba(255,255,255,.65);}
+
+/* FAQ */
+#faq{background:var(--bg2);}
+.faq-list{display:flex;flex-direction:column;gap:12px;margin-top:40px;max-width:720px;}
+.faq-item{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;}
+.faq-q{padding:20px 24px;font-size:14.5px;font-weight:700;color:var(--text);cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;user-select:none;}
+.faq-q::after{content:'+';font-size:20px;color:var(--faint);flex-shrink:0;transition:transform .2s;}
+.faq-item.open .faq-q::after{transform:rotate(45deg);}
+.faq-a{display:none;padding:0 24px 20px;font-size:13.5px;color:var(--muted);line-height:1.65;}
+.faq-item.open .faq-a{display:block;}
+
+/* CTA BAND */
+.cta-band{background:var(--dark);border-radius:var(--r-xl);padding:52px 48px;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;}
+@media(max-width:600px){.cta-band{padding:36px 24px;}}
+.cta-band-h{font-family:var(--font-h);font-size:clamp(22px,3.5vw,34px);color:#F6F5F2;line-height:1.15;max-width:400px;text-wrap:balance;}
+.cta-band-sub{font-size:14px;color:rgba(255,255,255,.4);margin-top:10px;max-width:360px;}
+.btn-cta-main{background:var(--blue);color:#fff;font-size:14px;font-weight:700;padding:14px 28px;border-radius:var(--r-lg);border:none;display:inline-flex;align-items:center;gap:8px;transition:background .15s;}
+.btn-cta-main:hover{background:var(--blue-d);}
+
+/* FOOTER */
+footer{background:var(--dark);border-top:1px solid rgba(255,255,255,.07);padding:24px 0;}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+.footer-logo{font-family:var(--font-b);font-size:15px;font-weight:800;color:rgba(255,255,255,.5);letter-spacing:-.2px;}
+.footer-logo span{color:var(--blue);}
+.footer-links{display:flex;gap:20px;}
+.footer-links a{font-size:12.5px;color:rgba(255,255,255,.3);transition:color .15s;}
+.footer-links a:hover{color:rgba(255,255,255,.65);}
+.footer-copy{font-size:12px;color:rgba(255,255,255,.25);}
+@media(max-width:600px){.hero-stats{gap:20px;}}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Callypso Engage","applicationCategory":"BusinessApplication","operatingSystem":"Web","description":"E-ticaret işletmeleri için sepet terk, tekrar satın alma ve müşteri yeniden kazanım otomasyonu. WhatsApp, SMS ve e-posta kampanya platformu.","url":"https://callypsotech.com/engage","offers":{"@type":"Offer","availability":"https://schema.org/InStock"},"publisher":{"@type":"Organization","name":"CallypsoTech","url":"https://callypsotech.com"}}
+</script>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">Callypso<span>Tech</span></a>
+    <a href="index.html" class="nav-back">← Ana Sayfa</a>
+    <button class="btn-nav" onclick="openCal()">Demo Talep Et →</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-inner">
+    <div class="hero-breadcrumb">
+      <a href="index.html">CallypsoTech</a>
+      <span>/</span>
+      <span>Callypso Engage</span>
+    </div>
+    <div class="hero-eyebrow">E-ticaret Büyüme Otomasyonu</div>
+    <h1 class="hero-h1">Müşterilerinizi geri kazanın,<br><em>tekrar satın almayı otomatikleştirin</em></h1>
+    <p class="hero-sub">Sepet terk edenlerden gelir kazanın. Pasif müşterileri yeniden aktive edin. E-posta, SMS ve WhatsApp — tek platformda.</p>
+    <div class="hero-btns">
+      <button class="btn-primary" onclick="openCal()">Ücretsiz Demo Talep Et →</button>
+      <button class="btn-secondary" onclick="document.getElementById('how').scrollIntoView({behavior:'smooth'})">Nasıl Çalışır</button>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="hero-stat-num">E-posta</div>
+        <div class="hero-stat-lbl">Kampanya otomasyonu</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">WhatsApp</div>
+        <div class="hero-stat-lbl">Mesaj otomasyonu</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">SMS</div>
+        <div class="hero-stat-lbl">Bildirim akışları</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">Shopify+</div>
+        <div class="hero-stat-lbl">Platform entegrasyonları</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS / USE CASES -->
+<section id="how" class="sec">
+  <div class="wrap">
+    <div class="sec-label blue">Kullanım Senaryoları</div>
+    <h2 class="sec-h">Hangi süreçleri otomatikleştirir?</h2>
+    <p class="sec-desc">Her e-ticaret işletmesinin kayıp yaşadığı kritik noktalarda devreye girer.</p>
+
+    <div class="use-cases">
+      <div class="uc-card">
+        <div class="uc-num">01</div>
+        <div class="uc-h">Sepet Terk Geri Kazanım</div>
+        <div class="uc-p">Müşteri sepeti terk ettiğinde otomatik hatırlatma akışı başlar. E-posta, SMS ve WhatsApp üzerinden kişiselleştirilmiş mesajlar gönderilir.</div>
+        <div class="uc-tag">Engage ile otomatik</div>
+      </div>
+      <div class="uc-card">
+        <div class="uc-num">02</div>
+        <div class="uc-h">Tekrar Satın Alma Otomasyonu</div>
+        <div class="uc-p">Müşteri satın aldıktan belirli bir süre sonra yeniden ürün öneren, indirim sunan veya ilgili ürünler tanıtan otomatik akışlar.</div>
+        <div class="uc-tag">Engage ile otomatik</div>
+      </div>
+      <div class="uc-card">
+        <div class="uc-num">03</div>
+        <div class="uc-h">Pasif Müşteri Yeniden Kazanım</div>
+        <div class="uc-p">3–6 ay boyunca satın almayan müşterileri belirler ve kişiselleştirilmiş yeniden aktivasyon kampanyaları başlatır.</div>
+        <div class="uc-tag">Engage ile otomatik</div>
+      </div>
+      <div class="uc-card">
+        <div class="uc-num">04</div>
+        <div class="uc-h">Müşteri Segmentasyonu ve Kampanyalar</div>
+        <div class="uc-p">Satın alma davranışlarına göre müşteri segmentleri oluşturur. Her segment için özel kampanya ve içerik akışları kurulur.</div>
+        <div class="uc-tag">Engage ile otomatik</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section id="features" class="sec">
+  <div class="wrap">
+    <div class="sec-label">Platform Özellikleri</div>
+    <h2 class="sec-h">Callypso Engage neler yapabilir?</h2>
+
+    <div class="feat-grid">
+      <div class="feat-card">
+        <div class="feat-ico">📧</div>
+        <div class="feat-h">E-posta Otomasyon Akışları</div>
+        <div class="feat-p">Drag-and-drop akış tasarımcısı ile karmaşık e-posta sekanslarını kolay kurun. A/B testi, koşullu dallanma.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-ico">💬</div>
+        <div class="feat-h">WhatsApp Kampanyaları</div>
+        <div class="feat-p">WhatsApp Business API ile onaylı şablon mesajları ve kişiselleştirilmiş bildirimler gönderin.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-ico">📱</div>
+        <div class="feat-h">SMS Bildirimleri</div>
+        <div class="feat-p">Sepet terk, sipariş hatırlatma ve kampanya bildirimlerini SMS ile destekleyin.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-ico">👥</div>
+        <div class="feat-h">Müşteri Segmentasyonu</div>
+        <div class="feat-p">RFM analizi ve satın alma davranışlarına göre otomatik müşteri segmentleri oluşturun.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-ico">📊</div>
+        <div class="feat-h">Gelir ve Kampanya Analizi</div>
+        <div class="feat-p">Her otomasyon akışının gelire katkısını, açılma oranlarını ve dönüşüm metriklerini takip edin.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-ico">🔗</div>
+        <div class="feat-h">Platform Entegrasyonları</div>
+        <div class="feat-p">Shopify, ikas, Ticimax, IdeaSoft ve WooCommerce ile entegre çalışır. Kurulum 1 günde tamamlanır.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INTEGRATIONS -->
+<section id="integrations" class="sec-sm">
+  <div class="wrap">
+    <div class="sec-label">Entegrasyonlar</div>
+    <h2 class="sec-h">Mevcut sisteminize bağlanır</h2>
+    <p class="sec-desc">Şu an kullandığınız e-ticaret altyapısını değiştirmenize gerek yok.</p>
+    <div class="int-row">
+      <div class="int-pill">Shopify</div>
+      <div class="int-pill">ikas</div>
+      <div class="int-pill">Ticimax</div>
+      <div class="int-pill">IdeaSoft</div>
+      <div class="int-pill">WooCommerce</div>
+      <div class="int-pill">WhatsApp Business API</div>
+      <div class="int-pill">Resend</div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="sec">
+  <div class="wrap">
+    <div class="sec-label">Sık Sorulan Sorular</div>
+    <h2 class="sec-h">Merak edilenler</h2>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Callypso Engage hangi e-ticaret platformlarıyla çalışır?</div>
+        <div class="faq-a">Shopify, ikas, Ticimax, IdeaSoft ve WooCommerce ile entegre çalışır. Farklı bir platform kullanıyorsanız görüşmede değerlendirebiliriz.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Kurulum ne kadar sürer?</div>
+        <div class="faq-a">Tipik kurulum süresi 1–3 iş günüdür. Entegrasyon, ilk akışların kurulumu ve test sürecini biz yönetiyoruz.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">WhatsApp otomasyonu için ne gerekiyor?</div>
+        <div class="faq-a">WhatsApp Business API erişimi gerekiyor. Hesap açılış sürecinde de destek sağlıyoruz. Meta onayı genellikle 1–5 iş günü sürer.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">KVKK açısından ne sağlanıyor?</div>
+        <div class="faq-a">Platform, KVKK uyumlu onay mekanizmaları ve İYS entegrasyonu içerir. İzinsiz müşterilere ticari ileti gönderilmez. Hukuki danışman onayı için metinleri sizinle paylaşıyoruz.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Klaviyo veya Mailchimp'ten farkı ne?</div>
+        <div class="faq-a">Callypso Engage, Türk pazarına özgün ihtiyaçlara göre konumlanmış, Türkçe destekli, yerel e-ticaret altyapılarıyla entegre çalışan bir platformdur. Aynı zamanda WhatsApp ve SMS kanallarını tek merkezde yönetir.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="sec">
+  <div class="wrap">
+    <div class="cta-band">
+      <div>
+        <div class="cta-band-h">Engage'in işletmenize nasıl katkı sağlayabileceğini birlikte değerlendirelim</div>
+        <div class="cta-band-sub">Ücretsiz 15 dakikalık keşif görüşmesi · Taahhüt yok</div>
+      </div>
+      <button class="btn-cta-main" onclick="openCal()">Ücretsiz Demo Planla →</button>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-inner">
+      <div class="footer-logo">Callypso<span>Tech</span></div>
+      <div class="footer-links">
+        <a href="index.html">Ana Sayfa</a>
+        <a href="export.html">Export Agent</a>
+        <a href="mailto:support@callypsotech.com">İletişim</a>
+      </div>
+      <div class="footer-copy">© 2026 CallypsoTech · İstanbul</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+function openCal(){window.open('https://cal.com/furkan-alumert','_blank');}
+function toggleFaq(el){var item=el.parentElement;item.classList.toggle('open');}
+</script>
+</body>
+</html>
