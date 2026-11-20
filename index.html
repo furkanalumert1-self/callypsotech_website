@@ -11,6 +11,13 @@
 <meta property="og:url" content="https://callypsotech.com">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="CallypsoTech | B2B Satış ve Büyüme Otomasyonu">
+<meta name="twitter:description" content="E-ticaret büyümesi ve ihracat otomasyonu için AI destekli B2B platformlar.">
+<meta name="twitter:image" content="https://callypsotech.com/og-image.svg">
+<meta property="og:image" content="https://callypsotech.com/og-image.svg">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:site_name" content="CallypsoTech">
+<meta name="robots" content="index, follow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
@@ -81,48 +88,49 @@ nav {
   position: sticky;
   top: 0;
   z-index: 200;
-  background: rgba(13,17,23,.97);
+  background: rgba(246,245,242,.97);
   backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(255,255,255,.07);
+  border-bottom: 1px solid var(--border);
   height: 62px;
 }
 .nav-inner { max-width: 1100px; margin: 0 auto; height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-left: max(24px, env(safe-area-inset-left,0px)); padding-right: max(24px, env(safe-area-inset-right,0px)); }
-.logo { font-family: var(--font-b); font-size: 17px; font-weight: 800; color: #fff; letter-spacing: -.3px; }
+.logo { font-family: var(--font-b); font-size: 17px; font-weight: 800; color: var(--dark); letter-spacing: -.3px; }
 .logo span { color: var(--blue); }
 .nav-links { display: flex; gap: 28px; list-style: none; }
-.nav-links a { color: rgba(255,255,255,.55); font-size: 13.5px; font-weight: 500; transition: color .15s; }
-.nav-links a:hover { color: #fff; }
+.nav-links a { color: var(--muted); font-size: 13.5px; font-weight: 500; transition: color .15s; }
+.nav-links a:hover { color: var(--dark); }
 .nav-right { display: flex; align-items: center; gap: 10px; }
 .btn-nav { background: var(--blue); color: #fff; font-size: 13px; font-weight: 600; padding: 8px 18px; border-radius: var(--r); border: none; white-space: nowrap; transition: background .15s; }
 .btn-nav:hover { background: var(--blue-d); }
 .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; padding: 4px; }
-.hamburger span { display: block; width: 22px; height: 2px; background: #fff; border-radius: 2px; transition: all .3s; }
+.hamburger span { display: block; width: 22px; height: 2px; background: var(--dark); border-radius: 2px; transition: all .3s; }
 .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
 .hamburger.open span:nth-child(2) { opacity: 0; }
 .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-.mob-menu { display: none; position: fixed; top: 62px; left: 0; right: 0; bottom: 0; background: rgba(13,17,23,.98); z-index: 190; flex-direction: column; padding: 2rem 24px; gap: 0; border-top: 1px solid rgba(255,255,255,.07); }
+.mob-menu { display: none; position: fixed; top: 62px; left: 0; right: 0; bottom: 0; background: rgba(246,245,242,.98); z-index: 190; flex-direction: column; padding: 2rem 24px; gap: 0; border-top: 1px solid var(--border); }
 .mob-menu.open { display: flex; }
-.mob-menu a { color: rgba(255,255,255,.65); font-size: 18px; font-weight: 500; padding: 1.1rem 0; border-bottom: 1px solid rgba(255,255,255,.07); display: block; transition: color .15s; }
-.mob-menu a:hover { color: #fff; }
+.mob-menu a { color: var(--sub); font-size: 18px; font-weight: 500; padding: 1.1rem 0; border-bottom: 1px solid var(--border); display: block; transition: color .15s; }
+.mob-menu a:hover { color: var(--dark); }
 .mob-menu-btns { display: flex; flex-direction: column; gap: .75rem; margin-top: 1.5rem; }
 @media (max-width: 768px) { .nav-links { display: none; } .hamburger { display: flex; } }
 
 /* ── HERO ── */
 .hero {
-  background: var(--dark);
-  min-height: 100vh;
+  background: var(--bg);
+  min-height: calc(100vh - 62px);
   display: flex;
   align-items: center;
   padding: 80px 0 72px;
   position: relative;
   overflow: hidden;
+  border-bottom: 1px solid var(--border);
 }
 .hero::before {
   content: '';
   position: absolute;
   top: -120px; left: -80px;
   width: 700px; height: 500px;
-  background: radial-gradient(ellipse, rgba(19,85,255,.18) 0%, transparent 65%);
+  background: radial-gradient(ellipse, rgba(19,85,255,.07) 0%, transparent 65%);
   pointer-events: none;
 }
 .hero::after {
@@ -130,7 +138,7 @@ nav {
   position: absolute;
   bottom: -60px; right: -60px;
   width: 500px; height: 400px;
-  background: radial-gradient(ellipse, rgba(10,110,74,.12) 0%, transparent 65%);
+  background: radial-gradient(ellipse, rgba(10,110,74,.05) 0%, transparent 65%);
   pointer-events: none;
 }
 .hero-inner { position: relative; z-index: 1; max-width: 760px; }
@@ -142,30 +150,31 @@ nav {
   font-weight: 700;
   letter-spacing: 1.2px;
   text-transform: uppercase;
-  color: rgba(255,255,255,.45);
-  border: 1px solid rgba(255,255,255,.12);
+  color: var(--blue);
+  border: 1px solid var(--blue-m);
+  background: var(--blue-s);
   padding: 6px 14px;
   border-radius: 100px;
   margin-bottom: 28px;
 }
-.hero-eyebrow::before { content: ''; width: 6px; height: 6px; background: #1355FF; border-radius: 50%; flex-shrink: 0; }
+.hero-eyebrow::before { content: ''; width: 6px; height: 6px; background: var(--blue); border-radius: 50%; flex-shrink: 0; }
 h1.hero-h1 {
   font-family: var(--font-h);
   font-size: clamp(40px, 6vw, 68px);
   font-weight: 400;
   line-height: 1.08;
   letter-spacing: -.5px;
-  color: #F6F5F2;
+  color: var(--dark);
   text-wrap: balance;
   margin-bottom: 24px;
 }
 h1.hero-h1 em {
   font-style: italic;
-  color: rgba(246,245,242,.65);
+  color: var(--muted);
 }
 .hero-sub {
   font-size: 17px;
-  color: rgba(246,245,242,.55);
+  color: var(--sub);
   line-height: 1.65;
   max-width: 540px;
   margin-bottom: 36px;
@@ -173,8 +182,8 @@ h1.hero-h1 em {
 .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 56px; }
 .btn-primary { background: var(--blue); color: #fff; font-size: 14px; font-weight: 700; padding: 13px 26px; border-radius: var(--r); border: none; display: inline-flex; align-items: center; gap: 7px; transition: background .15s; }
 .btn-primary:hover { background: var(--blue-d); }
-.btn-secondary { background: rgba(255,255,255,.07); color: rgba(246,245,242,.8); font-size: 14px; font-weight: 500; padding: 13px 26px; border-radius: var(--r); border: 1px solid rgba(255,255,255,.12); display: inline-flex; align-items: center; gap: 7px; transition: all .15s; }
-.btn-secondary:hover { background: rgba(255,255,255,.12); color: #F6F5F2; }
+.btn-secondary { background: var(--surface); color: var(--sub); font-size: 14px; font-weight: 500; padding: 13px 26px; border-radius: var(--r); border: 1px solid var(--border); display: inline-flex; align-items: center; gap: 7px; transition: all .15s; }
+.btn-secondary:hover { background: var(--bg2); color: var(--dark); }
 .hero-products {
   display: flex;
   gap: 10px;
@@ -184,17 +193,18 @@ h1.hero-h1 em {
   display: flex;
   align-items: center;
   gap: 8px;
-  background: rgba(255,255,255,.05);
-  border: 1px solid rgba(255,255,255,.1);
+  background: var(--surface);
+  border: 1px solid var(--border);
   border-radius: 10px;
   padding: 10px 16px;
+  box-shadow: var(--sh);
 }
 .hp-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
-.hp-dot.blue { background: var(--blue); box-shadow: 0 0 8px rgba(19,85,255,.5); }
-.hp-dot.green { background: #0A6E4A; box-shadow: 0 0 8px rgba(10,110,74,.5); }
-.hp-dot.gray { background: rgba(255,255,255,.3); }
-.hp-name { font-size: 13px; font-weight: 600; color: rgba(255,255,255,.75); }
-.hp-desc { font-size: 11.5px; color: rgba(255,255,255,.35); margin-left: 2px; }
+.hp-dot.blue { background: var(--blue); }
+.hp-dot.green { background: #0A6E4A; }
+.hp-dot.gray { background: var(--faint); }
+.hp-name { font-size: 13px; font-weight: 600; color: var(--text); }
+.hp-desc { font-size: 11.5px; color: var(--muted); margin-left: 2px; }
 
 /* ── SECTION HEADINGS ── */
 .sec-label { font-size: 11.5px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
@@ -419,29 +429,58 @@ footer { background: var(--dark); border-top: 1px solid rgba(255,255,255,.07); p
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "WebSite",
+      "@id": "https://callypsotech.com/#website",
+      "url": "https://callypsotech.com",
+      "name": "CallypsoTech",
+      "description": "B2B satış ve büyüme otomasyonu için AI destekli platformlar.",
+      "inLanguage": "tr-TR",
+      "publisher": { "@id": "https://callypsotech.com/#org" }
+    },
+    {
       "@type": "Organization",
       "@id": "https://callypsotech.com/#org",
       "name": "CallypsoTech",
       "url": "https://callypsotech.com",
       "email": "support@callypsotech.com",
-      "address": { "@type": "PostalAddress", "addressLocality": "İstanbul", "addressCountry": "TR" },
-      "description": "B2B satış ve büyüme otomasyonu için AI destekli platformlar."
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://callypsotech.com/og-image.svg",
+        "width": 1200,
+        "height": 630
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "İstanbul",
+        "addressCountry": "TR"
+      },
+      "areaServed": ["TR", "DE", "NL", "FR", "AE"],
+      "knowsAbout": ["E-ticaret otomasyonu", "B2B satış otomasyonu", "İhracat satış", "Pazarlama otomasyonu", "WhatsApp Business API"],
+      "description": "CallypsoTech, Türkiye merkezli B2B satış otomasyonu şirketidir. E-ticaret işletmelerine büyüme otomasyonu (Callypso Engage) ve ihracatçılara yurt dışı müşteri kazanımı (Export Agent) hizmetleri sunar."
     },
     {
       "@type": "SoftwareApplication",
+      "@id": "https://callypsotech.com/engage#app",
       "name": "Callypso Engage",
       "applicationCategory": "BusinessApplication",
       "operatingSystem": "Web",
-      "description": "E-ticaret işletmeleri için sepet terk, tekrar satın alma ve müşteri yeniden kazanım otomasyonu.",
-      "url": "https://callypsotech.com/engage"
+      "inLanguage": "tr-TR",
+      "description": "E-ticaret işletmeleri için sepet terk, tekrar satın alma ve müşteri yeniden kazanım otomasyonu. Shopify, ikas, Ticimax, IdeaSoft ve WooCommerce entegrasyonu.",
+      "url": "https://callypsotech.com/engage.html",
+      "offers": { "@type": "Offer", "availability": "https://schema.org/InStock", "priceCurrency": "TRY" },
+      "publisher": { "@id": "https://callypsotech.com/#org" }
     },
     {
       "@type": "SoftwareApplication",
+      "@id": "https://callypsotech.com/export#app",
       "name": "Callypso Export Agent",
       "applicationCategory": "BusinessApplication",
       "operatingSystem": "Web",
-      "description": "İhracatçılar için AI destekli yurt dışı müşteri araştırması, ilk temas ve teklif takip otomasyonu.",
-      "url": "https://callypsotech.com/export"
+      "inLanguage": "tr-TR",
+      "description": "İhracatçılar için AI destekli yurt dışı müşteri araştırması, kişiselleştirilmiş ilk temas ve teklif takip otomasyonu. Tekstil, mobilya, makine ve gıda sektörlerine özel.",
+      "url": "https://callypsotech.com/export.html",
+      "offers": { "@type": "Offer", "availability": "https://schema.org/InStock", "priceCurrency": "TRY" },
+      "publisher": { "@id": "https://callypsotech.com/#org" }
     }
   ]
 }
