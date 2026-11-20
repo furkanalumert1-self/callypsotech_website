@@ -142,7 +142,76 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:24px 0;}
 .footer-copy{font-size:12px;color:var(--faint);}
 </style>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Callypso Export Agent","applicationCategory":"BusinessApplication","operatingSystem":"Web","description":"İhracatçılar için AI destekli yurt dışı müşteri araştırması, kişiselleştirilmiş ilk temas ve teklif takip otomasyonu.","url":"https://callypsotech.com/export","offers":{"@type":"Offer","availability":"https://schema.org/InStock"},"publisher":{"@type":"Organization","name":"CallypsoTech","url":"https://callypsotech.com"}}
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://callypsotech.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Export Agent", "item": "https://callypsotech.com/export.html" }
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://callypsotech.com/export.html#app",
+      "name": "Callypso Export Agent",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "inLanguage": "tr-TR",
+      "description": "İhracatçılar için AI destekli yurt dışı müşteri araştırması, kişiselleştirilmiş ilk temas yazışmaları ve teklif takip otomasyonu. Tekstil, mobilya, makine ve gıda sektörlerine özel. Hedef ülkeler: Almanya, Hollanda, Fransa, BAE.",
+      "url": "https://callypsotech.com/export.html",
+      "offers": { "@type": "Offer", "availability": "https://schema.org/InStock", "priceCurrency": "TRY" },
+      "publisher": { "@type": "Organization", "@id": "https://callypsotech.com/#org", "name": "CallypsoTech", "url": "https://callypsotech.com" },
+      "featureList": ["Yurt dışı alıcı araştırması", "Kişiselleştirilmiş ilk temas mektupları", "İnsan onaylı gönderim", "Teklif takip otomasyonu", "CRM entegrasyonu (HubSpot, Pipedrive)", "Çoklu dil desteği (İngilizce, Almanca, Fransızca, Arapça)"]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Callypso Export Agent müşteri adına mı yazışıyor?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Evet, ancak her mesaj kullanıcının onayından geçtikten sonra gönderilir. AI taslağı hazırlar, kullanıcı onaylar, firma adına gönderilir. Hiçbir şey onaysız gitmiyor."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Export Agent hangi dillerde iletişim kurabiliyor?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Öncelikli olarak İngilizce, Almanca, Fransızca ve Arapça desteklenmektedir. Hedef pazara göre özel dil desteği için görüşme talep edilebilir."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Export Agent mevcut CRM ile entegre olabilir mi?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "HubSpot ve Pipedrive entegrasyonu mevcuttur. Farklı bir CRM kullanıyorsanız görüşmede değerlendirilebilir."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Pilot uygulama mümkün mü?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Evet. Tipik pilot süreç 2 hafta sürer, gerçek müşteri listesi ve ürün grubuyla yürütülür. Pilot sonunda sonuçlar birlikte değerlendirilir."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Hiç yurt dışı müşterimiz yoksa Export Agent işe yarar mı?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Evet, özellikle bu durum için tasarlandı. Hedef pazar seçimi, ilk liste oluşturma ve ilk temas akışının kurulmasını baştan CallypsoTech ekibi yürütür."
+          }
+        }
+      ]
+    }
+  ]
+}
 </script>
 </head>
 <body>
