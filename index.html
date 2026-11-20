@@ -265,25 +265,26 @@ h3.prod-name { font-family: var(--font-h); font-size: 28px; font-weight: 400; co
 .btn-ghost-sm:hover { border-color: var(--text); color: var(--text); }
 
 /* ── PROBLEMS SECTION ── */
-#problems { background: var(--dark); }
-#problems .sec-label { color: rgba(255,255,255,.35); }
-#problems h2.sec-h { color: var(--inv); }
-#problems .sec-desc { color: rgba(255,255,255,.45); }
+#problems { background: var(--bg3); }
+#problems .sec-label { color: var(--muted); }
+#problems h2.sec-h { color: var(--dark); }
+#problems .sec-desc { color: var(--muted); }
 .prob-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 48px; }
 @media (max-width: 800px) { .prob-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 500px) { .prob-grid { grid-template-columns: 1fr; } }
 .prob-card {
-  background: rgba(255,255,255,.04);
-  border: 1px solid rgba(255,255,255,.08);
+  background: var(--surface);
+  border: 1px solid var(--border);
   border-radius: var(--r-lg);
   padding: 24px;
-  transition: background .15s;
+  box-shadow: var(--sh);
+  transition: box-shadow .15s;
 }
-.prob-card:hover { background: rgba(255,255,255,.07); }
-.prob-num { font-family: var(--font-h); font-size: 13px; color: rgba(255,255,255,.2); margin-bottom: 14px; }
-.prob-h { font-family: var(--font-b); font-size: 15px; font-weight: 700; color: #F6F5F2; margin-bottom: 8px; line-height: 1.35; }
-.prob-p { font-size: 13px; color: rgba(255,255,255,.45); line-height: 1.6; }
-.prob-solution { display: flex; align-items: center; gap: 7px; margin-top: 14px; font-size: 12px; font-weight: 600; color: rgba(19,85,255,.9); }
+.prob-card:hover { box-shadow: var(--sh-lg); }
+.prob-num { font-family: var(--font-h); font-size: 13px; color: var(--faint); margin-bottom: 14px; }
+.prob-h { font-family: var(--font-b); font-size: 15px; font-weight: 700; color: var(--dark); margin-bottom: 8px; line-height: 1.35; }
+.prob-p { font-size: 13px; color: var(--muted); line-height: 1.6; }
+.prob-solution { display: flex; align-items: center; gap: 7px; margin-top: 14px; font-size: 12px; font-weight: 600; color: var(--blue); }
 .prob-solution::before { content: '→'; }
 
 /* ── HOW WE WORK ── */
@@ -442,7 +443,7 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2
       "@id": "https://callypsotech.com/#org",
       "name": "CallypsoTech",
       "url": "https://callypsotech.com",
-      "email": "support@callypsotech.com",
+      "email": "furkanalumert@callypsotech.info",
       "logo": {
         "@type": "ImageObject",
         "url": "https://callypsotech.com/og-image.svg",
@@ -834,7 +835,7 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2
             </div>
             <div class="form-kvkk">
               <input type="checkbox" id="kvkk-eng" name="kvkk" required>
-              <label for="kvkk-eng">Verilerimin analiz raporu hazırlamak amacıyla işlenmesine izin veriyorum. <a href="mailto:support@callypsotech.com">KVKK Aydınlatma Metni</a> için iletişime geçin.</label>
+              <label for="kvkk-eng">Verilerimin analiz raporu hazırlamak amacıyla işlenmesine izin veriyorum. <a href="mailto:furkanalumert@callypsotech.info">KVKK Aydınlatma Metni</a> için iletişime geçin.</label>
             </div>
             <button type="submit" class="form-submit-btn blue">Ücretsiz Analiz İste →</button>
           </form>
@@ -882,7 +883,7 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2
             </div>
             <div class="form-kvkk">
               <input type="checkbox" id="kvkk-exp" name="kvkk" required>
-              <label for="kvkk-exp">Verilerimin analiz raporu hazırlamak amacıyla işlenmesine izin veriyorum. <a href="mailto:support@callypsotech.com">KVKK Aydınlatma Metni</a> için iletişime geçin.</label>
+              <label for="kvkk-exp">Verilerimin analiz raporu hazırlamak amacıyla işlenmesine izin veriyorum. <a href="mailto:furkanalumert@callypsotech.info">KVKK Aydınlatma Metni</a> için iletişime geçin.</label>
             </div>
             <button type="submit" class="form-submit-btn green">Ücretsiz Analiz İste →</button>
           </form>
@@ -902,7 +903,7 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2
       </div>
       <div>
         <div class="legal-col-title">// İletişim</div>
-        <p><a href="mailto:support@callypsotech.com">support@callypsotech.com</a><br><br><a href="https://cal.com/furkan-alumert" target="_blank" rel="noopener">Görüşme planla →</a></p>
+        <p><a href="mailto:furkanalumert@callypsotech.info">furkanalumert@callypsotech.info</a><br><br><a href="https://cal.com/furkan-alumert" target="_blank" rel="noopener">Görüşme planla →</a></p>
       </div>
       <div>
         <div class="legal-col-title">// Yasal Bildirim</div>
